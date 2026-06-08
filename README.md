@@ -83,11 +83,10 @@ All 19 objectives across 4 perspectives (Financial, Customer, Internal Processes
 
 | File  | URL |
 |-------|-----|
-| CLIENT FOLLOW-UP SOP | (https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/SOP-Initial%20Lead%20Follow-Up%20%26%20Qualification%20Protocol.pdf) |
+| CLIENT FOLLOW-UP-SOP | (https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/SOP-Initial%20Lead%20Follow-Up%20%26%20Qualification%20Protocol.pdf) |
 | Digital Bayanihan Playbook | (https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Digital%20Bayanihan.png) |
 | CRISIS-PROOF OPERATIONAL WORKFLOW | (https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/CRISIS-PROOF%20OPERATIONAL%20WORKFLOW%20-%20Stronghold%20A3.pdf
-) |
-| 72-Hour CLIENT Onboarding SOP | (Guiding Principles.png](https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/STANDARD%20OPERATING%20PROCEDURES-Client%20Onboarding%20%26%20Deployment%20Protocol-%20Stronghold%20A3.pdf)) |
+) 72-Hour CLIENT Onboarding SOP | ((https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/STANDARD%20OPERATING%20PROCEDURES-Client%20Onboarding%20%26%20Deployment%20Protocol-%20Stronghold%20A3.pdf)) |
 | CLOUD SMS VENDOR CHECKLIST |(https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/CLOUD%20SMS%20VENDOR%20EVALUATION%20CHECKLIST.pdf))|
 
 ## 🔗 External Assets
