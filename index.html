@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Stronghold A3 | Premier Security Agency Eastern Visayas">
     <meta property="og:description" content="Zero-Liability Security Partner. DOLE DO-174 Compliant. Serving Eastern Visayas with advanced risk mitigation solutions.">
-    <meta property="og:image" content="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20A3%20logo.jpg">
+    <meta property="og:image" content="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png">
     <meta property="og:url" content="https://strongholda3.com">
     <meta property="og:site_name" content="Stronghold A3 Security Agency">
     
@@ -24,24 +24,79 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Stronghold A3 | Zero-Liability Security Partner">
     <meta name="twitter:description" content="Eastern Visayas' premier security agency offering DOLE-compliant, technologically advanced risk mitigation services.">
-    <meta name="twitter:image" content="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20A3%20logo.jpg">
+    <meta name="twitter:image" content="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://strongholda3.com">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20A3%20logo.jpg">
+    <link rel="icon" type="image/x-icon" href="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png">
     
     <!-- Preload Key Assets -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
     
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        border: "hsl(var(--border))",
+                        input: "hsl(var(--input))",
+                        ring: "hsl(var(--ring))",
+                        background: "hsl(var(--background))",
+                        foreground: "hsl(var(--foreground))",
+                        primary: {
+                            DEFAULT: "hsl(var(--primary))",
+                            foreground: "hsl(var(--primary-foreground))",
+                        },
+                        secondary: {
+                            DEFAULT: "hsl(var(--secondary))",
+                            foreground: "hsl(var(--secondary-foreground))",
+                        },
+                        destructive: {
+                            DEFAULT: "hsl(var(--destructive))",
+                            foreground: "hsl(var(--destructive-foreground))",
+                        },
+                        muted: {
+                            DEFAULT: "hsl(var(--muted))",
+                            foreground: "hsl(var(--muted-foreground))",
+                        },
+                        accent: {
+                            DEFAULT: "hsl(var(--accent))",
+                            foreground: "hsl(var(--accent-foreground))",
+                        },
+                        popover: {
+                            DEFAULT: "hsl(var(--popover))",
+                            foreground: "hsl(var(--popover-foreground))",
+                        },
+                        card: {
+                            DEFAULT: "hsl(var(--card))",
+                            foreground: "hsl(var(--card-foreground))",
+                        },
+                    },
+                    borderRadius: {
+                        lg: "var(--radius)",
+                        md: "calc(var(--radius) - 2px)",
+                        sm: "calc(var(--radius) - 4px)",
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif'],
+                        'roboto-condensed': ['Roboto Condensed', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
     
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -49,64 +104,80 @@
     <!-- Chart.js for Dashboard -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     
-    <!-- Custom CSS with Your Specifications -->
+    <!-- Custom CSS with New Design System -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap');
-        
-        /* Root Variables */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
         :root {
-            --background: 215 90% 8%;
-            --foreground: 210 40% 98%;
-            --card: 215 80% 12%;
-            --card-foreground: 210 40% 98%;
-            --popover: 215 80% 10%;
-            --popover-foreground: 210 40% 98%;
-            --primary: 211 100% 25%;
+            --background: 210 40% 98%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 222.2 84% 4.9%;
+            --primary: 221 83% 53%;
             --primary-foreground: 210 40% 98%;
-            --secondary: 215 50% 18%;
-            --secondary-foreground: 210 40% 98%;
-            --muted: 215 40% 20%;
-            --muted-foreground: 210 20% 70%;
-            --accent: 45 100% 50%;
-            --accent-foreground: 215 90% 8%;
-            --destructive: 348 83% 47%;
+            --secondary: 210 40% 96.1%;
+            --secondary-foreground: 222.2 47.4% 11.2%;
+            --muted: 210 40% 96.1%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 96.1%;
+            --accent-foreground: 222.2 47.4% 11.2%;
+            --destructive: 0 84.2% 60.2%;
             --destructive-foreground: 210 40% 98%;
-            --border: 215 40% 22%;
-            --input: 215 40% 22%;
-            --ring: 45 100% 50%;
-            --radius: 1rem;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 221 83% 53%;
+            --radius: 0.5rem;
         }
-        
-        /* Base Styles */
+
+        .dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 222.2 84% 4.9%;
+            --card-foreground: 210 40% 98%;
+            --popover: 222.2 84% 4.9%;
+            --popover-foreground: 210 40% 98%;
+            --primary: 217.2 91.2% 59.8%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --destructive: 0 62.8% 30.6%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 17.5%;
+            --input: 217.2 32.6% 17.5%;
+            --ring: 224.3 76.3% 48%;
+        }
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Roboto Condensed', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background: radial-gradient(circle at 20% 0%, #002b5c 0%, #001b3d 45%, #000c1f 100%);
             background-attachment: fixed;
             min-height: 100vh;
-            color: #FFFFFF;
+            color: hsl(var(--foreground));
             overflow-x: hidden;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             letter-spacing: 0.02em;
-            color: #FFFFFF;
+            color: hsl(var(--foreground));
         }
-        
-        .font-display {
-            font-family: 'Oswald', sans-serif !important;
-        }
-        
-        .font-body {
-            font-family: 'Roboto Condensed', sans-serif !important;
-        }
-        
+
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-roboto-condensed { font-family: 'Roboto Condensed', sans-serif; }
+
         /* Glass Effects */
         .glass {
             background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
@@ -135,233 +206,38 @@
             backdrop-filter: blur(16px);
             border: 1px solid rgba(220,20,60,0.5);
         }
-        
-        .text-gold {
-            color: #FFD700;
-        }
-        
-        /* Animations */
-        .pulse-green {
-            animation: pulseG 2s infinite;
-        }
-        
-        .pulse-red {
-            animation: pulseR 1.2s infinite;
-        }
-        
-        @keyframes pulseG {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(34,197,94,0.6);
-            }
-            50% {
-                box-shadow: 0 0 0 6px rgba(34,197,94,0);
-            }
-        }
-        
-        @keyframes pulseR {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(220,20,60,0.7);
-            }
-            50% {
-                box-shadow: 0 0 0 10px rgba(220,20,60,0);
-            }
-        }
-        
-        @keyframes spring {
-            0% {
-                transform: scale(0.96);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-        
-        .animate-spring {
-            animation: spring 0.3s cubic-bezier(0.34,1.56,0.64,1);
-        }
-        
-        .lite-mode .glass,
-        .lite-mode .glass-strong,
-        .lite-mode .glass-gold,
-        .lite-mode .glass-red {
-            backdrop-filter: none !important;
-            -webkit-backdrop-filter: none !important;
-            background: #06122a !important;
-        }
-        
-        .lite-mode * {
-            animation: none !important;
-            transition: none !important;
-        }
-        
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: rgba(10, 22, 40, 0.5);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255,215,0,0.25);
-            border-radius: 8px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255,215,0,0.4);
-        }
-        
-        /* Navigation Active State */
-        .nav-active {
-            border-bottom: 2px solid #3B82F6;
-        }
-        
-        /* Header Styling */
-        .header-section {
-            background: #0A1628;
-            color: white;
-        }
-        
-        /* Button Hover Effects */
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.5);
-        }
-        
-        /* Page Visibility */
-        .page-section {
-            display: none;
-        }
-        
-        .page-section.active {
-            display: block;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Loader */
-        .loader {
-            border: 3px solid rgba(255,255,255,0.1);
-            border-top: 3px solid #3B82F6;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Auth Modal */
-        .auth-modal {
-            max-width: 450px;
-        }
-        
-        /* Service Cards */
-        .service-card {
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            max-width: 350px;
-            height: 100vh;
-            background: #0A1628;
-            z-index: 9999;
-            transition: right 0.3s ease;
-            padding: 20px;
-        }
-        
-        .mobile-menu.open {
-            right: 0;
-        }
-        
-        /* Overlay */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 9998;
-            display: none;
-        }
-        
-        .overlay.show {
-            display: block;
-        }
-        
-        /* Responsive Tables */
-        .table-responsive {
-            overflow-x: auto;
-        }
-        
-        .table-responsive table {
-            min-width: 600px;
-        }
-        
-        /* Floating CTA */
-        .floating-cta {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-            display: none;
-        }
-        
-        .floating-cta.show {
-            display: block;
-        }
-        
-        /* Accessibility */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-        
-        /* Focus Styles */
-        *:focus-visible {
-            outline: 2px solid #3B82F6;
-            outline-offset: 2px;
-        }
-        
-        /* Print Styles */
-        @media print {
-            body {
-                background: white !important;
-                color: black !important;
-            }
-            .no-print {
-                display: none !important;
-            }
+
+        /* Smooth scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(100, 116, 139, 0.5); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
-        /* Wide Image Container for Strategic Assets */
+        @keyframes pulseG {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
+            50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+        }
+
+        @keyframes pulseR {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220,20,60,0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(220,20,60,0); }
+        }
+
+        @keyframes spring {
+            0% { transform: scale(0.96); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .pulse-green { animation: pulseG 2s infinite; }
+        .pulse-red { animation: pulseR 1.2s infinite; }
+        .animate-spring { animation: spring 0.3s cubic-bezier(0.34,1.56,0.64,1); }
+
+        /* Wide Image Container */
         .wide-image-container {
             width: 100%;
             height: 400px;
@@ -395,7 +271,7 @@
             z-index: 10;
         }
 
-        /* Tab Navigation for Strategy Section - IMPROVED READABILITY */
+        /* Navigation */
         .nav-tab {
             transition: all 0.3s ease;
             position: relative;
@@ -420,87 +296,7 @@
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
         }
 
-        /* Strategy Card Hover Effects */
-        .stat-card {
-            transition: transform 0.2s;
-        }
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Strategy Scroll Wrapper */
-        .strategy-scroll-wrapper {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            padding-bottom: 1rem;
-        }
-
-        /* Strategy Content Sections */
-        .strategy-content {
-            display: block;
-        }
-        
-        .strategy-content.hidden {
-            display: none;
-        }
-
-        /* Improved Text Readability on Dark Backgrounds - ALL WHITE OR GOLD */
-        .text-readable {
-            color: #FFFFFF;
-        }
-        
-        .text-readable-light {
-            color: #E2E8F0;
-        }
-        
-        .text-muted-readable {
-            color: #CBD5E1;
-        }
-
-        /* Table Improvements */
-        table th {
-            color: #FFFFFF;
-            font-weight: 600;
-        }
-        
-        table td {
-            color: #FFFFFF;
-        }
-
-        /* Card Content Improvements - ALL WHITE TEXT */
-        .glass p, .glass-strong p, .glass-gold p, .glass-red p {
-            color: #FFFFFF;
-        }
-        
-        .glass h3, .glass-strong h3, .glass-gold h3, .glass-red h3 {
-            color: #FFFFFF;
-        }
-        
-        .glass h4, .glass-strong h4 {
-            color: #FFFFFF;
-        }
-
-        /* Form Improvements */
-        input, select, textarea {
-            color: #FFFFFF !important;
-            background: rgba(255,255,255,0.05) !important;
-        }
-        
-        input::placeholder, textarea::placeholder {
-            color: #94A3B8 !important;
-        }
-
-        /* List Items */
-        ul li, ol li {
-            color: #FFFFFF;
-        }
-
-        /* Blockquote */
-        blockquote {
-            color: #FFFFFF;
-        }
-
-        /* Collapsible BSC Sections */
+        /* BSC Collapsible */
         .bsc-perspective {
             margin-bottom: 1rem;
             border-radius: 0.5rem;
@@ -563,13 +359,11 @@
             background: rgba(255, 255, 255, 0.05);
         }
 
-        /* Perspective Color Coding */
         .perspective-financial { border-left: 4px solid #3B82F6; }
         .perspective-customer { border-left: 4px solid #8B5CF6; }
         .perspective-internal { border-left: 4px solid #F59E0B; }
         .perspective-learning { border-left: 4px solid #10B981; }
 
-        /* Chevron Icon */
         .chevron {
             transition: transform 0.3s ease;
             color: #FFD700;
@@ -577,6 +371,133 @@
         
         .chevron.rotate {
             transform: rotate(180deg);
+        }
+
+        /* Page sections */
+        .page-section {
+            display: none;
+        }
+        
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 350px;
+            height: 100vh;
+            background: #0A1628;
+            z-index: 9999;
+            transition: right 0.3s ease;
+            padding: 20px;
+        }
+        
+        .mobile-menu.open {
+            right: 0;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 9998;
+            display: none;
+        }
+        
+        .overlay.show {
+            display: block;
+        }
+
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: none;
+        }
+        
+        .floating-cta.show {
+            display: block;
+        }
+
+        /* Strategy content */
+        .strategy-content {
+            display: block;
+        }
+        
+        .strategy-content.hidden {
+            display: none;
+        }
+
+        /* Service cards */
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Stat cards */
+        .stat-card {
+            transition: transform 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Text utilities */
+        .text-gold { color: #FFD700; }
+        .text-white { color: #FFFFFF; }
+
+        /* Button styles */
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Form elements */
+        input, select, textarea {
+            color: #FFFFFF !important;
+            background: rgba(255,255,255,0.05) !important;
+        }
+        
+        input::placeholder, textarea::placeholder {
+            color: #94A3B8 !important;
+        }
+
+        /* Lists */
+        ul li, ol li {
+            color: #FFFFFF;
+        }
+
+        /* Blockquote */
+        blockquote {
+            color: #FFFFFF;
+        }
+
+        /* Strategy scroll */
+        .strategy-scroll-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 1rem;
         }
     </style>
     
@@ -669,7 +590,7 @@
     </script>
 </head>
 
-<body class="antialiased min-h-screen relative">
+<body class="antialiased min-h-screen relative dark">
     
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
@@ -699,7 +620,7 @@
     </nav>
     
     <!-- Header Section -->
-    <header class="header-section sticky top-0 z-50 shadow-lg no-print">
+    <header class="sticky top-0 z-50 shadow-lg no-print bg-[#0A1628]">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
@@ -708,14 +629,14 @@
                          alt="Stronghold A3 Logo" 
                          class="h-16 w-16 rounded-full object-cover border-2 border-[#3B82F6]">
                     <div class="hidden md:block">
-                        <h1 class="text-xl font-display font-bold tracking-wide text-white">STRONGHOLD A3</h1>
+                        <h1 class="text-xl font-montserrat font-bold tracking-wide text-white">STRONGHOLD A3</h1>
                         <p class="text-sm text-[#3B82F6]">Zero-Liability Security Partner</p>
                     </div>
                 </a>
                 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-6">
-                    <a href="#" onclick="showPage('home')" class="nav-link text-white hover:text-[#3B82F6] transition nav-active">Home</a>
+                    <a href="#" onclick="showPage('home')" class="nav-link text-white hover:text-[#3B82F6] transition">Home</a>
                     <a href="#" onclick="showPage('services')" class="nav-link text-white hover:text-[#3B82F6] transition">Services</a>
                     <a href="#" onclick="showPage('about')" class="nav-link text-white hover:text-[#3B82F6] transition">About Us</a>
                     <a href="#" onclick="showPage('strategy')" class="nav-link text-white hover:text-[#3B82F6] transition">Strategy</a>
@@ -745,7 +666,7 @@
                 <!-- Hero Section with Zero-Liability Moat Image -->
                 <div class="relative py-20">
                     <div class="wide-image-container" style="height: 500px; margin: 0;">
-                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/The%20Stronghiold%20Sequence-2.png" 
+                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Zero-Liablity%20Moat.png" 
                              alt="Zero-Liability Moat - Stronghold A3 Strategic Advantage"
                              style="object-position: center;">
                     </div>
@@ -754,16 +675,16 @@
                         <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
                             <div class="lg:w-1/2 space-y-6">
                                 <div class="inline-block glass-gold px-4 py-2 rounded-full animate-spring">
-                                    <span class="text-[#0A1628] font-display"><i class="fas fa-check-circle mr-2"></i>DOLE DO-174 COMPLIANT</span>
+                                    <span class="text-[#0A1628] font-montserrat"><i class="fas fa-check-circle mr-2"></i>DOLE DO-174 COMPLIANT</span>
                                 </div>
                                 
-                                <h1 id="home-heading" class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                                <h1 id="home-heading" class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white font-montserrat">
                                     Eastern Visayas'<br>
                                     <span class="text-[#FFD700]">Zero-Liability</span><br>
                                     Security Partner
                                 </h1>
                                 
-                                <p class="text-lg text-white font-body max-w-lg">
+                                <p class="text-lg text-white font-poppins max-w-lg">
                                     More than a guard supplier. We are your mature, compliant, and technologically advanced risk-mitigation partner serving Tacloban, Leyte, Biliran, Samar & Eastern Visayas.
                                 </p>
                                 
@@ -801,7 +722,7 @@
                                              class="w-64 h-64 rounded-full object-cover">
                                     </div>
                                     <div class="absolute -bottom-4 -right-4 glass-gold px-6 py-3 rounded-xl">
-                                        <p class="text-[#0A1628] font-display text-xl">100%</p>
+                                        <p class="text-[#0A1628] font-montserrat text-xl">100%</p>
                                         <p class="text-white text-sm">Compliance Rate</p>
                                     </div>
                                 </div>
@@ -809,10 +730,22 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Strategic Sequence Image -->
+                <div class="container mx-auto px-4 py-12">
+                    <div class="wide-image-container shadow-lg">
+                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/The%20Stronghiold%20Sequence-2.png" 
+                             alt="The Stronghold Sequence - Four Phases of Strategy Execution">
+                        <div class="wide-caption">
+                            <h3 class="text-2xl font-bold text-white font-montserrat">The Stronghold Sequence</h3>
+                            <p class="text-white">Four-Phased Execution Strategy: Assessment → Planning → Execution → Review</p>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Core Competencies Section -->
                 <div class="py-16 container mx-auto px-4">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gold font-display">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gold font-montserrat">
                         Our <span class="text-[#3B82F6]">Core Competencies</span>
                     </h2>
                     
@@ -824,7 +757,7 @@
                                     <i class="fas fa-user-shield text-2xl text-[#0A1628]"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-2xl font-display mb-3 text-white">Physical Security Solutions</h3>
+                                    <h3 class="text-2xl font-montserrat mb-3 text-white">Physical Security Solutions</h3>
                                     <ul class="space-y-2 text-white">
                                         <li><i class="fas fa-check text-[#3B82F6] mr-2"></i>Guard Force Management</li>
                                         <li><i class="fas fa-check text-[#3B82F6] mr-2"></i>Access Control Systems</li>
@@ -842,7 +775,7 @@
                                     <i class="fas fa-chart-line text-2xl text-[#0A1628]"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-2xl font-display mb-3 text-white">Strategic Risk Mitigation</h3>
+                                    <h3 class="text-2xl font-montserrat mb-3 text-white">Strategic Risk Mitigation</h3>
                                     <ul class="space-y-2 text-white">
                                         <li><i class="fas fa-check text-[#3B82F6] mr-2"></i>Threat Assessment</li>
                                         <li><i class="fas fa-check text-[#3B82F6] mr-2"></i>Disaster Response Planning</li>
@@ -858,26 +791,26 @@
                 <!-- Stronghold Advantage -->
                 <div class="py-16 bg-gradient-to-r from-[#001b3d] to-[#000c1f]">
                     <div class="container mx-auto px-4">
-                        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gold font-display">
+                        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gold font-montserrat">
                             Why Choose <span class="text-[#3B82F6]">Stronghold A3?</span>
                         </h2>
                         
                         <div class="grid md:grid-cols-3 gap-8">
                             <div class="glass p-6 rounded-xl text-center animate-spring">
                                 <i class="fas fa-certificate text-4xl text-[#FFD700] mb-4"></i>
-                                <h3 class="text-xl font-bold mb-2 text-white">Full Compliance</h3>
+                                <h3 class="text-xl font-bold mb-2 text-white font-montserrat">Full Compliance</h3>
                                 <p class="text-white text-sm">DOLE DO-174 compliant operations ensuring zero liability exposure for clients.</p>
                             </div>
                             
                             <div class="glass p-6 rounded-xl text-center animate-spring">
                                 <i class="fas fa-bolt text-4xl text-[#FFD700] mb-4"></i>
-                                <h3 class="text-xl font-bold mb-2 text-white">Technology Forward</h3>
+                                <h3 class="text-xl font-bold mb-2 text-white font-montserrat">Technology Forward</h3>
                                 <p class="text-white text-sm">AI-based monitoring and real-time deployment tracking systems.</p>
                             </div>
                             
                             <div class="glass p-6 rounded-xl text-center animate-spring">
                                 <i class="fas fa-map-marked-alt text-4xl text-[#FFD700] mb-4"></i>
-                                <h3 class="text-xl font-bold mb-2 text-white">Regional Expertise</h3>
+                                <h3 class="text-xl font-bold mb-2 text-white font-montserrat">Regional Expertise</h3>
                                 <p class="text-white text-sm">Deep understanding of Eastern Visayas terrain, climate risks, and communities.</p>
                             </div>
                         </div>
@@ -887,7 +820,7 @@
                 <!-- Call to Action Banner -->
                 <div class="py-16 container mx-auto px-4">
                     <div class="glass-gold p-8 rounded-xl text-center animate-spring">
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display text-[#0A1628]">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-montserrat text-[#0A1628]">
                             Ready to Secure Your Assets?
                         </h2>
                         <p class="text-xl text-gray-800 mb-6">Schedule your complimentary risk assessment today</p>
@@ -904,7 +837,7 @@
             <div class="py-20 container mx-auto px-4">
                 <!-- Page Header -->
                 <div class="text-center mb-12">
-                    <h1 id="services-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-display">
+                    <h1 id="services-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-montserrat">
                         Our <span class="text-[#3B82F6]">Services</span>
                     </h1>
                     <p class="text-xl text-white max-w-2xl mx-auto">
@@ -919,7 +852,7 @@
                         <div class="w-14 h-14 bg-[#3B82F6] rounded-lg flex items-center justify-center mb-4">
                             <i class="fas fa-building text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Corporate Site Security</h3>
+                        <h3 class="text-xl font-bold mb-2 text-white font-montserrat">Corporate Site Security</h3>
                         <p class="text-white text-sm mb-4">24/7 guarding services for commercial buildings, office complexes, and industrial facilities.</p>
                         <ul class="space-y-1 text-sm text-white">
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Access control management</li>
@@ -933,7 +866,7 @@
                         <div class="w-14 h-14 bg-[#3B82F6] rounded-lg flex items-center justify-center mb-4">
                             <i class="fas fa-users text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Event Security</h3>
+                        <h3 class="text-xl font-bold mb-2 text-white font-montserrat">Event Security</h3>
                         <p class="text-white text-sm mb-4">Crowd control and security for conferences, concerts, and large-scale gatherings.</p>
                         <ul class="space-y-1 text-sm text-white">
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Crowd management</li>
@@ -947,7 +880,7 @@
                         <div class="w-14 h-14 bg-[#3B82F6] rounded-lg flex items-center justify-center mb-4">
                             <i class="fas fa-umbrella text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Disaster Response</h3>
+                        <h3 class="text-xl font-bold mb-2 text-white font-montserrat">Disaster Response</h3>
                         <p class="text-white text-sm mb-4">Critical support during typhoons, floods, and natural disasters in Eastern Visayas.</p>
                         <ul class="space-y-1 text-sm text-white">
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Evacuation assistance</li>
@@ -961,7 +894,7 @@
                         <div class="w-14 h-14 bg-[#3B82F6] rounded-lg flex items-center justify-center mb-4">
                             <i class="fas fa-search text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Intelligence Services</h3>
+                        <h3 class="text-xl font-bold mb-2 text-white font-montserrat">Intelligence Services</h3>
                         <p class="text-white text-sm mb-4">Proactive threat assessment and intelligence gathering for high-risk situations.</p>
                         <ul class="space-y-1 text-sm text-white">
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Risk profiling</li>
@@ -975,7 +908,7 @@
                         <div class="w-14 h-14 bg-[#3B82F6] rounded-lg flex items-center justify-center mb-4">
                             <i class="fas fa-user-tie text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Executive Protection</h3>
+                        <h3 class="text-xl font-bold mb-2 text-white font-montserrat">Executive Protection</h3>
                         <p class="text-white text-sm mb-4">Close protection officers for VIPs, corporate executives, and dignitaries.</p>
                         <ul class="space-y-1 text-sm text-white">
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Personal security detail</li>
@@ -989,7 +922,7 @@
                         <div class="w-14 h-14 bg-[#3B82F6] rounded-lg flex items-center justify-center mb-4">
                             <i class="fas fa-handshake text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Security Consulting</h3>
+                        <h3 class="text-xl font-bold mb-2 text-white font-montserrat">Security Consulting</h3>
                         <p class="text-white text-sm mb-4">Expert guidance on security policy development and compliance implementation.</p>
                         <ul class="space-y-1 text-sm text-white">
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Policy development</li>
@@ -1001,7 +934,7 @@
                 
                 <!-- Regional Coverage -->
                 <div class="glass p-8 rounded-xl mb-12">
-                    <h3 class="text-2xl font-bold mb-6 text-center text-white">Our Service Areas</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-center text-white font-montserrat">Our Service Areas</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                         <div>
                             <i class="fas fa-map-marker-alt text-[#FFD700] text-2xl mb-2"></i>
@@ -1040,7 +973,7 @@
                 
                 <!-- CTA -->
                 <div class="glass-gold p-8 rounded-xl text-center animate-spring">
-                    <h3 class="text-2xl font-bold mb-4 font-display text-[#0A1628]">Need a Customized Solution?</h3>
+                    <h3 class="text-2xl font-bold mb-4 font-montserrat text-[#0A1628]">Need a Customized Solution?</h3>
                     <p class="mb-6 text-gray-800">Each client receives a tailored security plan based on their unique risk profile.</p>
                     <button onclick="showPage('contact')" class="btn-primary bg-[#0A1628] text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-900 transition">
                         Get Free Consultation
@@ -1054,7 +987,7 @@
             <div class="py-20 container mx-auto px-4">
                 <!-- Page Header -->
                 <div class="text-center mb-12">
-                    <h1 id="about-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-display">
+                    <h1 id="about-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-montserrat">
                         About <span class="text-[#3B82F6]">Stronghold A3</span>
                     </h1>
                     <p class="text-xl text-white max-w-2xl mx-auto">
@@ -1062,34 +995,53 @@
                     </p>
                 </div>
 
-                <!-- VMV Image - Wide Format -->
-                <div class="wide-image-container shadow-lg mb-12">
+                <!-- Context Images -->
+                <div class="wide-image-container shadow-lg mb-8">
+                    <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Macro-Threats.png" 
+                         alt="Context: Macro Threats">
+                    <div class="wide-caption">
+                        <h3 class="text-2xl font-bold text-white font-montserrat">Context: Macro Threats</h3>
+                        <p class="text-white">Regional risk landscape analysis for strategic positioning.</p>
+                    </div>
+                </div>
+
+                <div class="wide-image-container shadow-lg mb-8">
+                    <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Key%20Constraints.png" 
+                         alt="Context: Key Internal Constraints">
+                    <div class="wide-caption">
+                        <h3 class="text-2xl font-bold text-white font-montserrat">Context: Key Internal Constraints</h3>
+                        <p class="text-white">Operational bottlenecks and resource limitations map.</p>
+                    </div>
+                </div>
+
+                <!-- VMV Image -->
+                <div class="wide-image-container shadow-lg mb-8">
                     <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/VMV.png" 
                          alt="Vision, Mission, and Values - Stronghold A3">
                     <div class="wide-caption">
-                        <h3 class="text-2xl font-bold text-white">Vision, Mission & Values</h3>
+                        <h3 class="text-2xl font-bold text-white font-montserrat">Vision, Mission & Values</h3>
                         <p class="text-white">Our commitment to excellence and zero-liability security</p>
                     </div>
                 </div>
                 
-                <!-- Guiding Principles Image - Wide Format -->
+                <!-- Guiding Principles Image -->
                 <div class="wide-image-container shadow-lg mb-12">
                     <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Guiding%20Principles.png" 
                          alt="Guiding Principles - Stronghold A3">
                     <div class="wide-caption">
-                        <h3 class="text-2xl font-bold text-white">Guiding Principles</h3>
+                        <h3 class="text-2xl font-bold text-white font-montserrat">Guiding Principles</h3>
                         <p class="text-white">The ethical framework that drives our operations</p>
                     </div>
                 </div>
                 
                 <!-- Strategic Pillars -->
-                <h2 class="text-3xl font-bold text-gold mb-6 font-display">Strategic Pillars</h2>
+                <h2 class="text-3xl font-bold text-gold mb-6 font-montserrat">Strategic Pillars</h2>
                 <div class="grid md:grid-cols-3 gap-6 mb-12">
                     <div class="glass p-6 rounded-xl hover:-translate-y-2 transition duration-300">
                         <div class="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center mb-4 border border-blue-500">
                             <i class="fas fa-shield-alt text-2xl text-white"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-2">Compliance is Our Promise</h4>
+                        <h4 class="text-xl font-bold text-white mb-2 font-montserrat">Compliance is Our Promise</h4>
                         <p class="text-white text-sm">Integrity in every policy. Zero-liability assurance through strict adherence to Philippine regulations.</p>
                     </div>
 
@@ -1097,7 +1049,7 @@
                         <div class="w-12 h-12 bg-amber-900 rounded-lg flex items-center justify-center mb-4 border border-amber-500">
                             <i class="fas fa-waves text-2xl text-white"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-2">Built for Eastern Visayas</h4>
+                        <h4 class="text-xl font-bold text-white mb-2 font-montserrat">Built for Eastern Visayas</h4>
                         <p class="text-white text-sm">Prepared for every storm. Specialized Disaster Risk Reduction and Management (DRRM) protocols.</p>
                     </div>
 
@@ -1105,14 +1057,14 @@
                         <div class="w-12 h-12 bg-purple-900 rounded-lg flex items-center justify-center mb-4 border border-purple-500">
                             <i class="fas fa-handshake text-2xl text-white"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-2">Fair Pay Creates Pride</h4>
+                        <h4 class="text-xl font-bold text-white mb-2 font-montserrat">Fair Pay Creates Pride</h4>
                         <p class="text-white text-sm">Empowered guards protect better. Investing in your workforce ensures mission success.</p>
                     </div>
                 </div>
                 
                 <!-- Main Content -->
                 <div class="glass p-8 rounded-xl mb-12">
-                    <h2 class="text-2xl font-bold mb-6 text-[#3B82F6] font-display">
+                    <h2 class="text-2xl font-bold mb-6 text-[#3B82F6] font-montserrat">
                         Our Strategic Advantage
                     </h2>
                     
@@ -1139,7 +1091,7 @@
                                 <i class="fas fa-user text-3xl text-white"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold text-white">Antonie M. Silva</h3>
+                                <h3 class="text-xl font-bold text-white font-montserrat">Antonie M. Silva</h3>
                                 <p class="text-[#FFD700] text-sm">Chief Executive Officer</p>
                             </div>
                         </div>
@@ -1149,7 +1101,7 @@
                     </div>
                     
                     <div class="glass p-8 rounded-xl animate-spring">
-                        <h3 class="text-xl font-bold mb-4 text-white">Certifications & Compliance</h3>
+                        <h3 class="text-xl font-bold mb-4 text-white font-montserrat">Certifications & Compliance</h3>
                         <ul class="space-y-2 text-white">
                             <li><i class="fas fa-check text-[#3B82F6] mr-2"></i><strong>DOLE DO-174 Compliant</strong> - All security personnel nationally certified</li>
                             <li><i class="fas fa-check text-[#3B82F6] mr-2"></i><strong>Bureau of Fire Protection (BFP)</strong> - Regular fire safety coordination</li>
@@ -1169,11 +1121,11 @@
             </div>
         </section>
 
-        <!-- STRATEGY PAGE (NEW) -->
+        <!-- STRATEGY PAGE -->
         <section id="strategy" class="page-section" aria-labelledby="strategy-heading">
             <div class="py-20 container mx-auto px-4">
                 <div class="text-center mb-12">
-                    <h1 id="strategy-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-display">
+                    <h1 id="strategy-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-montserrat">
                         Strategy <span class="text-[#3B82F6]">Map</span>
                     </h1>
                     <p class="text-xl text-white max-w-2xl mx-auto">
@@ -1415,20 +1367,56 @@
                         </div>
                     </div>
 
-                    <!-- Four Phases Image -->
+                    <!-- Strategy Images -->
                     <div class="wide-image-container shadow-lg mt-12">
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/The%20Stronghiold%20Sequence-2.png" 
                              alt="The Stronghold Sequence - Four Phases of Strategy Execution">
                         <div class="wide-caption">
-                            <h3 class="text-2xl font-bold text-white">The Stronghold Sequence</h3>
+                            <h3 class="text-2xl font-bold text-white font-montserrat">The Stronghold Sequence</h3>
                             <p class="text-white">Four-Phased Execution Strategy: Assessment → Planning → Execution → Review</p>
+                        </div>
+                    </div>
+
+                    <div class="wide-image-container shadow-lg mt-8">
+                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Offline-first%20Crisis%20BCP.png" 
+                             alt="Offline-first Crisis BCP">
+                        <div class="wide-caption">
+                            <h3 class="text-2xl font-bold text-white font-montserrat">Offline-first Crisis BCP</h3>
+                            <p class="text-white">Business Continuity Plan for disaster scenarios</p>
+                        </div>
+                    </div>
+
+                    <div class="wide-image-container shadow-lg mt-8">
+                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/RACI%20Funnel.png" 
+                             alt="RACI Framework">
+                        <div class="wide-caption">
+                            <h3 class="text-2xl font-bold text-white font-montserrat">RACI Framework</h3>
+                            <p class="text-white">Responsibility Assignment Matrix for clarity</p>
+                        </div>
+                    </div>
+
+                    <div class="wide-image-container shadow-lg mt-8">
+                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Digital%20Bayanihan.png" 
+                             alt="Digital Bayanihan">
+                        <div class="wide-caption">
+                            <h3 class="text-2xl font-bold text-white font-montserrat">Digital Bayanihan</h3>
+                            <p class="text-white">Collaborative digital transformation initiative</p>
+                        </div>
+                    </div>
+
+                    <div class="wide-image-container shadow-lg mt-8">
+                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Launching%20Zero%20Liability%20Market%20capture.png" 
+                             alt="Zero Liability Market Capture">
+                        <div class="wide-caption">
+                            <h3 class="text-2xl font-bold text-white font-montserrat">Zero Liability Market Capture</h3>
+                            <p class="text-white">Expansion strategy into key sectors</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Financial ROI Content -->
                 <div id="content-financial" class="strategy-content hidden">
-                    <h2 class="text-3xl font-bold text-gold mb-6 font-display">Financial Performance & ROI</h2>
+                    <h2 class="text-3xl font-bold text-gold mb-6 font-montserrat">Financial Performance & ROI</h2>
                     
                     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                         <div class="glass-strong p-6 rounded-xl stat-card">
@@ -1457,14 +1445,14 @@
                     </div>
 
                     <div class="glass p-6 rounded-xl">
-                        <h3 class="text-xl font-bold text-white mb-4">Value Drivers Analysis</h3>
+                        <h3 class="text-xl font-bold text-white mb-4 font-montserrat">Value Drivers Analysis</h3>
                         <div class="grid md:grid-cols-3 gap-6">
                             <div class="flex items-start gap-4">
                                 <div class="w-10 h-10 rounded bg-blue-900 flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-clock text-blue-400"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-white">Admin Efficiency</h4>
+                                    <h4 class="font-bold text-white font-montserrat">Admin Efficiency</h4>
                                     <p class="text-sm text-white mt-1">Reclaims 40% of administrative staff time through automation tools and Cloud SMS adoption.</p>
                                 </div>
                             </div>
@@ -1473,7 +1461,7 @@
                                     <i class="fas fa-chart-line text-green-400"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-white">Revenue Generation</h4>
+                                    <h4 class="font-bold text-white font-montserrat">Revenue Generation</h4>
                                     <p class="text-sm text-white mt-1">Estimated PHP 50,000 net monthly margin per new hybrid contract (Physical Guard + Tech).</p>
                                 </div>
                             </div>
@@ -1482,7 +1470,7 @@
                                     <i class="fas fa-funnel-dollar text-red-400"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-white">Leakage Prevention</h4>
+                                    <h4 class="font-bold text-white font-montserrat">Leakage Prevention</h4>
                                     <p class="text-sm text-white mt-1">Recovery of dropped high-value leads via strict 24-hour RACI follow-up mandate.</p>
                                 </div>
                             </div>
@@ -1492,14 +1480,14 @@
 
                 <!-- Strategic Assets Content -->
                 <div id="content-assets" class="strategy-content hidden">
-                    <h2 class="text-3xl font-bold text-gold mb-2 font-display">Strategic Visual Context</h2>
+                    <h2 class="text-3xl font-bold text-gold mb-2 font-montserrat">Strategic Visual Context</h2>
                     <p class="text-white mb-8">Core frameworks and operational matrices for internal review.</p>
 
                     <!-- Macro Threats -->
                     <div class="wide-image-container shadow-lg">
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Macro-Threats.png" alt="Macro Threats Context">
                         <div class="wide-caption">
-                            <h3 class="text-2xl font-bold text-white">Context: Macro Threats</h3>
+                            <h3 class="text-2xl font-bold text-white font-montserrat">Context: Macro Threats</h3>
                             <p class="text-white">Regional risk landscape analysis for strategic positioning.</p>
                         </div>
                     </div>
@@ -1508,7 +1496,7 @@
                     <div class="wide-image-container shadow-lg">
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Key%20Constraints.png" alt="Key Internal Constraints">
                         <div class="wide-caption">
-                            <h3 class="text-2xl font-bold text-white">Context: Key Internal Constraints</h3>
+                            <h3 class="text-2xl font-bold text-white font-montserrat">Context: Key Internal Constraints</h3>
                             <p class="text-white">Operational bottlenecks and resource limitations map.</p>
                         </div>
                     </div>
@@ -1521,7 +1509,7 @@
             <div class="py-20 container mx-auto px-4">
                 <!-- Page Header -->
                 <div class="text-center mb-12">
-                    <h1 id="contact-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-display">
+                    <h1 id="contact-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-montserrat">
                         Contact <span class="text-[#3B82F6]">Us</span>
                     </h1>
                     <p class="text-xl text-white max-w-2xl mx-auto">
@@ -1533,7 +1521,7 @@
                 <div class="grid md:grid-cols-2 gap-8 mb-12">
                     <!-- Contact Form -->
                     <div class="glass p-8 rounded-xl">
-                        <h3 class="text-2xl font-bold mb-6 text-[#3B82F6] font-display">Send Us a Message</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-[#3B82F6] font-montserrat">Send Us a Message</h3>
                         
                         <form id="contactForm" onsubmit="handleFormSubmit(event)">
                             <div class="space-y-4">
@@ -1597,7 +1585,7 @@
                     <div class="space-y-6">
                         <!-- Office Address -->
                         <div class="glass p-6 rounded-xl animate-spring">
-                            <h3 class="text-xl font-bold mb-4 flex items-center text-gold font-display">
+                            <h3 class="text-xl font-bold mb-4 flex items-center text-gold font-montserrat">
                                 <i class="fas fa-map-marker-alt mr-3"></i>Our Office
                             </h3>
                             <p class="text-white">2nd Floor Real St.<br>Tacloban City, Leyte<br>Philippines 6500</p>
@@ -1608,7 +1596,7 @@
                         
                         <!-- Direct Contacts -->
                         <div class="glass p-6 rounded-xl animate-spring">
-                            <h3 class="text-xl font-bold mb-4 flex items-center text-[#3B82F6] font-display">
+                            <h3 class="text-xl font-bold mb-4 flex items-center text-[#3B82F6] font-montserrat">
                                 <i class="fas fa-phone mr-3"></i>Direct Contact
                             </h3>
                             
@@ -1648,7 +1636,7 @@
                         
                         <!-- Emergency -->
                         <div class="glass-red p-6 rounded-xl animate-spring">
-                            <h3 class="text-xl font-bold mb-4 flex items-center text-gold font-display">
+                            <h3 class="text-xl font-bold mb-4 flex items-center text-gold font-montserrat">
                                 <i class="fas fa-exclamation-triangle mr-3"></i>Emergency Contact
                             </h3>
                             <p class="text-white mb-4">Available 24/7 for urgent security matters:</p>
@@ -1658,7 +1646,7 @@
                         
                         <!-- Hours -->
                         <div class="glass p-6 rounded-xl animate-spring">
-                            <h3 class="text-xl font-bold mb-4 flex items-center text-[#3B82F6] font-display">
+                            <h3 class="text-xl font-bold mb-4 flex items-center text-[#3B82F6] font-montserrat">
                                 <i class="fas fa-clock mr-3"></i>Office Hours
                             </h3>
                             <div class="space-y-2 text-white">
@@ -1694,7 +1682,7 @@
                 
                 <!-- Final CTA -->
                 <div class="glass-gold p-8 rounded-xl text-center animate-spring">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-4 font-display text-[#0A1628]">Schedule Your Complimentary Risk Assessment</h3>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4 font-montserrat text-[#0A1628]">Schedule Your Complimentary Risk Assessment</h3>
                     <p class="text-lg text-gray-800 mb-6">No obligation consultation. Learn how Stronghold A3 can protect your assets.</p>
                     <button onclick="window.location.href='tel:09171370112'" class="btn-primary bg-[#0A1628] text-white px-10 py-5 rounded-xl font-bold text-xl hover:bg-blue-900 transition shadow-lg pulse-green">
                         <i class="fas fa-phone-call mr-2"></i>Call 09171370112 Now
@@ -1708,7 +1696,7 @@
             <div class="py-20 container mx-auto px-4">
                 <!-- Page Header -->
                 <div class="text-center mb-12">
-                    <h1 id="dashboard-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-display">
+                    <h1 id="dashboard-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-montserrat">
                         Staff <span class="text-[#3B82F6]">Portal</span>
                     </h1>
                     <p class="text-xl text-white max-w-2xl mx-auto">
@@ -1721,7 +1709,7 @@
                     <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/The%20Stronghiold%20Sequence-2.png" 
                          alt="Strategy Map - The Stronghold Sequence">
                     <div class="wide-caption">
-                        <h3 class="text-2xl font-bold text-white">The Stronghold Sequence</h3>
+                        <h3 class="text-2xl font-bold text-white font-montserrat">The Stronghold Sequence</h3>
                         <p class="text-white">Four-Phased Strategic Execution Framework</p>
                     </div>
                 </div>
@@ -1732,7 +1720,7 @@
                     <div class="space-y-6">
                         <!-- SMS Mobile Access -->
                         <div class="glass p-6 rounded-xl animate-spring">
-                            <h3 class="text-lg font-bold mb-4 flex items-center text-[#3B82F6] font-display">
+                            <h3 class="text-lg font-bold mb-4 flex items-center text-[#3B82F6] font-montserrat">
                                 <i class="fas fa-mobile-alt mr-2"></i>Resilient Secure Mobile
                             </h3>
                             <p class="text-sm text-white mb-4">Secure messaging platform for field agents and emergency coordination.</p>
@@ -1743,13 +1731,16 @@
                         
                         <!-- Document Library -->
                         <div class="glass p-6 rounded-xl animate-spring">
-                            <h3 class="text-lg font-bold mb-4 flex items-center text-[#3B82F6] font-display">
+                            <h3 class="text-lg font-bold mb-4 flex items-center text-[#3B82F6] font-montserrat">
                                 <i class="fas fa-file-download mr-2"></i>Document Library
                             </h3>
                             <ul class="space-y-2 text-sm text-white">
                                 <li><a href="#" class="hover:text-[#3B82F6] transition"><i class="fas fa-file-pdf text-[#FFD700] mr-2"></i>Capability Statement</a></li>
                                 <li><a href="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/CRISIS-PROOF%20OPERATIONAL%20WORKFLOW%20-%20Stronghold%20A3.pdf" target="_blank" class="hover:text-[#3B82F6] transition"><i class="fas fa-file-pdf text-[#FFD700] mr-2"></i>Crisis-Proof Operational Workflow</a></li>
-                                <li><a href="#" class="hover:text-[#3B82F6] transition"><i class="fas fa-file-pdf text-[#FFD700] mr-2"></i>Compliance Checklists</a></li>
+                                <li><a href="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/STANDARD%20OPERATING%20PROCEDURES-Client%20Onboarding%20%26%20Deployment%20Protocol-%20Stronghold%20A3.pdf" target="_blank" class="hover:text-[#3B82F6] transition"><i class="fas fa-file-pdf text-[#FFD700] mr-2"></i>72-Hour Client Onboarding SOP</a></li>
+                                <li><a href="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/SOP-Initial%20Lead%20Follow-Up%20%26%20Qualification%20Protocol.pdf" target="_blank" class="hover:text-[#3B82F6] transition"><i class="fas fa-file-pdf text-[#FFD700] mr-2"></i>Client Follow-Up SOP</a></li>
+                                <li><a href="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/THE%20_DIGITAL%20BAYANIHAN_%20CHANGE%20MANAGEMENT%20PLAYBOOK-Stronghold%20A3.pdf" target="_blank" class="hover:text-[#3B82F6] transition"><i class="fas fa-file-pdf text-[#FFD700] mr-2"></i>Digital Bayanihan Playbook</a></li>
+                                <li><a href="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/CLOUD%20SMS%20VENDOR%20EVALUATION%20CHECKLIST.pdf" target="_blank" class="hover:text-[#3B82F6] transition"><i class="fas fa-file-pdf text-[#FFD700] mr-2"></i>Cloud SMS Vendor Checklist</a></li>
                                 <li><a href="#" class="hover:text-[#3B82F6] transition"><i class="fas fa-file-pdf text-[#FFD700] mr-2"></i>Employee Handbook</a></li>
                             </ul>
                         </div>
@@ -1765,7 +1756,7 @@
                 
                 <!-- 4-Phased Sequence Strategy -->
                 <div class="glass p-8 rounded-xl mt-12">
-                    <h3 class="text-2xl font-bold mb-8 text-gold font-display">
+                    <h3 class="text-2xl font-bold mb-8 text-gold font-montserrat">
                         <i class="fas fa-project-diagram mr-2"></i>4-Phased Sequence Strategy
                     </h3>
                     
@@ -1775,7 +1766,7 @@
                             <div class="w-16 h-16 bg-[#3B82F6] rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-2xl font-bold text-white">01</span>
                             </div>
-                            <h4 class="font-bold mb-2 text-white">Assessment</h4>
+                            <h4 class="font-bold mb-2 text-white font-montserrat">Assessment</h4>
                             <p class="text-sm text-white">Client site evaluation and risk identification analysis</p>
                         </div>
                         
@@ -1784,7 +1775,7 @@
                             <div class="w-16 h-16 bg-[#3B82F6] rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-2xl font-bold text-white">02</span>
                             </div>
-                            <h4 class="font-bold mb-2 text-white">Planning</h4>
+                            <h4 class="font-bold mb-2 text-white font-montserrat">Planning</h4>
                             <p class="text-sm text-white">Custom security protocol development and resource allocation</p>
                         </div>
                         
@@ -1793,7 +1784,7 @@
                             <div class="w-16 h-16 bg-[#3B82F6] rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-2xl font-bold text-white">03</span>
                             </div>
-                            <h4 class="font-bold mb-2 text-white">Execution</h4>
+                            <h4 class="font-bold mb-2 text-white font-montserrat">Execution</h4>
                             <p class="text-sm text-white">Deployment of security measures and operational activation</p>
                         </div>
                         
@@ -1802,7 +1793,7 @@
                             <div class="w-16 h-16 bg-[#3B82F6] rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-2xl font-bold text-white">04</span>
                             </div>
-                            <h4 class="font-bold mb-2 text-white">Review</h4>
+                            <h4 class="font-bold mb-2 text-white font-montserrat">Review</h4>
                             <p class="text-sm text-white">Performance audit and continuous improvement planning</p>
                         </div>
                     </div>
@@ -1825,7 +1816,7 @@
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20A3%20logo.jpg" 
                              alt="Stronghold A3 Logo" 
                              class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-[#3B82F6]">
-                        <h1 id="login-heading" class="text-2xl font-bold text-gold font-display">Staff Login</h1>
+                        <h1 id="login-heading" class="text-2xl font-bold text-gold font-montserrat">Staff Login</h1>
                         <p class="text-white text-sm mt-2">Enter credentials for secure portal access</p>
                     </div>
                     
@@ -1870,7 +1861,7 @@
                                  alt="Stronghold A3 Logo" 
                                  class="w-12 h-12 rounded-full">
                             <div>
-                                <h3 class="font-bold font-display text-white">STRONGHOLD A3</h3>
+                                <h3 class="font-bold font-montserrat text-white">STRONGHOLD A3</h3>
                                 <p class="text-xs text-[#3B82F6]">Zero-Liability Security</p>
                             </div>
                         </div>
@@ -1881,7 +1872,7 @@
                     
                     <!-- Quick Links -->
                     <div class="text-center">
-                        <h4 class="font-bold font-display text-white mb-4">Quick Links</h4>
+                        <h4 class="font-bold font-montserrat text-white mb-4">Quick Links</h4>
                         <ul class="space-y-2">
                             <li><a href="#" onclick="showPage('home')" class="text-white hover:text-[#3B82F6] transition">Home</a></li>
                             <li><a href="#" onclick="showPage('services')" class="text-white hover:text-[#3B82F6] transition">Services</a></li>
@@ -1894,7 +1885,7 @@
                     
                     <!-- Contact Info -->
                     <div class="text-center">
-                        <h4 class="font-bold font-display text-white mb-4">Contact</h4>
+                        <h4 class="font-bold font-montserrat text-white mb-4">Contact</h4>
                         <ul class="space-y-2 text-sm text-white">
                             <li><i class="fas fa-map-marker-alt mr-2"></i>2nd Floor Real St., Tacloban City</li>
                             <li><i class="fas fa-phone mr-2"></i><a href="tel:09171370112" class="hover:text-white">09171370112</a></li>
@@ -2141,7 +2132,7 @@
         showPage('home'); // Initialize first page
         
         console.log('%cStronghold A3 PWA Loaded', 'color: #3B82F6; font-size: 16px; font-weight: bold;');
-        console.log('Version: 3.0.0 | Build Date: June 2026 | All Improvements Applied');
+        console.log('Version: 4.0.0 | Build Date: June 2026 | New Design System Applied');
     </script>
 </body>
 </html>
