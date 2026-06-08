@@ -1,20 +1,28 @@
 {
   "name": "Stronghold A3 Security Agency",
   "short_name": "Stronghold A3",
-  "start_url": "/",
+  "description": "Eastern Visayas' Zero-Liability Security Partner",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#0A1628",
-  "theme_color": "#081020",
+  "theme_color": "#0A1628",
+  "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/logo-192.png",
+      "src": "https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "/logo-512.png",
+      "src": "https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "categories": ["business", "security", "productivity"],
+  "lang": "en-PH",
+  "scope": "/",
+  "screenshots": []
 }
