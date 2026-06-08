@@ -16,7 +16,7 @@ const APP = {
   vmvImg: 'https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/VMV.png',
   gpImg: 'https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Guiding%20Principles.png',
   stratMapImg: 'https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/The%20Stronghiold%20Sequence-2.png',
-  password: 'stronghold2026',
+  password: 'strongholda3777',
 };
 
 // ─── STATE ───
