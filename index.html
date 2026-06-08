@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Stronghold A3 | Premier Security Agency Eastern Visayas">
     <meta property="og:description" content="Zero-Liability Security Partner. DOLE DO-174 Compliant. Serving Eastern Visayas with advanced risk mitigation solutions.">
-    <meta property="og:image" content="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png">
+    <meta property="og:image" content="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20A3%20logo.jpg">
     <meta property="og:url" content="https://strongholda3.com">
     <meta property="og:site_name" content="Stronghold A3 Security Agency">
     
@@ -30,7 +30,7 @@
     <link rel="canonical" href="https://strongholda3.com">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png">
+    <link rel="icon" type="image/x-icon" href="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20A3%20logo.jpg">
     
     <!-- Preload Key Assets -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap">
@@ -50,154 +50,456 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     
     <!-- Custom CSS with Your Specifications -->
-    
-        /* ===== GLOBAL TEXT COLOR ENFORCEMENT ===== */
-
-        /* Force all text to white on dark backgrounds */
-        body, .page-section, .glass, .glass-strong, .glass-gold, .glass-red,
-        .service-card, .bsc-details, .wide-image-container, .stat-card,
-        .mobile-menu, footer, header, .header-section, .auth-modal {
-            color: white;
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap');
+        
+        /* Root Variables */
+        :root {
+            --background: 215 90% 8%;
+            --foreground: 210 40% 98%;
+            --card: 215 80% 12%;
+            --card-foreground: 210 40% 98%;
+            --popover: 215 80% 10%;
+            --popover-foreground: 210 40% 98%;
+            --primary: 211 100% 25%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 215 50% 18%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 215 40% 20%;
+            --muted-foreground: 210 20% 70%;
+            --accent: 45 100% 50%;
+            --accent-foreground: 215 90% 8%;
+            --destructive: 348 83% 47%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 215 40% 22%;
+            --input: 215 40% 22%;
+            --ring: 45 100% 50%;
+            --radius: 1rem;
         }
-
-        /* Headings */
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            background: radial-gradient(circle at 20% 0%, #002b5c 0%, #001b3d 45%, #000c1f 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+        
         h1, h2, h3, h4, h5, h6 {
-            color: white !important;
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.02em;
+            color: #FFFFFF;
         }
-
-        /* Preserve gold headings */
-        .text-gold, h1 .text-gold, h2 .text-gold, h3 .text-gold {
-            color: #FFD700 !important;
+        
+        .font-display {
+            font-family: 'Oswald', sans-serif !important;
         }
-
-        /* Paragraphs and body text */
-        p, li, span, label, blockquote, td, th, div {
-            color: white;
+        
+        .font-body {
+            font-family: 'Roboto Condensed', sans-serif !important;
         }
-
-        /* Links */
-        a {
-            color: white;
+        
+        /* Glass Effects */
+        .glass {
+            background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.18);
         }
-        a:hover {
-            color: #3B82F6;
+        
+        .glass-strong {
+            background: linear-gradient(135deg, rgba(0,43,92,0.55), rgba(0,12,31,0.65));
+            backdrop-filter: blur(28px) saturate(180%);
+            -webkit-backdrop-filter: blur(28px) saturate(180%);
+            border: 1px solid rgba(255,215,0,0.18);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.15);
         }
-
-        /* Form elements */
-        input, textarea, select {
-            color: white !important;
+        
+        .glass-gold {
+            background: linear-gradient(135deg, rgba(255,215,0,0.16), rgba(255,215,0,0.04));
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,215,0,0.35);
         }
-        input::placeholder, textarea::placeholder, select::placeholder {
-            color: rgba(255,255,255,0.6) !important;
+        
+        .glass-red {
+            background: linear-gradient(135deg, rgba(220,20,60,0.25), rgba(220,20,60,0.08));
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(220,20,60,0.5);
         }
-
-        /* Select dropdown options */
-        option {
-            color: #0A1628 !important;
-            background: white !important;
+        
+        .text-gold {
+            color: #FFD700;
         }
-
-        /* Navigation */
-        .nav-link {
-            color: white !important;
+        
+        /* Animations */
+        .pulse-green {
+            animation: pulseG 2s infinite;
         }
-        .nav-link:hover {
-            color: #3B82F6 !important;
+        
+        .pulse-red {
+            animation: pulseR 1.2s infinite;
         }
-        .nav-active {
-            color: #3B82F6 !important;
-            border-bottom-color: #3B82F6 !important;
-        }
-
-        /* Mobile menu */
-        .mobile-menu a {
-            color: white !important;
-        }
-
-        /* Footer */
-        footer p, footer a, footer li, footer span, footer h3, footer h4 {
-            color: white !important;
-        }
-
-        /* Service cards */
-        .service-card h3, .service-card p, .service-card li {
-            color: white !important;
-        }
-
-        /* BSC elements */
-        .bsc-value, .bsc-label, .bsc-summary {
-            color: white !important;
-        }
-        .bsc-value.accent {
-            color: #FFD700 !important;
-        }
-        .bsc-value.success {
-            color: #4ade80 !important;
-        }
-
-        /* Wide captions */
-        .wide-caption h3, .wide-caption p {
-            color: white !important;
-        }
-
-        /* Phase progress text */
-        .text-xs {
-            color: white !important;
-        }
-
-        /* Buttons with dark text */
-        [class*="bg-[#FFD700]"], .btn-primary.bg-yellow-400,
-        [class*="bg-[#FFD700]"], button.bg-yellow-400 {
-            color: #0A1628 !important;
-        }
-
-        /* Preserve specific colored text classes */
-        .text-\[\#3B82F6\], .text-blue-400, .text-blue-500 {
-            color: #3B82F6 !important;
-        }
-        .text-green-400, .text-green-500 {
-            color: #4ade80 !important;
-        }
-        .text-\[\#8B5CF6\], .text-purple-400 {
-            color: #8B5CF6 !important;
-        }
-        .text-\[\#F59E0B\], .text-amber-400 {
-            color: #F59E0B !important;
-        }
-        .text-\[\#10B981\], .text-emerald-400 {
-            color: #10B981 !important;
-        }
-        .text-\[\#DC143C\], .text-red-400 {
-            color: #DC143C !important;
-        }
-
-        /* Strong/Bold text */
-        strong, b {
-            color: white !important;
-        }
-
-        /* Trust badges */
-        .glass span.text-sm {
-            color: white !important;
-        }
-
-        /* Table cells */
-        table td, table th, .bsc-row div {
-            color: white !important;
-        }
-
-        /* Card hover states */
-        .stat-card:hover div {
-            color: white !important;
-        }
-
-        /* Print override */
-        @media print {
-            body, h1, h2, h3, h4, h5, h6, p, li, span, a, td, th, label, blockquote, div {
-                color: black !important;
+        
+        @keyframes pulseG {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(34,197,94,0.6);
+            }
+            50% {
+                box-shadow: 0 0 0 6px rgba(34,197,94,0);
             }
         }
-</style>
+        
+        @keyframes pulseR {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(220,20,60,0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(220,20,60,0);
+            }
+        }
+        
+        @keyframes spring {
+            0% {
+                transform: scale(0.96);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .animate-spring {
+            animation: spring 0.3s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        
+        .lite-mode .glass,
+        .lite-mode .glass-strong,
+        .lite-mode .glass-gold,
+        .lite-mode .glass-red {
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            background: #06122a !important;
+        }
+        
+        .lite-mode * {
+            animation: none !important;
+            transition: none !important;
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(10, 22, 40, 0.5);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255,215,0,0.25);
+            border-radius: 8px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,215,0,0.4);
+        }
+        
+        /* Navigation Active State */
+        .nav-active {
+            border-bottom: 2px solid #3B82F6;
+        }
+        
+        /* Header Styling */
+        .header-section {
+            background: #0A1628;
+            color: white;
+        }
+        
+        /* Button Hover Effects */
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.5);
+        }
+        
+        /* Page Visibility */
+        .page-section {
+            display: none;
+        }
+        
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Loader */
+        .loader {
+            border: 3px solid rgba(255,255,255,0.1);
+            border-top: 3px solid #3B82F6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Auth Modal */
+        .auth-modal {
+            max-width: 450px;
+        }
+        
+        /* Service Cards */
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 350px;
+            height: 100vh;
+            background: #0A1628;
+            z-index: 9999;
+            transition: right 0.3s ease;
+            padding: 20px;
+        }
+        
+        .mobile-menu.open {
+            right: 0;
+        }
+        
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 9998;
+            display: none;
+        }
+        
+        .overlay.show {
+            display: block;
+        }
+        
+        /* Responsive Tables */
+        .table-responsive {
+            overflow-x: auto;
+        }
+        
+        .table-responsive table {
+            min-width: 600px;
+        }
+        
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: none;
+        }
+        
+        .floating-cta.show {
+            display: block;
+        }
+        
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+        
+        /* Focus Styles */
+        *:focus-visible {
+            outline: 2px solid #3B82F6;
+            outline-offset: 2px;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        /* Wide Image Container for Strategic Assets */
+        .wide-image-container {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+        }
+
+        .wide-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85);
+            transition: transform 0.5s ease;
+        }
+
+        .wide-image-container:hover img {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+        
+        .wide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(10, 22, 40, 0.95), transparent);
+            z-index: 10;
+        }
+
+        /* Tab Navigation for Strategy Section - IMPROVED READABILITY */
+        .nav-tab {
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            background: rgba(59, 130, 246, 0.2);
+            color: #E2E8F0;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .nav-tab:hover {
+            background: rgba(59, 130, 246, 0.4);
+            color: #FFFFFF;
+        }
+        
+        .nav-tab.active {
+            background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+            color: white;
+            border-color: #3B82F6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Strategy Card Hover Effects */
+        .stat-card {
+            transition: transform 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Strategy Scroll Wrapper */
+        .strategy-scroll-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 1rem;
+        }
+
+        /* Strategy Content Sections */
+        .strategy-content {
+            display: block;
+        }
+        
+        .strategy-content.hidden {
+            display: none;
+        }
+
+        /* Improved Text Readability on Dark Backgrounds */
+        .text-readable {
+            color: #E2E8F0;
+        }
+        
+        .text-readable-light {
+            color: #CBD5E1;
+        }
+        
+        .text-muted-readable {
+            color: #94A3B8;
+        }
+
+        /* Table Improvements */
+        table th {
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+        
+        table td {
+            color: #E2E8F0;
+        }
+
+        /* Card Content Improvements */
+        .glass p, .glass-strong p, .glass-gold p {
+            color: #E2E8F0;
+        }
+        
+        .glass h3, .glass-strong h3, .glass-gold h3, .glass-red h3 {
+            color: #FFFFFF;
+        }
+        
+        .glass h4, .glass-strong h4 {
+            color: #FFFFFF;
+        }
+
+        /* Form Improvements */
+        input, select, textarea {
+            color: #FFFFFF !important;
+            background: rgba(255,255,255,0.05) !important;
+        }
+        
+        input::placeholder, textarea::placeholder {
+            color: #94A3B8 !important;
+        }
+
+        /* List Items */
+        ul li, ol li {
+            color: #E2E8F0;
+        }
+
+        /* Blockquote */
+        blockquote {
+            color: #E2E8F0;
+        }
+    </style>
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlN0cm9uZ2hvbGQgQTMgU2VjdXJpdHkgQWdlbmN5IiwKICAic2hvcnRfbmFtZSI6ICJTdHJvbmdob2xkIEEzIiwKICAiZGVzY3JpcHRpb24iOiAiRXdhcmRlbSBWaXNhcyBwcmVtaWVyIFplcm8tTGlhYmlsaXR5IFNlY3VyaXR5IFBhcnRuZXIuIERPUkUgRE8tMTc0IGNvbXBsaWFudCBzZWN1cml0eSBzZXJ2aWNlcy4iLAogICJzdGFydF91cmwiOiAiLyIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiIzBBMTYyOCIsCiAgInRoZW1lX2NvbG9yIjogIiMwODEyMDQiLAogICJpY29ucyI6IFt7CiAgICAic3JjIjogImh0dHBzOi8vZmh3aHFvaWN1Znhtc2NsaWFuaC5kYXRhYmFzZXBhZC5jb20vc3RvcmFnZS92MS9vYmplY3QvcHVibGljL3NvcC1maWxlcy9wdWJsaWMvU3Ryb25naG9sZCUyMCQzJmxvZ28uanBuZyIsCiAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAidHlwZSI6ICJpbWFnZS9wbmciCiAgfV0KfQ==">
@@ -286,7 +588,6 @@
         "priceRange": "$$"
     }
     </script>
-<base target="_blank">
 </head>
 
 <body class="antialiased min-h-screen relative">
@@ -305,16 +606,16 @@
             </button>
         </div>
         <ul class="space-y-4">
-            <li><a href="#" onclick="showPage('home')" class="text-lg block hover:text-[#3B82F6] transition">Home</a></li>
-            <li><a href="#" onclick="showPage('services')" class="text-lg block hover:text-[#3B82F6] transition">Services</a></li>
-            <li><a href="#" onclick="showPage('about')" class="text-lg block hover:text-[#3B82F6] transition">About Us</a></li>
-            <li><a href="#" onclick="showPage('strategy')" class="text-lg block hover:text-[#3B82F6] transition">Strategy Map</a></li>
-            <li><a href="#" onclick="showPage('contact')" class="text-lg block hover:text-[#3B82F6] transition">Contact Us</a></li>
+            <li><a href="#" onclick="showPage('home')" class="text-lg block text-white hover:text-[#3B82F6] transition">Home</a></li>
+            <li><a href="#" onclick="showPage('services')" class="text-lg block text-white hover:text-[#3B82F6] transition">Services</a></li>
+            <li><a href="#" onclick="showPage('about')" class="text-lg block text-white hover:text-[#3B82F6] transition">About Us</a></li>
+            <li><a href="#" onclick="showPage('strategy')" class="text-lg block text-white hover:text-[#3B82F6] transition">Strategy Map</a></li>
+            <li><a href="#" onclick="showPage('contact')" class="text-lg block text-white hover:text-[#3B82F6] transition">Contact Us</a></li>
             <li><a href="#" onclick="openAuthModal()" class="text-lg block text-[#FFD700] font-bold">Staff Portal Access</a></li>
         </ul>
         <div class="mt-6 pt-6 border-t border-[rgba(255,215,0,0.2)]">
-            <p class="text-sm text-white">© 2026 Stronghold A3 Security Agency</p>
-            <p class="text-xs text-white mt-1">DOLE DO-174 Compliant</p>
+            <p class="text-sm text-gray-300">© 2026 Stronghold A3 Security Agency</p>
+            <p class="text-xs text-gray-400 mt-1">DOLE DO-174 Compliant</p>
         </div>
     </nav>
     
@@ -335,11 +636,11 @@
                 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-6">
-                    <a href="#" onclick="showPage('home')" class="nav-link hover:text-[#3B82F6] transition nav-active">Home</a>
-                    <a href="#" onclick="showPage('services')" class="nav-link hover:text-[#3B82F6] transition">Services</a>
-                    <a href="#" onclick="showPage('about')" class="nav-link hover:text-[#3B82F6] transition">About Us</a>
-                    <a href="#" onclick="showPage('strategy')" class="nav-link hover:text-[#3B82F6] transition">Strategy</a>
-                    <a href="#" onclick="showPage('contact')" class="nav-link hover:text-[#3B82F6] transition">Contact Us</a>
+                    <a href="#" onclick="showPage('home')" class="nav-link text-white hover:text-[#3B82F6] transition nav-active">Home</a>
+                    <a href="#" onclick="showPage('services')" class="nav-link text-white hover:text-[#3B82F6] transition">Services</a>
+                    <a href="#" onclick="showPage('about')" class="nav-link text-white hover:text-[#3B82F6] transition">About Us</a>
+                    <a href="#" onclick="showPage('strategy')" class="nav-link text-white hover:text-[#3B82F6] transition">Strategy</a>
+                    <a href="#" onclick="showPage('contact')" class="nav-link text-white hover:text-[#3B82F6] transition">Contact Us</a>
                     <button onclick="openAuthModal()" class="bg-[#FFD700] text-[#0A1628] px-4 py-2 rounded-lg font-bold hover:bg-yellow-400 transition">
                         Staff Portal
                     </button>
@@ -364,7 +665,7 @@
             <div class="relative">
                 <!-- Hero Section -->
                 <div class="relative bg-gradient-to-b from-[#0A1628] to-transparent py-20">
-                    <div class="absolute inset-0 bg-[url('https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Zero-Liablity%20Moat.png')] bg-cover bg-center opacity-20"></div>
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
                     
                     <div class="container mx-auto px-4 relative z-10">
                         <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -379,7 +680,7 @@
                                     Security Partner
                                 </h1>
                                 
-                                <p class="text-lg text-white font-body max-w-lg">
+                                <p class="text-lg text-gray-200 font-body max-w-lg">
                                     More than a guard supplier. We are your mature, compliant, and technologically advanced risk-mitigation partner serving Tacloban, Leyte, Biliran, Samar & Eastern Visayas.
                                 </p>
                                 
@@ -396,25 +697,25 @@
                                 <div class="flex flex-wrap gap-4 pt-6">
                                     <div class="glass px-4 py-2 rounded-lg flex items-center gap-2">
                                         <i class="fas fa-shield-alt text-[#FFD700]"></i>
-                                        <span class="text-sm">DOLE Certified</span>
+                                        <span class="text-sm text-white">DOLE Certified</span>
                                     </div>
                                     <div class="glass px-4 py-2 rounded-lg flex items-center gap-2">
                                         <i class="fas fa-building text-[#FFD700]"></i>
-                                        <span class="text-sm">LGU Partnered</span>
+                                        <span class="text-sm text-white">LGU Partnered</span>
                                     </div>
                                     <div class="glass px-4 py-2 rounded-lg flex items-center gap-2">
                                         <i class="fas fa-camera text-[#FFD700]"></i>
-                                        <span class="text-sm">AI Surveillance Ready</span>
+                                        <span class="text-sm text-white">AI Surveillance Ready</span>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="lg:w-1/2 flex justify-center">
-                                <div class="relative animate-spring w-full">
-                                    <div class="w-full rounded-xl border-2 border-[#3B82F6] overflow-hidden glass-strong shadow-2xl">
-                                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Zero-Liablity%20Moat.png" 
-                                             alt="Zero-Liability Security Moat - Strategic Framework" 
-                                             class="w-full h-auto object-cover">
+                                <div class="relative animate-spring">
+                                    <div class="w-80 h-80 rounded-full border-4 border-[#3B82F6] flex items-center justify-center glass-strong">
+                                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20A3%20logo.jpg" 
+                                             alt="Stronghold A3" 
+                                             class="w-64 h-64 rounded-full object-cover">
                                     </div>
                                     <div class="absolute -bottom-4 -right-4 glass-gold px-6 py-3 rounded-xl">
                                         <p class="text-[#FFD700] font-display text-xl">100%</p>
@@ -441,7 +742,7 @@
                                 </div>
                                 <div>
                                     <h3 class="text-2xl font-display mb-3 text-white">Physical Security Solutions</h3>
-                                    <ul class="space-y-2 text-white">
+                                    <ul class="space-y-2 text-gray-200">
                                         <li><i class="fas fa-check text-[#3B82F6] mr-2"></i>Guard Force Management</li>
                                         <li><i class="fas fa-check text-[#3B82F6] mr-2"></i>Access Control Systems</li>
                                         <li><i class="fas fa-check text-[#3B82F6] mr-2"></i>CCTV Monitoring</li>
@@ -459,7 +760,7 @@
                                 </div>
                                 <div>
                                     <h3 class="text-2xl font-display mb-3 text-white">Strategic Risk Mitigation</h3>
-                                    <ul class="space-y-2 text-white">
+                                    <ul class="space-y-2 text-gray-200">
                                         <li><i class="fas fa-check text-[#3B82F6] mr-2"></i>Threat Assessment</li>
                                         <li><i class="fas fa-check text-[#3B82F6] mr-2"></i>Disaster Response Planning</li>
                                         <li><i class="fas fa-check text-[#3B82F6] mr-2"></i>Crisis Management</li>
@@ -482,19 +783,19 @@
                             <div class="glass p-6 rounded-xl text-center animate-spring">
                                 <i class="fas fa-certificate text-4xl text-[#FFD700] mb-4"></i>
                                 <h3 class="text-xl font-bold mb-2 text-white">Full Compliance</h3>
-                                <p class="text-white text-sm">DOLE DO-174 compliant operations ensuring zero liability exposure for clients.</p>
+                                <p class="text-gray-300 text-sm">DOLE DO-174 compliant operations ensuring zero liability exposure for clients.</p>
                             </div>
                             
                             <div class="glass p-6 rounded-xl text-center animate-spring">
                                 <i class="fas fa-bolt text-4xl text-[#FFD700] mb-4"></i>
                                 <h3 class="text-xl font-bold mb-2 text-white">Technology Forward</h3>
-                                <p class="text-white text-sm">AI-based monitoring and real-time deployment tracking systems.</p>
+                                <p class="text-gray-300 text-sm">AI-based monitoring and real-time deployment tracking systems.</p>
                             </div>
                             
                             <div class="glass p-6 rounded-xl text-center animate-spring">
                                 <i class="fas fa-map-marked-alt text-4xl text-[#FFD700] mb-4"></i>
                                 <h3 class="text-xl font-bold mb-2 text-white">Regional Expertise</h3>
-                                <p class="text-white text-sm">Deep understanding of Eastern Visayas terrain, climate risks, and communities.</p>
+                                <p class="text-gray-300 text-sm">Deep understanding of Eastern Visayas terrain, climate risks, and communities.</p>
                             </div>
                         </div>
                     </div>
@@ -503,11 +804,11 @@
                 <!-- Call to Action Banner -->
                 <div class="py-16 container mx-auto px-4">
                     <div class="glass-gold p-8 rounded-xl text-center animate-spring">
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display text-white">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display text-[#0A1628]">
                             Ready to Secure Your Assets?
                         </h2>
-                        <p class="text-xl text-white mb-6">Schedule your complimentary risk assessment today</p>
-                        <button onclick="showPage('contact')" class="btn-primary bg-[#FFD700] text-[#0A1628] px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-400 transition shadow-lg">
+                        <p class="text-xl text-gray-800 mb-6">Schedule your complimentary risk assessment today</p>
+                        <button onclick="showPage('contact')" class="btn-primary bg-[#0A1628] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-900 transition shadow-lg">
                             <i class="fas fa-phone-alt mr-2"></i>Call Now: 09171370112
                         </button>
                     </div>
@@ -523,7 +824,7 @@
                     <h1 id="services-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-display">
                         Our <span class="text-[#3B82F6]">Services</span>
                     </h1>
-                    <p class="text-xl text-white max-w-2xl mx-auto">
+                    <p class="text-xl text-gray-200 max-w-2xl mx-auto">
                         Comprehensive security solutions tailored for Eastern Visayas businesses, corporations, and government agencies.
                     </p>
                 </div>
@@ -536,8 +837,8 @@
                             <i class="fas fa-building text-2xl text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2 text-white">Corporate Site Security</h3>
-                        <p class="text-white text-sm mb-4">24/7 guarding services for commercial buildings, office complexes, and industrial facilities.</p>
-                        <ul class="space-y-1 text-sm text-white">
+                        <p class="text-gray-300 text-sm mb-4">24/7 guarding services for commercial buildings, office complexes, and industrial facilities.</p>
+                        <ul class="space-y-1 text-sm text-gray-200">
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Access control management</li>
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Visitor screening protocols</li>
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Surveillance monitoring</li>
@@ -550,8 +851,8 @@
                             <i class="fas fa-users text-2xl text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2 text-white">Event Security</h3>
-                        <p class="text-white text-sm mb-4">Crowd control and security for conferences, concerts, and large-scale gatherings.</p>
-                        <ul class="space-y-1 text-sm text-white">
+                        <p class="text-gray-300 text-sm mb-4">Crowd control and security for conferences, concerts, and large-scale gatherings.</p>
+                        <ul class="space-y-1 text-sm text-gray-200">
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Crowd management</li>
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Perimeter security</li>
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Emergency response planning</li>
@@ -564,8 +865,8 @@
                             <i class="fas fa-umbrella text-2xl text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2 text-white">Disaster Response</h3>
-                        <p class="text-white text-sm mb-4">Critical support during typhoons, floods, and natural disasters in Eastern Visayas.</p>
-                        <ul class="space-y-1 text-sm text-white">
+                        <p class="text-gray-300 text-sm mb-4">Critical support during typhoons, floods, and natural disasters in Eastern Visayas.</p>
+                        <ul class="space-y-1 text-sm text-gray-200">
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Evacuation assistance</li>
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Relief distribution support</li>
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Post-disaster security</li>
@@ -578,8 +879,8 @@
                             <i class="fas fa-search text-2xl text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2 text-white">Intelligence Services</h3>
-                        <p class="text-white text-sm mb-4">Proactive threat assessment and intelligence gathering for high-risk situations.</p>
-                        <ul class="space-y-1 text-sm text-white">
+                        <p class="text-gray-300 text-sm mb-4">Proactive threat assessment and intelligence gathering for high-risk situations.</p>
+                        <ul class="space-y-1 text-sm text-gray-200">
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Risk profiling</li>
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Vulnerability assessments</li>
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Security audits</li>
@@ -592,8 +893,8 @@
                             <i class="fas fa-user-tie text-2xl text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2 text-white">Executive Protection</h3>
-                        <p class="text-white text-sm mb-4">Close protection officers for VIPs, corporate executives, and dignitaries.</p>
-                        <ul class="space-y-1 text-sm text-white">
+                        <p class="text-gray-300 text-sm mb-4">Close protection officers for VIPs, corporate executives, and dignitaries.</p>
+                        <ul class="space-y-1 text-sm text-gray-200">
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Personal security detail</li>
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Road security coordination</li>
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Safe transport arrangements</li>
@@ -606,8 +907,8 @@
                             <i class="fas fa-handshake text-2xl text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2 text-white">Security Consulting</h3>
-                        <p class="text-white text-sm mb-4">Expert guidance on security policy development and compliance implementation.</p>
-                        <ul class="space-y-1 text-sm text-white">
+                        <p class="text-gray-300 text-sm mb-4">Expert guidance on security policy development and compliance implementation.</p>
+                        <ul class="space-y-1 text-sm text-gray-200">
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Policy development</li>
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>DOLE compliance audits</li>
                             <li><i class="fas fa-arrow-right text-[#3B82F6] mr-2"></i>Training program design</li>
@@ -656,9 +957,9 @@
                 
                 <!-- CTA -->
                 <div class="glass-gold p-8 rounded-xl text-center animate-spring">
-                    <h3 class="text-2xl font-bold mb-4 font-display text-white">Need a Customized Solution?</h3>
-                    <p class="mb-6 text-white">Each client receives a tailored security plan based on their unique risk profile.</p>
-                    <button onclick="showPage('contact')" class="btn-primary bg-[#3B82F6] text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-600 transition">
+                    <h3 class="text-2xl font-bold mb-4 font-display text-[#0A1628]">Need a Customized Solution?</h3>
+                    <p class="mb-6 text-gray-800">Each client receives a tailored security plan based on their unique risk profile.</p>
+                    <button onclick="showPage('contact')" class="btn-primary bg-[#0A1628] text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-900 transition">
                         Get Free Consultation
                     </button>
                 </div>
@@ -673,7 +974,7 @@
                     <h1 id="about-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-display">
                         About <span class="text-[#3B82F6]">Stronghold A3</span>
                     </h1>
-                    <p class="text-xl text-white max-w-2xl mx-auto">
+                    <p class="text-xl text-gray-200 max-w-2xl mx-auto">
                         From tactical operations to strategic risk management, we are Eastern Visayas' most trusted security partner.
                     </p>
                 </div>
@@ -703,7 +1004,7 @@
                             <i class="fas fa-shield-alt text-2xl text-white"></i>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-2">Compliance is Our Promise</h4>
-                        <p class="text-white text-sm">Integrity in every policy. Zero-liability assurance through strict adherence to Philippine regulations.</p>
+                        <p class="text-gray-300 text-sm">Integrity in every policy. Zero-liability assurance through strict adherence to Philippine regulations.</p>
                     </div>
 
                     <div class="glass p-6 rounded-xl hover:-translate-y-2 transition duration-300">
@@ -711,7 +1012,7 @@
                             <i class="fas fa-waves text-2xl text-white"></i>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-2">Built for Eastern Visayas</h4>
-                        <p class="text-white text-sm">Prepared for every storm. Specialized Disaster Risk Reduction and Management (DRRM) protocols.</p>
+                        <p class="text-gray-300 text-sm">Prepared for every storm. Specialized Disaster Risk Reduction and Management (DRRM) protocols.</p>
                     </div>
 
                     <div class="glass p-6 rounded-xl hover:-translate-y-2 transition duration-300">
@@ -719,27 +1020,7 @@
                             <i class="fas fa-handshake text-2xl text-white"></i>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-2">Fair Pay Creates Pride</h4>
-                        <p class="text-white text-sm">Empowered guards protect better. Investing in your workforce ensures mission success.</p>
-                    </div>
-                </div>
-
-                <!-- Vision Mission Values Image -->
-                <h2 class="text-3xl font-bold text-gold mb-4 font-display">Vision, Mission & Values</h2>
-                <div class="wide-image-container shadow-lg mb-12">
-                    <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/VMV.png" alt="Vision Mission Values Framework">
-                    <div class="wide-caption">
-                        <h3 class="text-2xl font-bold text-white">Foundations: VMV</h3>
-                        <p class="text-white">Vision, Mission, and Values alignment driving every strategic decision.</p>
-                    </div>
-                </div>
-
-                <!-- Guiding Principles Image -->
-                <h2 class="text-3xl font-bold text-gold mb-4 font-display">Guiding Principles</h2>
-                <div class="wide-image-container shadow-lg mb-12">
-                    <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Guiding%20Principles.png" alt="Guiding Principles Framework">
-                    <div class="wide-caption">
-                        <h3 class="text-2xl font-bold text-white">Culture: Guiding Principles</h3>
-                        <p class="text-white">Ethical framework and behavioral standards that define our operational culture.</p>
+                        <p class="text-gray-300 text-sm">Empowered guards protect better. Investing in your workforce ensures mission success.</p>
                     </div>
                 </div>
                 
@@ -750,15 +1031,15 @@
                     </h2>
                     
                     <div class="space-y-4">
-                        <p class="text-white leading-relaxed">
+                        <p class="text-gray-200 leading-relaxed">
                             Stronghold A3 Security Agency represents a new standard in security service delivery. Unlike traditional guard suppliers, we provide comprehensive <strong>zero-liability security solutions</strong> backed by decades of regional expertise and strict adherence to Philippine regulatory standards.
                         </p>
                         
-                        <p class="text-white leading-relaxed">
+                        <p class="text-gray-200 leading-relaxed">
                             Operating throughout <strong>Tacloban, Leyte, Biliran, Samar, and Eastern Visayas</strong>, we understand the unique challenges our region faces—from tropical weather patterns to socio-political dynamics. This local knowledge translates into proactive threat mitigation rather than reactive responses.
                         </p>
                         
-                        <p class="text-white leading-relaxed">
+                        <p class="text-gray-200 leading-relaxed">
                             Under the leadership of <strong>CEO Antonie M. Silva</strong>, Stronghold A3 has developed a robust operational framework that combines human expertise with cutting-edge technology. Our personnel undergo rigorous training aligned with <strong>DOLE Department Order No. 174 series of 2019</strong>, ensuring every team member meets national certification standards.
                         </p>
                     </div>
@@ -776,14 +1057,14 @@
                                 <p class="text-[#FFD700] text-sm">Chief Executive Officer</p>
                             </div>
                         </div>
-                        <p class="text-white text-sm">
+                        <p class="text-gray-300 text-sm">
                             With extensive experience in security operations across Eastern Visayas, Antonio brings strategic vision and operational excellence to Stronghold A3. His leadership ensures our commitment to client safety and regulatory compliance remains uncompromised.
                         </p>
                     </div>
                     
                     <div class="glass p-8 rounded-xl animate-spring">
                         <h3 class="text-xl font-bold mb-4 text-white">Certifications & Compliance</h3>
-                        <ul class="space-y-2 text-white">
+                        <ul class="space-y-2 text-gray-200">
                             <li><i class="fas fa-check text-[#3B82F6] mr-2"></i><strong>DOLE DO-174 Compliant</strong> - All security personnel nationally certified</li>
                             <li><i class="fas fa-check text-[#3B82F6] mr-2"></i><strong>Bureau of Fire Protection (BFP)</strong> - Regular fire safety coordination</li>
                             <li><i class="fas fa-check text-[#3B82F6] mr-2"></i><strong>Philippine National Police (PNP)</strong> - Community policing partnerships</li>
@@ -809,7 +1090,7 @@
                     <h1 id="strategy-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-display">
                         Strategy <span class="text-[#3B82F6]">Map</span>
                     </h1>
-                    <p class="text-xl text-white max-w-2xl mx-auto">
+                    <p class="text-xl text-gray-200 max-w-2xl mx-auto">
                         Balanced Scorecard framework aligned with our 4-Phased execution strategy.
                     </p>
                 </div>
@@ -823,239 +1104,117 @@
 
                 <!-- Balanced Scorecard Content -->
                 <div id="content-bsc" class="strategy-content">
-                    <div class="mb-8">
-                        <p class="text-white mb-6">Click each perspective below to expand objectives, activities, KPIs, and ownership details.</p>
+                    <div class="glass p-6 rounded-xl overflow-hidden mb-8">
+                        <div class="strategy-scroll-wrapper">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-[#0A1628] text-white border-b border-[#3B82F6]">
+                                        <th class="p-4 w-24">Perspective</th>
+                                        <th class="p-4">Objective</th>
+                                        <th class="p-4">Activity (Pillar)</th>
+                                        <th class="p-4">KPI (Metric)</th>
+                                        <th class="p-4">Target</th>
+                                        <th class="p-4">Owner</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-[rgba(255,255,255,0.1)] text-sm">
+                                    <!-- Financial -->
+                                    <tr class="hover:bg-[rgba(255,255,255,0.05)] transition">
+                                        <td class="p-4 font-bold text-[#3B82F6]">FINANCIAL</td>
+                                        <td class="p-4 font-semibold text-white">Drive Revenue Growth</td>
+                                        <td class="p-4 text-gray-200">Hybrid Upsell (Guard + Remote Monitor)</td>
+                                        <td class="p-4 text-gray-300">% High-Value Acquisition</td>
+                                        <td class="p-4 text-green-400">15-20% Growth</td>
+                                        <td class="p-4 text-yellow-400">GM/Ops</td>
+                                    </tr>
+                                    <tr class="hover:bg-[rgba(255,255,255,0.05)] transition">
+                                        <td class="p-4 font-bold text-[#3B82F6]">FINANCIAL</td>
+                                        <td class="p-4 font-semibold text-white">Protect Margins</td>
+                                        <td class="p-4 text-gray-200">Dynamic Contract Structuring</td>
+                                        <td class="p-4 text-gray-300">Escalation Penetration</td>
+                                        <td class="p-4 text-green-400">100% New Contracts</td>
+                                        <td class="p-4 text-yellow-400">Ops Mgr</td>
+                                    </tr>
 
-                        <!-- FINANCIAL PERSPECTIVE -->
-                        <details class="bsc-details" open>
-                            <summary class="bsc-summary text-[#3B82F6]">
-                                <span><i class="fas fa-coins mr-3"></i>FINANCIAL PERSPECTIVE</span>
-                            </summary>
-                            <div class="bsc-content">
-                                <div class="bsc-row">
-                                    <div>
-                                        <div class="bsc-label">Objective</div>
-                                        <div class="bsc-value">Drive Revenue Growth</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Activity (Pillar)</div>
-                                        <div class="bsc-value">Hybrid Upsell (Guard + Remote Monitor)</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">KPI (Metric)</div>
-                                        <div class="bsc-value">% High-Value Acquisition</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Target</div>
-                                        <div class="bsc-value success">15-20% Growth</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Owner</div>
-                                        <div class="bsc-value accent">GM / Operations</div>
-                                    </div>
-                                </div>
-                                <div class="bsc-row">
-                                    <div>
-                                        <div class="bsc-label">Objective</div>
-                                        <div class="bsc-value">Protect Margins</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Activity (Pillar)</div>
-                                        <div class="bsc-value">Dynamic Contract Structuring</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">KPI (Metric)</div>
-                                        <div class="bsc-value">Escalation Penetration</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Target</div>
-                                        <div class="bsc-value success">100% New Contracts</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Owner</div>
-                                        <div class="bsc-value accent">Ops Manager</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </details>
+                                    <!-- Customer -->
+                                    <tr class="hover:bg-[rgba(255,255,255,0.05)] transition">
+                                        <td class="p-4 font-bold text-[#8B5CF6]">CUSTOMER</td>
+                                        <td class="p-4 font-semibold text-white">Zero-Liability Partner</td>
+                                        <td class="p-4 text-gray-200">DRRM Bundle Integration</td>
+                                        <td class="p-4 text-gray-300"># DRRM Contracts</td>
+                                        <td class="p-4 text-green-400">3 Institutional Deals</td>
+                                        <td class="p-4 text-yellow-400">Ops Mgr</td>
+                                    </tr>
+                                    <tr class="hover:bg-[rgba(255,255,255,0.05)] transition">
+                                        <td class="p-4 font-bold text-[#8B5CF6]">CUSTOMER</td>
+                                        <td class="p-4 font-semibold text-white">Transparent Service</td>
+                                        <td class="p-4 text-gray-200">Cloud-Based SMS Adoption</td>
+                                        <td class="p-4 text-gray-300">Digital Transparency Index</td>
+                                        <td class="p-4 text-green-400">100% Adoption</td>
+                                        <td class="p-4 text-yellow-400">Ops Mgr</td>
+                                    </tr>
 
-                        <!-- CUSTOMER PERSPECTIVE -->
-                        <details class="bsc-details">
-                            <summary class="bsc-summary text-[#8B5CF6]">
-                                <span><i class="fas fa-users mr-3"></i>CUSTOMER PERSPECTIVE</span>
-                            </summary>
-                            <div class="bsc-content">
-                                <div class="bsc-row">
-                                    <div>
-                                        <div class="bsc-label">Objective</div>
-                                        <div class="bsc-value">Zero-Liability Partner</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Activity (Pillar)</div>
-                                        <div class="bsc-value">DRRM Bundle Integration</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">KPI (Metric)</div>
-                                        <div class="bsc-value"># DRRM Contracts</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Target</div>
-                                        <div class="bsc-value success">3 Institutional Deals</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Owner</div>
-                                        <div class="bsc-value accent">Ops Manager</div>
-                                    </div>
-                                </div>
-                                <div class="bsc-row">
-                                    <div>
-                                        <div class="bsc-label">Objective</div>
-                                        <div class="bsc-value">Transparent Service</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Activity (Pillar)</div>
-                                        <div class="bsc-value">Cloud-Based SMS Adoption</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">KPI (Metric)</div>
-                                        <div class="bsc-value">Digital Transparency Index</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Target</div>
-                                        <div class="bsc-value success">100% Adoption</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Owner</div>
-                                        <div class="bsc-value accent">Ops Manager</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </details>
+                                    <!-- Internal Process -->
+                                    <tr class="hover:bg-[rgba(255,255,255,0.05)] transition">
+                                        <td class="p-4 font-bold text-[#F59E0B]">INTERNAL PROCESSES</td>
+                                        <td class="p-4 font-semibold text-white">Eliminate Bottlenecks</td>
+                                        <td class="p-4 text-gray-200">RACI Matrix & 72-Hr Onboarding</td>
+                                        <td class="p-4 text-gray-300">Admin Overhead Reduction</td>
+                                        <td class="p-4 text-green-400">40% Reduction</td>
+                                        <td class="p-4 text-yellow-400">Admin/Ops</td>
+                                    </tr>
+                                    <tr class="hover:bg-[rgba(255,255,255,0.05)] transition">
+                                        <td class="p-4 font-bold text-[#F59E0B]">INTERNAL PROCESSES</td>
+                                        <td class="p-4 font-semibold text-white">Crisis Continuity</td>
+                                        <td class="p-4 text-gray-200">Typhoon BCP & 3-Bridge Protocol</td>
+                                        <td class="p-4 text-gray-300">BCP Execution Fidelity</td>
+                                        <td class="p-4 text-green-400">100% Compliance</td>
+                                        <td class="p-4 text-yellow-400">Ops Mgr</td>
+                                    </tr>
 
-                        <!-- INTERNAL PROCESS PERSPECTIVE -->
-                        <details class="bsc-details">
-                            <summary class="bsc-summary text-[#F59E0B]">
-                                <span><i class="fas fa-cogs mr-3"></i>INTERNAL PROCESSES</span>
-                            </summary>
-                            <div class="bsc-content">
-                                <div class="bsc-row">
-                                    <div>
-                                        <div class="bsc-label">Objective</div>
-                                        <div class="bsc-value">Eliminate Bottlenecks</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Activity (Pillar)</div>
-                                        <div class="bsc-value">RACI Matrix & 72-Hr Onboarding</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">KPI (Metric)</div>
-                                        <div class="bsc-value">Admin Overhead Reduction</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Target</div>
-                                        <div class="bsc-value success">40% Reduction</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Owner</div>
-                                        <div class="bsc-value accent">Admin / Ops</div>
-                                    </div>
-                                </div>
-                                <div class="bsc-row">
-                                    <div>
-                                        <div class="bsc-label">Objective</div>
-                                        <div class="bsc-value">Crisis Continuity</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Activity (Pillar)</div>
-                                        <div class="bsc-value">Typhoon BCP & 3-Bridge Protocol</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">KPI (Metric)</div>
-                                        <div class="bsc-value">BCP Execution Fidelity</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Target</div>
-                                        <div class="bsc-value success">100% Compliance</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Owner</div>
-                                        <div class="bsc-value accent">Ops Manager</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </details>
-
-                        <!-- LEARNING & GROWTH PERSPECTIVE -->
-                        <details class="bsc-details">
-                            <summary class="bsc-summary text-[#10B981]">
-                                <span><i class="fas fa-graduation-cap mr-3"></i>LEARNING & GROWTH</span>
-                            </summary>
-                            <div class="bsc-content">
-                                <div class="bsc-row">
-                                    <div>
-                                        <div class="bsc-label">Objective</div>
-                                        <div class="bsc-value">Resilient Workforce</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Activity (Pillar)</div>
-                                        <div class="bsc-value">Guard Retention Program</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">KPI (Metric)</div>
-                                        <div class="bsc-value">Attrition Rate</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Target</div>
-                                        <div class="bsc-value success">&lt; 5% Annually</div>
-                                    </div>
-                                    <div>
-                                        <div class="bsc-label">Owner</div>
-                                        <div class="bsc-value accent">Admin</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </details>
+                                    <!-- Learning & Growth -->
+                                    <tr class="hover:bg-[rgba(255,255,255,0.05)] transition">
+                                        <td class="p-4 font-bold text-[#10B981]">LEARNING & GROWTH</td>
+                                        <td class="p-4 font-semibold text-white">Resilient Workforce</td>
+                                        <td class="p-4 text-gray-200">Guard Retention Program</td>
+                                        <td class="p-4 text-gray-300">Attrition Rate</td>
+                                        <td class="p-4 text-green-400">&lt; 5% Annually</td>
+                                        <td class="p-4 text-yellow-400">Admin</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     <!-- Phase Progress -->
                     <div class="grid md:grid-cols-4 gap-4 mb-8">
                         <div class="glass p-4 rounded-xl text-center">
-                            <div class="text-xs text-white mb-1">PHASE 1: FOUNDATION</div>
+                            <div class="text-xs text-gray-300 mb-1">PHASE 1: FOUNDATION</div>
                             <div class="text-2xl font-bold text-gold mb-1">WEEKS 1-4</div>
                             <div class="w-full bg-gray-700 rounded-full h-2">
                                 <div class="bg-[#FFD700] h-2 rounded-full" style="width: 100%"></div>
                             </div>
                         </div>
                         <div class="glass p-4 rounded-xl text-center">
-                            <div class="text-xs text-white mb-1">PHASE 2: OPTIMIZATION</div>
+                            <div class="text-xs text-gray-300 mb-1">PHASE 2: OPTIMIZATION</div>
                             <div class="text-2xl font-bold text-white mb-1">MONTHS 2-4</div>
                             <div class="w-full bg-gray-700 rounded-full h-2">
                                 <div class="bg-[#3B82F6] h-2 rounded-full" style="width: 70%"></div>
                             </div>
                         </div>
                         <div class="glass p-4 rounded-xl text-center">
-                            <div class="text-xs text-white mb-1">PHASE 3: STABILIZE</div>
+                            <div class="text-xs text-gray-300 mb-1">PHASE 3: STABILIZE</div>
                             <div class="text-2xl font-bold text-white mb-1">MONTHS 5-7</div>
                             <div class="w-full bg-gray-700 rounded-full h-2">
                                 <div class="bg-[#3B82F6] h-2 rounded-full" style="width: 30%"></div>
                             </div>
                         </div>
                         <div class="glass p-4 rounded-xl text-center">
-                            <div class="text-xs text-white mb-1">PHASE 4: SCALE</div>
+                            <div class="text-xs text-gray-300 mb-1">PHASE 4: SCALE</div>
                             <div class="text-2xl font-bold text-white mb-1">MONTHS 8-12</div>
                             <div class="w-full bg-gray-700 rounded-full h-2">
                                 <div class="bg-[#3B82F6] h-2 rounded-full" style="width: 10%"></div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- 4 Phases Strategy Image -->
-                    <h2 class="text-3xl font-bold text-gold mb-4 font-display">The Stronghold Sequence: 4 Phases</h2>
-                    <div class="wide-image-container shadow-lg mb-8">
-                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/The%20Stronghiold%20Sequence-2.png" alt="The Stronghold Sequence - 4 Phases of Strategy">
-                        <div class="wide-caption">
-                            <h3 class="text-2xl font-bold text-white">Framework: The Strategic Sequence</h3>
-                            <p class="text-white">The 4-Phase execution roadmap from Foundation through Scale.</p>
                         </div>
                     </div>
                 </div>
@@ -1066,27 +1225,27 @@
                     
                     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                         <div class="glass-strong p-6 rounded-xl stat-card">
-                            <div class="text-sm text-white mb-2">Total Year 1 Investment</div>
+                            <div class="text-sm text-gray-300 mb-2">Total Year 1 Investment</div>
                             <div class="text-3xl font-bold text-white">PHP 1,065,000</div>
-                            <div class="mt-2 text-xs text-white">Low CAPEX Model</div>
+                            <div class="mt-2 text-xs text-gray-400">Low CAPEX Model</div>
                         </div>
                         
                         <div class="glass-strong p-6 rounded-xl stat-card border-t-4 border-[#FFD700]">
-                            <div class="text-sm text-white mb-2">Projected Year 1 Benefit</div>
+                            <div class="text-sm text-gray-300 mb-2">Projected Year 1 Benefit</div>
                             <div class="text-3xl font-bold text-[#FFD700]">PHP 1,600,000</div>
-                            <div class="mt-2 text-xs text-white">Revenue + Savings</div>
+                            <div class="mt-2 text-xs text-gray-400">Revenue + Savings</div>
                         </div>
 
                         <div class="glass-strong p-6 rounded-xl stat-card border-t-4 border-[#3B82F6]">
-                            <div class="text-sm text-white mb-2">Net Year 1 Gain</div>
+                            <div class="text-sm text-gray-300 mb-2">Net Year 1 Gain</div>
                             <div class="text-3xl font-bold text-white">PHP 565,000</div>
-                            <div class="mt-2 text-xs text-white">Operating Profit</div>
+                            <div class="mt-2 text-xs text-gray-400">Operating Profit</div>
                         </div>
 
                         <div class="glass-strong p-6 rounded-xl stat-card border-t-4 border-green-500">
-                            <div class="text-sm text-white mb-2">Year 1 ROI</div>
+                            <div class="text-sm text-gray-300 mb-2">Year 1 ROI</div>
                             <div class="text-3xl font-bold text-green-400">54.5%</div>
-                            <div class="mt-2 text-xs text-white">Rapid Payback Period</div>
+                            <div class="mt-2 text-xs text-gray-400">Rapid Payback Period</div>
                         </div>
                     </div>
 
@@ -1099,7 +1258,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-white">Admin Efficiency</h4>
-                                    <p class="text-sm text-white mt-1">Reclaims 40% of administrative staff time through automation tools and Cloud SMS adoption.</p>
+                                    <p class="text-sm text-gray-300 mt-1">Reclaims 40% of administrative staff time through automation tools and Cloud SMS adoption.</p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
@@ -1108,7 +1267,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-white">Revenue Generation</h4>
-                                    <p class="text-sm text-white mt-1">Estimated PHP 50,000 net monthly margin per new hybrid contract (Physical Guard + Tech).</p>
+                                    <p class="text-sm text-gray-300 mt-1">Estimated PHP 50,000 net monthly margin per new hybrid contract (Physical Guard + Tech).</p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
@@ -1117,7 +1276,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-white">Leakage Prevention</h4>
-                                    <p class="text-sm text-white mt-1">Recovery of dropped high-value leads via strict 24-hour RACI follow-up mandate.</p>
+                                    <p class="text-sm text-gray-300 mt-1">Recovery of dropped high-value leads via strict 24-hour RACI follow-up mandate.</p>
                                 </div>
                             </div>
                         </div>
@@ -1127,14 +1286,14 @@
                 <!-- Strategic Assets Content -->
                 <div id="content-assets" class="strategy-content hidden">
                     <h2 class="text-3xl font-bold text-gold mb-2 font-display">Strategic Visual Context</h2>
-                    <p class="text-white mb-8">Core frameworks and operational matrices for internal review.</p>
+                    <p class="text-gray-300 mb-8">Core frameworks and operational matrices for internal review.</p>
 
                     <!-- Macro Threats -->
                     <div class="wide-image-container shadow-lg">
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Macro-Threats.png" alt="Macro Threats Context">
                         <div class="wide-caption">
                             <h3 class="text-2xl font-bold text-white">Context: Macro Threats</h3>
-                            <p class="text-white">Regional risk landscape analysis for strategic positioning.</p>
+                            <p class="text-gray-200">Regional risk landscape analysis for strategic positioning.</p>
                         </div>
                     </div>
 
@@ -1143,7 +1302,7 @@
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Key%20Constraints.png" alt="Key Internal Constraints">
                         <div class="wide-caption">
                             <h3 class="text-2xl font-bold text-white">Context: Key Internal Constraints</h3>
-                            <p class="text-white">Operational bottlenecks and resource limitations map.</p>
+                            <p class="text-gray-200">Operational bottlenecks and resource limitations map.</p>
                         </div>
                     </div>
 
@@ -1152,7 +1311,7 @@
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/The%20Stronghiold%20Sequence-2.png" alt="The Strategic Sequence">
                         <div class="wide-caption">
                             <h3 class="text-2xl font-bold text-white">Framework: The Strategic Sequence</h3>
-                            <p class="text-white">The 4-Phase execution roadmap.</p>
+                            <p class="text-gray-200">The 4-Phase execution roadmap.</p>
                         </div>
                     </div>
 
@@ -1161,7 +1320,7 @@
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/VMV.png" alt="Vision Mission Value">
                         <div class="wide-caption">
                             <h3 class="text-2xl font-bold text-white">Foundations: VMV</h3>
-                            <p class="text-white">Vision, Mission, and Values alignment.</p>
+                            <p class="text-gray-200">Vision, Mission, and Values alignment.</p>
                         </div>
                     </div>
 
@@ -1170,7 +1329,7 @@
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Guiding%20Principles.png" alt="Guiding Principles">
                         <div class="wide-caption">
                             <h3 class="text-2xl font-bold text-white">Culture: Guiding Principles</h3>
-                            <p class="text-white">Ethical framework and behavioral standards.</p>
+                            <p class="text-gray-200">Ethical framework and behavioral standards.</p>
                         </div>
                     </div>
 
@@ -1179,7 +1338,7 @@
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Offline-first%20Crisis%20BCP.png" alt="Offline-first Crisis BCP">
                         <div class="wide-caption">
                             <h3 class="text-2xl font-bold text-white">Protocol: Offline-first Crisis BCP</h3>
-                            <p class="text-white">Business Continuity Plan for disaster scenarios.</p>
+                            <p class="text-gray-200">Business Continuity Plan for disaster scenarios.</p>
                         </div>
                     </div>
 
@@ -1188,7 +1347,7 @@
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/RACI%20Funnel.png" alt="RACI Framework">
                         <div class="wide-caption">
                             <h3 class="text-2xl font-bold text-white">Governance: RACI Funnel</h3>
-                            <p class="text-white">Responsibility Assignment Matrix for clarity.</p>
+                            <p class="text-gray-200">Responsibility Assignment Matrix for clarity.</p>
                         </div>
                     </div>
 
@@ -1197,7 +1356,7 @@
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Digital%20Bayanihan.png" alt="Digital Bayanihan">
                         <div class="wide-caption">
                             <h3 class="text-2xl font-bold text-white">Tech Culture: Digital Bayanihan</h3>
-                            <p class="text-white">Collaborative digital transformation initiative.</p>
+                            <p class="text-gray-200">Collaborative digital transformation initiative.</p>
                         </div>
                     </div>
 
@@ -1206,7 +1365,7 @@
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Zero-Liablity%20Moat.png" alt="Zero Liability Moat">
                         <div class="wide-caption">
                             <h3 class="text-2xl font-bold text-white">Strategy: Zero-Liability Moat</h3>
-                            <p class="text-white">Competitive advantage through compliance.</p>
+                            <p class="text-gray-200">Competitive advantage through compliance.</p>
                         </div>
                     </div>
 
@@ -1215,7 +1374,7 @@
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Launching%20Zero%20Liability%20Market%20capture.png" alt="Market Capture">
                         <div class="wide-caption">
                             <h3 class="text-2xl font-bold text-white">Growth: Launching Zero Liability Market Capture</h3>
-                            <p class="text-white">Expansion strategy into key sectors.</p>
+                            <p class="text-gray-200">Expansion strategy into key sectors.</p>
                         </div>
                     </div>
                 </div>
@@ -1230,7 +1389,7 @@
                     <h1 id="contact-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-display">
                         Contact <span class="text-[#3B82F6]">Us</span>
                     </h1>
-                    <p class="text-xl text-white max-w-2xl mx-auto">
+                    <p class="text-xl text-gray-200 max-w-2xl mx-auto">
                         Schedule your complimentary risk assessment or reach us directly for immediate assistance.
                     </p>
                 </div>
@@ -1244,52 +1403,52 @@
                         <form id="contactForm" onsubmit="handleFormSubmit(event)">
                             <div class="space-y-4">
                                 <div>
-                                    <label class="block text-sm font-semibold text-white mb-2">Full Name *</label>
-                                    <input type="text" required class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]" placeholder="Your full name">
+                                    <label class="block text-sm font-semibold mb-2 text-white">Full Name *</label>
+                                    <input type="text" required class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] text-white" placeholder="Your full name">
                                 </div>
                                 
                                 <div>
-                                    <label class="block text-sm font-semibold text-white mb-2">Email Address *</label>
-                                    <input type="email" required class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]" placeholder="your@email.com">
+                                    <label class="block text-sm font-semibold mb-2 text-white">Email Address *</label>
+                                    <input type="email" required class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] text-white" placeholder="your@email.com">
                                 </div>
                                 
                                 <div>
-                                    <label class="block text-sm font-semibold text-white mb-2">Phone Number *</label>
-                                    <input type="tel" required class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]" placeholder="09XX XXX XXXX">
+                                    <label class="block text-sm font-semibold mb-2 text-white">Phone Number *</label>
+                                    <input type="tel" required class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] text-white" placeholder="09XX XXX XXXX">
                                 </div>
                                 
                                 <div>
-                                    <label class="block text-sm font-semibold text-white mb-2">Company/Organization (Optional)</label>
-                                    <input type="text" class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]" placeholder="Your company name">
+                                    <label class="block text-sm font-semibold mb-2 text-white">Company/Organization (Optional)</label>
+                                    <input type="text" class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] text-white" placeholder="Your company name">
                                 </div>
                                 
                                 <div>
-                                    <label class="block text-sm font-semibold text-white mb-2">Location *</label>
-                                    <select required class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]">
-                                        <option value="">Select Location</option>
-                                        <option value="Tacloban">Tacloban City</option>
-                                        <option value="Ormoc">Ormoc City</option>
-                                        <option value="Biliran">Biliran Province</option>
-                                        <option value="Samar">Samar Region</option>
-                                        <option value="Other">Other (Specify Below)</option>
+                                    <label class="block text-sm font-semibold mb-2 text-white">Location *</label>
+                                    <select required class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] text-white">
+                                        <option value="" class="bg-[#0A1628]">Select Location</option>
+                                        <option value="Tacloban" class="bg-[#0A1628]">Tacloban City</option>
+                                        <option value="Ormoc" class="bg-[#0A1628]">Ormoc City</option>
+                                        <option value="Biliran" class="bg-[#0A1628]">Biliran Province</option>
+                                        <option value="Samar" class="bg-[#0A1628]">Samar Region</option>
+                                        <option value="Other" class="bg-[#0A1628]">Other (Specify Below)</option>
                                     </select>
                                 </div>
                                 
                                 <div>
-                                    <label class="block text-sm font-semibold text-white mb-2">Service Interested In</label>
-                                    <select class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]">
-                                        <option value="Risk Assessment">Free Risk Assessment</option>
-                                        <option value="Corporate Security">Corporate Site Security</option>
-                                        <option value="Event Security">Event Security</option>
-                                        <option value="Disaster Response">Disaster Response</option>
-                                        <option value="Consulting">Security Consulting</option>
-                                        <option value="Other">Other</option>
+                                    <label class="block text-sm font-semibold mb-2 text-white">Service Interested In</label>
+                                    <select class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] text-white">
+                                        <option value="Risk Assessment" class="bg-[#0A1628]">Free Risk Assessment</option>
+                                        <option value="Corporate Security" class="bg-[#0A1628]">Corporate Site Security</option>
+                                        <option value="Event Security" class="bg-[#0A1628]">Event Security</option>
+                                        <option value="Disaster Response" class="bg-[#0A1628]">Disaster Response</option>
+                                        <option value="Consulting" class="bg-[#0A1628]">Security Consulting</option>
+                                        <option value="Other" class="bg-[#0A1628]">Other</option>
                                     </select>
                                 </div>
                                 
                                 <div>
-                                    <label class="block text-sm font-semibold text-white mb-2">Message</label>
-                                    <textarea rows="4" class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]" placeholder="How can we help you?"></textarea>
+                                    <label class="block text-sm font-semibold mb-2 text-white">Message</label>
+                                    <textarea rows="4" class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] text-white" placeholder="How can we help you?"></textarea>
                                 </div>
                                 
                                 <button type="submit" class="w-full btn-primary bg-[#3B82F6] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-600 transition">
@@ -1306,7 +1465,7 @@
                             <h3 class="text-xl font-bold mb-4 flex items-center text-gold font-display">
                                 <i class="fas fa-map-marker-alt mr-3"></i>Our Office
                             </h3>
-                            <p class="text-white">2nd Floor Real St.<br>Tacloban City, Leyte<br>Philippines 6500</p>
+                            <p class="text-gray-200">2nd Floor Real St.<br>Tacloban City, Leyte<br>Philippines 6500</p>
                             <a href="https://maps.google.com/?q=2nd+Floor+Real+St,+Tacloban+City,+Leyte,+Philippines" target="_blank" class="text-[#3B82F6] hover:underline inline-flex items-center mt-2">
                                 Get Directions <i class="fas fa-directions ml-2"></i>
                             </a>
@@ -1324,17 +1483,17 @@
                                         <i class="fas fa-phone text-white"></i>
                                     </div>
                                     <div>
-                                        <p class="text-sm text-white">General Line</p>
+                                        <p class="text-sm text-gray-300">General Line</p>
                                         <a href="tel:09171370112" class="text-xl font-bold text-white">09171370112</a>
                                     </div>
                                 </div>
                                 
                                 <div class="flex items-start gap-3">
                                     <div class="bg-[#FFD700] p-2 rounded-lg">
-                                        <i class="fas fa-user-tie text-white"></i>
+                                        <i class="fas fa-user-tie text-black"></i>
                                     </div>
                                     <div>
-                                        <p class="text-sm text-white">CEO Direct</p>
+                                        <p class="text-sm text-gray-300">CEO Direct</p>
                                         <p class="text-white font-bold">Antonie M. Silva</p>
                                         <a href="tel:09171350112" class="text-lg font-bold text-white">09171350112</a>
                                     </div>
@@ -1345,8 +1504,8 @@
                                         <i class="fas fa-envelope text-white"></i>
                                     </div>
                                     <div>
-                                        <p class="text-sm text-white">Email</p>
-                                        <a href="mailto:info@strongholda3.com" class="text-white hover:[#3B82F6]">info@strongholda3.com</a>
+                                        <p class="text-sm text-gray-300">Email</p>
+                                        <a href="mailto:info@strongholda3.com" class="text-white hover:text-[#3B82F6]">info@strongholda3.com</a>
                                     </div>
                                 </div>
                             </div>
@@ -1357,9 +1516,9 @@
                             <h3 class="text-xl font-bold mb-4 flex items-center text-gold font-display">
                                 <i class="fas fa-exclamation-triangle mr-3"></i>Emergency Contact
                             </h3>
-                            <p class="text-white mb-4">Available 24/7 for urgent security matters:</p>
+                            <p class="text-gray-200 mb-4">Available 24/7 for urgent security matters:</p>
                             <a href="tel:09171370112" class="text-3xl font-bold text-white hover:text-[#FFD700] transition">09171370112</a>
-                            <p class="text-sm text-white mt-2">Pulse animation indicates active monitoring</p>
+                            <p class="text-sm text-gray-300 mt-2">Pulse animation indicates active monitoring</p>
                         </div>
                         
                         <!-- Hours -->
@@ -1367,7 +1526,7 @@
                             <h3 class="text-xl font-bold mb-4 flex items-center text-[#3B82F6] font-display">
                                 <i class="fas fa-clock mr-3"></i>Office Hours
                             </h3>
-                            <div class="space-y-2 text-white">
+                            <div class="space-y-2 text-gray-200">
                                 <div class="flex justify-between">
                                     <span>Mon-Fri:</span>
                                     <span class="text-white font-bold">8:00 AM - 5:00 PM</span>
@@ -1400,9 +1559,9 @@
                 
                 <!-- Final CTA -->
                 <div class="glass-gold p-8 rounded-xl text-center animate-spring">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-4 font-display text-white">Schedule Your Complimentary Risk Assessment</h3>
-                    <p class="text-lg text-white mb-6">No obligation consultation. Learn how Stronghold A3 can protect your assets.</p>
-                    <button onclick="window.location.href='tel:09171370112'" class="btn-primary bg-[#FFD700] text-[#0A1628] px-10 py-5 rounded-xl font-bold text-xl hover:bg-yellow-400 transition shadow-lg pulse-green">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4 font-display text-[#0A1628]">Schedule Your Complimentary Risk Assessment</h3>
+                    <p class="text-lg text-gray-800 mb-6">No obligation consultation. Learn how Stronghold A3 can protect your assets.</p>
+                    <button onclick="window.location.href='tel:09171370112'" class="btn-primary bg-[#0A1628] text-white px-10 py-5 rounded-xl font-bold text-xl hover:bg-blue-900 transition shadow-lg pulse-green">
                         <i class="fas fa-phone-call mr-2"></i>Call 09171370112 Now
                     </button>
                 </div>
@@ -1417,7 +1576,7 @@
                     <h1 id="dashboard-heading" class="text-4xl md:text-5xl font-bold mb-4 text-gold font-display">
                         Staff <span class="text-[#3B82F6]">Portal</span>
                     </h1>
-                    <p class="text-xl text-white max-w-2xl mx-auto">
+                    <p class="text-xl text-gray-200 max-w-2xl mx-auto">
                         Secure internal access for authorized personnel only.
                     </p>
                 </div>
@@ -1429,23 +1588,17 @@
                         <h3 class="text-xl font-bold mb-6 flex items-center text-gold font-display">
                             <i class="fas fa-chess-board mr-2"></i>Strategy Map
                         </h3>
-
-                        <!-- Strategy Map Image -->
-                        <div class="wide-image-container shadow-lg" style="height: 420px;">
-                            <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/The%20Stronghiold%20Sequence-2.png" 
-                                 alt="Strategy Map - The Stronghold Sequence" 
-                                 class="w-full h-full object-contain">
-                            <div class="wide-caption">
-                                <h3 class="text-2xl font-bold text-white">The Stronghold Sequence</h3>
-                                <p class="text-white">4-Phase strategic execution framework.</p>
-                            </div>
+                        
+                        <!-- Chart Container -->
+                        <div id="strategyChart" class="h-80">
+                            <!-- Chart will be rendered here via JavaScript -->
                         </div>
-
-                        <p class="text-sm text-white mt-4">
+                        
+                        <p class="text-sm text-gray-300 mt-4">
                             <i class="fas fa-info-circle mr-2"></i>Data sourced from internal strategy documents. Live updates synchronized daily.
                         </p>
                     </div>
-
+                    
                     <!-- Quick Access Links -->
                     <div class="space-y-6">
                         <!-- SMS Mobile Access -->
@@ -1453,7 +1606,7 @@
                             <h3 class="text-lg font-bold mb-4 flex items-center text-[#3B82F6] font-display">
                                 <i class="fas fa-mobile-alt mr-2"></i>Resilient Secure Mobile
                             </h3>
-                            <p class="text-sm text-white mb-4">Secure messaging platform for field agents and emergency coordination.</p>
+                            <p class="text-sm text-gray-300 mb-4">Secure messaging platform for field agents and emergency coordination.</p>
                             <a href="https://resilient-secure-mobile.deploypad.app/" target="_blank" class="block w-full bg-[#3B82F6] text-white text-center px-4 py-3 rounded-lg hover:bg-blue-600 transition">
                                 <i class="fas fa-sign-in-alt mr-2"></i>Access SMS Platform
                             </a>
@@ -1464,9 +1617,9 @@
                             <h3 class="text-lg font-bold mb-4 flex items-center text-[#3B82F6] font-display">
                                 <i class="fas fa-file-download mr-2"></i>Document Library
                             </h3>
-                            <ul class="space-y-2 text-sm text-white">
+                            <ul class="space-y-2 text-sm text-gray-200">
                                 <li><a href="#" class="hover:text-[#3B82F6] transition"><i class="fas fa-file-pdf text-[#FFD700] mr-2"></i>Capability Statement</a></li>
-                                <li><a href="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/CRISIS-PROOF%20OPERATIONAL%20WORKFLOW%20-%20Stronghold%20A3.pdf" target="_blank" class="hover:text-[#3B82F6] transition"><i class="fas fa-file-pdf text-[#FFD700] mr-2"></i>Operational Procedures</a></li>
+                                <li><a href="#" class="hover:text-[#3B82F6] transition"><i class="fas fa-file-pdf text-[#FFD700] mr-2"></i>Operational Procedures</a></li>
                                 <li><a href="#" class="hover:text-[#3B82F6] transition"><i class="fas fa-file-pdf text-[#FFD700] mr-2"></i>Compliance Checklists</a></li>
                                 <li><a href="#" class="hover:text-[#3B82F6] transition"><i class="fas fa-file-pdf text-[#FFD700] mr-2"></i>Employee Handbook</a></li>
                             </ul>
@@ -1494,7 +1647,7 @@
                                 <span class="text-2xl font-bold text-white">01</span>
                             </div>
                             <h4 class="font-bold mb-2 text-white">Assessment</h4>
-                            <p class="text-sm text-white">Client site evaluation and risk identification analysis</p>
+                            <p class="text-sm text-gray-300">Client site evaluation and risk identification analysis</p>
                         </div>
                         
                         <!-- Phase 2 -->
@@ -1503,7 +1656,7 @@
                                 <span class="text-2xl font-bold text-white">02</span>
                             </div>
                             <h4 class="font-bold mb-2 text-white">Planning</h4>
-                            <p class="text-sm text-white">Custom security protocol development and resource allocation</p>
+                            <p class="text-sm text-gray-300">Custom security protocol development and resource allocation</p>
                         </div>
                         
                         <!-- Phase 3 -->
@@ -1512,7 +1665,7 @@
                                 <span class="text-2xl font-bold text-white">03</span>
                             </div>
                             <h4 class="font-bold mb-2 text-white">Execution</h4>
-                            <p class="text-sm text-white">Deployment of security measures and operational activation</p>
+                            <p class="text-sm text-gray-300">Deployment of security measures and operational activation</p>
                         </div>
                         
                         <!-- Phase 4 -->
@@ -1521,14 +1674,14 @@
                                 <span class="text-2xl font-bold text-white">04</span>
                             </div>
                             <h4 class="font-bold mb-2 text-white">Review</h4>
-                            <p class="text-sm text-white">Performance audit and continuous improvement planning</p>
+                            <p class="text-sm text-gray-300">Performance audit and continuous improvement planning</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Back to Public Site -->
                 <div class="text-center mt-12">
-                    <button onclick="showPage('home')" class="glass px-8 py-3 rounded-xl hover:bg-opacity-80 transition">
+                    <button onclick="showPage('home')" class="glass px-8 py-3 rounded-xl hover:bg-opacity-80 transition text-white">
                         <i class="fas fa-arrow-left mr-2"></i>Return to Public Website
                     </button>
                 </div>
@@ -1544,19 +1697,19 @@
                              alt="Stronghold A3 Logo" 
                              class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-[#3B82F6]">
                         <h1 id="login-heading" class="text-2xl font-bold text-gold font-display">Staff Login</h1>
-                        <p class="text-white text-sm mt-2">Enter credentials for secure portal access</p>
+                        <p class="text-gray-300 text-sm mt-2">Enter credentials for secure portal access</p>
                     </div>
                     
                     <form id="loginForm" onsubmit="handleLogin(event)">
                         <div class="space-y-4">
                             <div>
-                                <label class="block text-sm font-semibold text-white mb-2">Email Address</label>
-                                <input type="email" id="email" required class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]" placeholder="staff@strongholda3.com">
+                                <label class="block text-sm font-semibold mb-2 text-white">Email Address</label>
+                                <input type="email" id="email" required class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] text-white" placeholder="staff@strongholda3.com">
                             </div>
                             
                             <div>
-                                <label class="block text-sm font-semibold text-white mb-2">Password</label>
-                                <input type="password" id="password" required class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]" placeholder="Enter your password">
+                                <label class="block text-sm font-semibold mb-2 text-white">Password</label>
+                                <input type="password" id="password" required class="w-full glass border-[#3B82F6] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] text-white" placeholder="Enter your password">
                             </div>
                             
                             <button type="submit" class="w-full bg-[#3B82F6] text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-600 transition">
@@ -1566,7 +1719,7 @@
                     </form>
                     
                     <div class="mt-6 text-center">
-                        <button onclick="showPage('home')" class="text-white hover:text-[#3B82F6] transition text-sm">
+                        <button onclick="showPage('home')" class="text-gray-300 hover:text-[#3B82F6] transition text-sm">
                             <i class="fas fa-arrow-left mr-2"></i>Return to Home
                         </button>
                     </div>
@@ -1592,7 +1745,7 @@
                                 <p class="text-xs text-[#3B82F6]">Zero-Liability Security</p>
                             </div>
                         </div>
-                        <p class="text-sm text-white">
+                        <p class="text-sm text-gray-300">
                             Eastern Visayas' premier security partner committed to zero-liability protection through compliance excellence.
                         </p>
                     </div>
@@ -1601,19 +1754,19 @@
                     <div class="text-center">
                         <h4 class="font-bold font-display text-white mb-4">Quick Links</h4>
                         <ul class="space-y-2">
-                            <li><a href="#" onclick="showPage('home')" class="text-white hover:text-[#3B82F6] transition">Home</a></li>
-                            <li><a href="#" onclick="showPage('services')" class="text-white hover:text-[#3B82F6] transition">Services</a></li>
-                            <li><a href="#" onclick="showPage('about')" class="text-white hover:text-[#3B82F6] transition">About Us</a></li>
-                            <li><a href="#" onclick="showPage('strategy')" class="text-white hover:text-[#3B82F6] transition">Strategy Map</a></li>
-                            <li><a href="#" onclick="showPage('contact')" class="text-white hover:text-[#3B82F6] transition">Contact Us</a></li>
-                            <li><a href="#" onclick="openAuthModal()" class="text-white hover:text-[#3B82F6] transition">Staff Portal</a></li>
+                            <li><a href="#" onclick="showPage('home')" class="text-gray-300 hover:text-[#3B82F6] transition">Home</a></li>
+                            <li><a href="#" onclick="showPage('services')" class="text-gray-300 hover:text-[#3B82F6] transition">Services</a></li>
+                            <li><a href="#" onclick="showPage('about')" class="text-gray-300 hover:text-[#3B82F6] transition">About Us</a></li>
+                            <li><a href="#" onclick="showPage('strategy')" class="text-gray-300 hover:text-[#3B82F6] transition">Strategy Map</a></li>
+                            <li><a href="#" onclick="showPage('contact')" class="text-gray-300 hover:text-[#3B82F6] transition">Contact Us</a></li>
+                            <li><a href="#" onclick="openAuthModal()" class="text-gray-300 hover:text-[#3B82F6] transition">Staff Portal</a></li>
                         </ul>
                     </div>
                     
                     <!-- Contact Info -->
                     <div class="text-center">
                         <h4 class="font-bold font-display text-white mb-4">Contact</h4>
-                        <ul class="space-y-2 text-sm text-white">
+                        <ul class="space-y-2 text-sm text-gray-300">
                             <li><i class="fas fa-map-marker-alt mr-2"></i>2nd Floor Real St., Tacloban City</li>
                             <li><i class="fas fa-phone mr-2"></i><a href="tel:09171370112" class="hover:text-white">09171370112</a></li>
                             <li><i class="fas fa-phone mr-2"></i><a href="tel:09171350112" class="hover:text-white">09171350112 (CEO)</a></li>
@@ -1623,10 +1776,10 @@
                 </div>
                 
                 <div class="border-t border-[#3B82F6] mt-8 pt-6 text-center">
-                    <p class="text-sm text-white">
+                    <p class="text-sm text-gray-400">
                         © 2026 Stronghold A3 Security Agency. All Rights Reserved. | <a href="#" class="hover:text-[#3B82F6]">Privacy Policy</a> | <a href="#" class="hover:text-[#3B82F6]">Terms of Service</a>
                     </p>
-                    <p class="text-xs text-white mt-2">DOLE DO-174 Compliant | Licensed Private Security Agency</p>
+                    <p class="text-xs text-gray-500 mt-2">DOLE DO-174 Compliant | Licensed Private Security Agency</p>
                 </div>
             </div>
         </div>
@@ -1718,7 +1871,7 @@
                 isLoggedIn = true;
                 localStorage.setItem('stronghold_a3_authenticated', 'true');
                 showPage('dashboard');
-                
+                renderDashboardCharts();
             } else {
                 alert('For demo purposes: Enter any valid email and 6+ character password');
             }
@@ -1746,6 +1899,79 @@
             // In production, send to backend API
             alert('Thank you! Your message has been received. Our team will contact you within 24 hours.');
             e.target.reset();
+        }
+        
+        // ==================== DASHBOARD CHARTS ====================
+        
+        function renderDashboardCharts() {
+            if (!document.getElementById('strategyChart')) return;
+            
+            // Sample data from Google Sheets (simulated)
+            const chartData = {
+                labels: ['Phase 1 Assessment', 'Phase 2 Planning', 'Phase 3 Execution', 'Phase 4 Review'],
+                datasets: [{
+                    label: 'Completion Status',
+                    data: [85, 72, 68, 45],
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(59, 130, 246, 0.6)',
+                        'rgba(255, 215, 0, 0.8)',
+                        'rgba(255, 215, 0, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgb(59, 130, 246)',
+                        'rgb(59, 130, 246)',
+                        'rgb(255, 215, 0)',
+                        'rgb(255, 215, 0)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+            
+            const ctx = document.getElementById('strategyChart').getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: chartData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: '4-Phased Strategy Progress (% Complete)',
+                            color: '#FFFFFF',
+                            font: {
+                                family: 'Oswald, sans-serif',
+                                size: 16
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {
+                                color: 'rgba(255,255,255,0.1)'
+                            },
+                            ticks: {
+                                color: '#E2E8F0'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: '#E2E8F0'
+                            }
+                        }
+                    }
+                }
+            });
         }
         
         // ==================== PWA INSTALLATION ====================
@@ -1845,7 +2071,7 @@
         showPage('home'); // Initialize first page
         
         console.log('%cStronghold A3 PWA Loaded', 'color: #3B82F6; font-size: 16px; font-weight: bold;');
-        console.log('Version: 2.0.0 | Build Date: June 2026 | Strategic Integration Complete');
+        console.log('Version: 2.1.0 | Build Date: June 2026 | Readability Improvements Applied');
     </script>
 </body>
 </html>
