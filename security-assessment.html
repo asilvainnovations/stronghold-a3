@@ -37,7 +37,10 @@
     <!-- Chart.js & jsPDF -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Supabase JS Client -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <style>
         :root {
             --gold: #FFD700;
@@ -404,6 +407,14 @@
         let leadData = {};
         let radarChartInstance = null;
 
+        // ==========================================
+        // 1. INITIALIZE SUPABASE CLIENT
+        // ==========================================
+        const { createClient } = supabase;
+        const supabaseUrl = 'https://zpahlcmuowwwiauffrby.supabase.co';
+        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpwYWhsY211b3d3d2lhdWZmcmJ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMjc5MjAsImV4cCI6MjA5NjYwMzkyMH0.nqX53srwL36lEzVPbEPC0x7TJmL6YZ2lhmQrDNtVKJw';
+        const sb = createClient(supabaseUrl, supabaseAnonKey);
+
         const categoryWeights = {
             "Physical Security": 0.25,
             "Operational Continuity": 0.25,
@@ -511,8 +522,13 @@
             }
         }
 
-        function submitLead(event) {
+        // ==========================================
+        // 2. UPDATED LEAD SUBMISSION (ROUTED TO SUPABASE)
+        // ==========================================
+        async function submitLead(event) {
             event.preventDefault();
+            
+            // 1. Gather Data
             leadData = {
                 fullName: document.getElementById('fullName').value,
                 email: document.getElementById('email').value,
@@ -520,10 +536,39 @@
                 facilityType: document.getElementById('facilityType').value,
                 timestamp: new Date().toLocaleDateString('en-PH', { year: 'numeric', month: 'long', day: 'numeric' })
             };
-            calculateResults();
+
+            // 2. Calculate Results (Updates the UI with OSRI Score)
+            calculateResults(); 
+            
+            // 3. Show Results UI immediately for good UX
             document.getElementById('leadCaptureSection').classList.add('hidden');
             document.getElementById('resultsSection').classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // 4. 🚀 ROUTE LEAD TO STRONGHOLD A3 SUPABASE DATABASE
+            // We use a slight timeout to ensure the DOM has updated with the OSRI score
+            setTimeout(async () => {
+                const osriScore = parseInt(document.getElementById('overallScore').textContent) || 0;
+                const riskLevel = document.getElementById('riskLevel').textContent || 'Unknown';
+
+                const { data, error } = await sb
+                    .from('security_assessment_leads')
+                    .insert([{
+                        full_name: leadData.fullName,
+                        email: leadData.email,
+                        company: leadData.company,
+                        facility_type: leadData.facilityType,
+                        osri_score: osriScore,
+                        risk_level: riskLevel,
+                        status: 'New'
+                    }]);
+
+                if (error) {
+                    console.error('⚠️ Lead routing failed:', error);
+                } else {
+                    console.log('✅ LEAD SUCCESSFULLY ROUTED TO STRONGHOLD A3 OPS DASHBOARD!', data);
+                }
+            }, 500); 
         }
 
         // ==========================================
