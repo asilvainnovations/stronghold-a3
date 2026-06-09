@@ -47,46 +47,6 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        border: "hsl(var(--border))",
-                        input: "hsl(var(--input))",
-                        ring: "hsl(var(--ring))",
-                        background: "hsl(var(--background))",
-                        foreground: "hsl(var(--foreground))",
-                        primary: {
-                            DEFAULT: "hsl(var(--primary))",
-                            foreground: "hsl(var(--primary-foreground))",
-                        },
-                        secondary: {
-                            DEFAULT: "hsl(var(--secondary))",
-                            foreground: "hsl(var(--secondary-foreground))",
-                        },
-                        destructive: {
-                            DEFAULT: "hsl(var(--destructive))",
-                            foreground: "hsl(var(--destructive-foreground))",
-                        },
-                        muted: {
-                            DEFAULT: "hsl(var(--muted))",
-                            foreground: "hsl(var(--muted-foreground))",
-                        },
-                        accent: {
-                            DEFAULT: "hsl(var(--accent))",
-                            foreground: "hsl(var(--accent-foreground))",
-                        },
-                        popover: {
-                            DEFAULT: "hsl(var(--popover))",
-                            foreground: "hsl(var(--popover-foreground))",
-                        },
-                        card: {
-                            DEFAULT: "hsl(var(--card))",
-                            foreground: "hsl(var(--card-foreground))",
-                        },
-                    },
-                    borderRadius: {
-                        lg: "var(--radius)",
-                        md: "calc(var(--radius) - 2px)",
-                        sm: "calc(var(--radius) - 4px)",
-                    },
                     fontFamily: {
                         montserrat: ['Montserrat', 'sans-serif'],
                         poppins: ['Poppins', 'sans-serif'],
@@ -109,62 +69,21 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         :root {
-            --background: 210 40% 98%;
-            --foreground: 222.2 84% 4.9%;
-            --card: 0 0% 100%;
-            --card-foreground: 222.2 84% 4.9%;
-            --popover: 0 0% 100%;
-            --popover-foreground: 222.2 84% 4.9%;
-            --primary: 221 83% 53%;
-            --primary-foreground: 210 40% 98%;
-            --secondary: 210 40% 96.1%;
-            --secondary-foreground: 222.2 47.4% 11.2%;
-            --muted: 210 40% 96.1%;
-            --muted-foreground: 215.4 16.3% 46.9%;
-            --accent: 210 40% 96.1%;
-            --accent-foreground: 222.2 47.4% 11.2%;
-            --destructive: 0 84.2% 60.2%;
-            --destructive-foreground: 210 40% 98%;
-            --border: 214.3 31.8% 91.4%;
-            --input: 214.3 31.8% 91.4%;
-            --ring: 221 83% 53%;
+            --gold: #FFD700;
+            --navy: #0A1628;
+            --blue: #3B82F6;
+            --blue-dark: #2563EB;
             --radius: 0.5rem;
         }
 
-        .dark {
-            --background: 222.2 84% 4.9%;
-            --foreground: 210 40% 98%;
-            --card: 222.2 84% 4.9%;
-            --card-foreground: 210 40% 98%;
-            --popover: 222.2 84% 4.9%;
-            --popover-foreground: 210 40% 98%;
-            --primary: 217.2 91.2% 59.8%;
-            --primary-foreground: 222.2 47.4% 11.2%;
-            --secondary: 217.2 32.6% 17.5%;
-            --secondary-foreground: 210 40% 98%;
-            --muted: 217.2 32.6% 17.5%;
-            --muted-foreground: 215 20.2% 65.1%;
-            --accent: 217.2 32.6% 17.5%;
-            --accent-foreground: 210 40% 98%;
-            --destructive: 0 62.8% 30.6%;
-            --destructive-foreground: 210 40% 98%;
-            --border: 217.2 32.6% 17.5%;
-            --input: 217.2 32.6% 17.5%;
-            --ring: 224.3 76.3% 48%;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Poppins', sans-serif;
             background: radial-gradient(circle at 20% 0%, #002b5c 0%, #001b3d 45%, #000c1f 100%);
             background-attachment: fixed;
             min-height: 100vh;
-            color: hsl(var(--foreground));
+            color: #fff;
             overflow-x: hidden;
         }
 
@@ -189,16 +108,9 @@
 
         main, header, footer, nav { position: relative; z-index: 1; }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 0.02em;
-        }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; letter-spacing: 0.02em; }
 
-        .font-montserrat { font-family: 'Montserrat', sans-serif; }
-        .font-poppins { font-family: 'Poppins', sans-serif; }
-        .font-roboto-condensed { font-family: 'Roboto Condensed', sans-serif; }
-
-        /* Glass Effects */
+        /* ===== GLASS EFFECTS ===== */
         .glass {
             background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
             backdrop-filter: blur(20px) saturate(160%);
@@ -227,42 +139,18 @@
             border: 1px solid rgba(220,20,60,0.5);
         }
 
-        /* Smooth scrollbar */
+        /* ===== SCROLLBAR ===== */
         ::-webkit-scrollbar { width: 8px; height: 8px; }
         ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.3); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(100, 116, 139, 0.5); }
+        ::-webkit-scrollbar-thumb { background: rgba(100,116,139,0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(100,116,139,0.5); }
 
-        @keyframes pulseG {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
-            50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
-        }
+        /* ===== ANIMATIONS ===== */
+        @keyframes pulseG { 0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.6)} 50%{box-shadow:0 0 0 6px rgba(34,197,94,0)} }
+        @keyframes pulseR { 0%,100%{box-shadow:0 0 0 0 rgba(220,20,60,.7)} 50%{box-shadow:0 0 0 10px rgba(220,20,60,0)} }
+        @keyframes spring { 0%{transform:scale(.96);opacity:0} 100%{transform:scale(1);opacity:1} }
+        @keyframes fadeInUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
         
-        @keyframes pulseR {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(220,20,60,0.7); }
-            50% { box-shadow: 0 0 0 10px rgba(220,20,60,0); }
-        }
-        
-        @keyframes spring {
-            0% { transform: scale(0.96); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-        
-        @keyframes floatLogo {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(1deg); }
-        }
-
         .pulse-green { animation: pulseG 2s infinite; }
         .pulse-red { animation: pulseR 1.2s infinite; }
         .animate-spring { animation: spring 0.3s cubic-bezier(0.34,1.56,0.64,1); }
@@ -288,15 +176,11 @@
             transition: transform 0.6s ease, filter 0.4s ease;
         }
 
-        .wide-image-container:hover img {
-            transform: scale(1.04);
-            filter: brightness(1);
-        }
-        
+        .wide-image-container:hover img { transform: scale(1.04); filter: brightness(1); }
+
         .wide-caption {
             position: absolute;
-            bottom: 0;
-            left: 0;
+            bottom: 0; left: 0;
             width: 100%;
             padding: 20px;
             background: linear-gradient(to top, rgba(10,22,40,0.95), transparent);
@@ -330,11 +214,7 @@
             color: #fff;
             border: 1px solid rgba(59,130,246,0.3);
         }
-        
-        .nav-tab:hover {
-            background: rgba(59,130,246,0.4);
-        }
-        
+        .nav-tab:hover { background: rgba(59,130,246,0.4); }
         .nav-tab.active {
             background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
             color: #fff;
@@ -343,733 +223,175 @@
         }
 
         /* ===== PAGE SECTIONS ===== */
-        .page-section {
-            display: none;
-        }
-        
-        .page-section.active {
-            display: block;
-            animation: fadeInUp 0.5s ease;
-        }
+        .page-section { display: none; }
+        .page-section.active { display: block; animation: fadeInUp 0.5s ease; }
 
         /* ===== MOBILE MENU ===== */
         .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            max-width: 350px;
-            height: 100vh;
-            background: #0A1628;
-            z-index: 9999;
-            transition: right 0.3s ease;
-            padding: 20px;
+            position: fixed; top: 0; right: -100%;
+            width: 80%; max-width: 350px; height: 100vh;
+            background: #0A1628; z-index: 9999;
+            transition: right 0.3s ease; padding: 20px;
         }
-        
-        .mobile-menu.open {
-            right: 0;
-        }
-        
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 9998;
-            display: none;
-        }
-        
-        .overlay.show {
-            display: block;
-        }
+        .mobile-menu.open { right: 0; }
+        .overlay { position: fixed; top:0;left:0;width:100%;height:100%; background:rgba(0,0,0,.7); z-index:9998; display:none; }
+        .overlay.show { display: block; }
 
         /* ===== FLOATING CTA ===== */
-        .floating-cta {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-        }
+        .floating-cta { position: fixed; bottom: 20px; right: 20px; z-index: 9999; }
 
         /* ===== BSC COLLAPSIBLE ===== */
-        .bsc-perspective {
-            margin-bottom: 1rem;
-            border-radius: 0.5rem;
-            overflow: hidden;
-        }
-        
+        .bsc-perspective { margin-bottom: 1rem; border-radius: 0.5rem; overflow: hidden; }
         .bsc-header {
-            background: linear-gradient(135deg, rgba(59,130,246,0.3), rgba(59,130,246,0.1));
-            padding: 1rem 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 1px solid rgba(59,130,246,0.3);
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg,rgba(59,130,246,.3),rgba(59,130,246,.1));
+            padding: 1rem 1.5rem; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            border: 1px solid rgba(59,130,246,.3); transition: all .3s;
         }
-        
-        .bsc-header:hover {
-            background: linear-gradient(135deg, rgba(59,130,246,0.5), rgba(59,130,246,0.2));
-        }
-        
-        .bsc-header h3 {
-            margin: 0;
-            color: #fff;
-            font-size: 1.1rem;
-        }
-        
-        .bsc-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-            background: rgba(10,22,40,0.6);
-        }
-        
-        .bsc-content.active {
-            max-height: 2000px;
-        }
-        
-        .bsc-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .bsc-table th {
-            background: rgba(59,130,246,0.2);
-            color: #FFD700;
-            padding: 0.75rem;
-            text-align: left;
-            font-weight: 600;
-            border-bottom: 2px solid rgba(255,215,0,0.3);
-        }
-        
-        .bsc-table td {
-            padding: 0.75rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            color: #fff;
-            font-size: 0.85rem;
-        }
-        
-        .bsc-table tr:hover {
-            background: rgba(255,255,255,0.05);
-        }
-
+        .bsc-header:hover { background: linear-gradient(135deg,rgba(59,130,246,.5),rgba(59,130,246,.2)); }
+        .bsc-header h3 { margin:0; color:#fff; font-size:1.1rem; }
+        .bsc-content { max-height:0; overflow:hidden; transition:max-height .4s ease-out; background:rgba(10,22,40,.6); }
+        .bsc-content.active { max-height:2000px; }
+        .bsc-table { width:100%; border-collapse:collapse; }
+        .bsc-table th { background:rgba(59,130,246,.2); color:#FFD700; padding:.75rem; text-align:left; font-weight:600; border-bottom:2px solid rgba(255,215,0,.3); }
+        .bsc-table td { padding:.75rem; border-bottom:1px solid rgba(255,255,255,.1); color:#fff; font-size:.85rem; }
+        .bsc-table tr:hover { background:rgba(255,255,255,.05); }
         .perspective-financial { border-left: 4px solid #3B82F6; }
         .perspective-customer { border-left: 4px solid #8B5CF6; }
         .perspective-internal { border-left: 4px solid #F59E0B; }
         .perspective-learning { border-left: 4px solid #10B981; }
-
-        .chevron {
-            transition: transform 0.3s ease;
-            color: #FFD700;
-        }
-        
-        .chevron.rotate {
-            transform: rotate(180deg);
-        }
+        .chevron { transition: transform .3s; color: #FFD700; }
+        .chevron.rotate { transform: rotate(180deg); }
 
         /* ===== STRATEGY TAB ===== */
-        .strategy-content {
-            display: block;
-        }
-        
-        .strategy-content.hidden {
-            display: none;
-        }
+        .strategy-content { display: block; }
+        .strategy-content.hidden { display: none; }
 
         /* ===== SERVICE CARDS ===== */
-        .service-card {
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-card {
-            transition: transform 0.2s;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
+        .service-card { transition: all .3s ease; }
+        .service-card:hover { transform: translateY(-5px); }
+        .stat-card { transition: transform .2s; }
+        .stat-card:hover { transform: translateY(-5px); }
 
         /* ===== FORM ===== */
-        input, select, textarea {
-            color: #fff !important;
-            background: rgba(255,255,255,0.05) !important;
-        }
-        
-        input::placeholder, textarea::placeholder {
-            color: #94A3B8 !important;
-        }
-
-        ul li, ol li {
-            color: #fff;
-        }
+        input, select, textarea { color:#fff !important; background:rgba(255,255,255,.05) !important; }
+        input::placeholder, textarea::placeholder { color:#94A3B8 !important; }
+        ul li, ol li { color: #fff; }
 
         /* ===== BUTTON ===== */
-        .btn-primary {
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(59,130,246,0.5);
-        }
+        .btn-primary { transition: all .3s ease; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(59,130,246,.5); }
 
         /* =============================================
         THE STRONGHOLD SEQUENCE — INTERACTIVE CARDS
         ============================================= */
-        
-        /* Container */
-        .sequence-section {
-            padding: 2rem 0;
-        }
-
-        /* Phase selector tabs */
-        .phase-tabs {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-
+        .sequence-section { padding: 2rem 0; }
+        .phase-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
         .phase-tab-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            border-radius: 9999px;
-            border: 2px solid transparent;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: #fff;
+            display: flex; align-items: center; gap: 0.5rem;
+            padding: 0.6rem 1.2rem; border-radius: 9999px;
+            border: 2px solid transparent; font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em;
+            cursor: pointer; transition: all 0.3s ease; color: #fff;
             background: rgba(255,255,255,0.06);
         }
-
-        .phase-tab-btn:hover {
-            background: rgba(255,255,255,0.12);
-        }
-
-        .phase-tab-btn.active-p1 {
-            background: linear-gradient(135deg, #DC143C, #8B0000);
-            border-color: #DC143C;
-            box-shadow: 0 0 20px rgba(220,20,60,0.4);
-        }
-
-        .phase-tab-btn.active-p2 {
-            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
-            border-color: #3B82F6;
-            box-shadow: 0 0 20px rgba(59,130,246,0.4);
-        }
-
-        .phase-tab-btn.active-p3 {
-            background: linear-gradient(135deg, #F59E0B, #B45309);
-            border-color: #F59E0B;
-            box-shadow: 0 0 20px rgba(245,158,11,0.4);
-        }
-
-        .phase-tab-btn.active-p4 {
-            background: linear-gradient(135deg, #10B981, #065F46);
-            border-color: #10B981;
-            box-shadow: 0 0 20px rgba(16,185,129,0.4);
-        }
-
+        .phase-tab-btn:hover { background: rgba(255,255,255,0.12); }
+        .phase-tab-btn.active-p1 { background: linear-gradient(135deg,#DC143C,#8B0000); border-color:#DC143C; box-shadow: 0 0 20px rgba(220,20,60,0.4); }
+        .phase-tab-btn.active-p2 { background: linear-gradient(135deg,#3B82F6,#1D4ED8); border-color:#3B82F6; box-shadow: 0 0 20px rgba(59,130,246,0.4); }
+        .phase-tab-btn.active-p3 { background: linear-gradient(135deg,#F59E0B,#B45309); border-color:#F59E0B; box-shadow: 0 0 20px rgba(245,158,11,0.4); }
+        .phase-tab-btn.active-p4 { background: linear-gradient(135deg,#10B981,#065F46); border-color:#10B981; box-shadow: 0 0 20px rgba(16,185,129,0.4); }
         .phase-tab-btn .phase-num {
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
+            width: 22px; height: 22px; border-radius: 50%;
             background: rgba(255,255,255,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            font-weight: 800;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem; font-weight: 800;
         }
 
-        /* Phase detail panel */
-        .phase-panel {
-            display: none;
-            animation: fadeInUp 0.4s ease;
-        }
-
-        .phase-panel.active {
-            display: block;
-        }
-
-        /* Main phase card */
-        .phase-card {
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 24px 64px rgba(0,0,0,0.5);
-        }
-
-        /* Phase header banner */
-        .phase-header {
-            width: 100%;
-            padding: 2.5rem 2rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .phase-header::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            opacity: 0.12;
-            background-image: url('https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png');
-            background-size: 280px;
-            background-repeat: no-repeat;
-            background-position: right -40px center;
-        }
-
-        .phase-header-p1 {
-            background: linear-gradient(135deg, rgba(139,0,0,0.7), rgba(10,22,40,0.95));
-        }
-
-        .phase-header-p2 {
-            background: linear-gradient(135deg, rgba(29,78,216,0.7), rgba(10,22,40,0.95));
-        }
-
-        .phase-header-p3 {
-            background: linear-gradient(135deg, rgba(180,83,9,0.7), rgba(10,22,40,0.95));
-        }
-
-        .phase-header-p4 {
-            background: linear-gradient(135deg, rgba(6,95,70,0.7), rgba(10,22,40,0.95));
-        }
-
-        .phase-badge {
-            min-width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 0.65rem;
-            letter-spacing: 0.05em;
-            flex-shrink: 0;
-            text-align: center;
-            line-height: 1.2;
-        }
-
-        .badge-p1 {
-            background: radial-gradient(circle, #DC143C, #8B0000);
-            box-shadow: 0 0 24px rgba(220,20,60,0.6);
-            color: #fff;
-        }
-
-        .badge-p2 {
-            background: radial-gradient(circle, #60A5FA, #1D4ED8);
-            box-shadow: 0 0 24px rgba(59,130,246,0.6);
-            color: #fff;
-        }
-
-        .badge-p3 {
-            background: radial-gradient(circle, #FCD34D, #B45309);
-            box-shadow: 0 0 24px rgba(245,158,11,0.6);
-            color: #1a1a1a;
-        }
-
-        .badge-p4 {
-            background: radial-gradient(circle, #34D399, #065F46);
-            box-shadow: 0 0 24px rgba(16,185,129,0.6);
-            color: #fff;
-        }
-
-        .phase-header-text {
-            flex: 1;
-            position: relative;
-            z-index: 1;
-        }
-
-        .phase-label {
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            opacity: 0.7;
-            margin-bottom: 0.25rem;
-        }
-
-        .phase-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            font-weight: 800;
-            color: #fff;
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-        }
-
-        .phase-subtitle {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.75);
-            max-width: 520px;
-        }
-
-        .phase-timeline {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 0.75rem;
-            background: rgba(0,0,0,0.3);
-            padding: 0.35rem 0.85rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #FFD700;
-        }
-
-        /* Body */
-        .phase-body {
-            background: rgba(0,10,24,0.6);
-            padding: 2rem;
-            backdrop-filter: blur(12px);
-        }
-
-        /* Thesis */
-        .phase-thesis {
-            background: rgba(255,255,255,0.04);
-            border-left: 3px solid;
-            border-radius: 0 8px 8px 0;
-            padding: 1rem 1.25rem;
-            margin-bottom: 1.75rem;
-            font-size: 0.875rem;
-            color: rgba(255,255,255,0.85);
-            font-style: italic;
-            line-height: 1.65;
-        }
-
+        .phase-panel { display: none; animation: fadeInUp 0.4s ease; }
+        .phase-panel.active { display: block; }
+        .phase-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 24px 64px rgba(0,0,0,0.5); }
+        .phase-header { width: 100%; padding: 2.5rem 2rem; display: flex; align-items: flex-start; gap: 1.5rem; position: relative; overflow: hidden; }
+        .phase-header::before { content:''; position:absolute; inset:0; opacity: 0.12; background-image: url('https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png'); background-size: 280px; background-repeat: no-repeat; background-position: right -40px center; }
+        .phase-header-p1 { background: linear-gradient(135deg,rgba(139,0,0,0.7),rgba(10,22,40,0.95)); }
+        .phase-header-p2 { background: linear-gradient(135deg,rgba(29,78,216,0.7),rgba(10,22,40,0.95)); }
+        .phase-header-p3 { background: linear-gradient(135deg,rgba(180,83,9,0.7),rgba(10,22,40,0.95)); }
+        .phase-header-p4 { background: linear-gradient(135deg,rgba(6,95,70,0.7),rgba(10,22,40,0.95)); }
+        .phase-badge { min-width: 64px; height: 64px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 0.65rem; letter-spacing: 0.05em; flex-shrink: 0; text-align: center; line-height: 1.2; }
+        .badge-p1 { background: radial-gradient(circle,#DC143C,#8B0000); box-shadow: 0 0 24px rgba(220,20,60,0.6); color:#fff; }
+        .badge-p2 { background: radial-gradient(circle,#60A5FA,#1D4ED8); box-shadow: 0 0 24px rgba(59,130,246,0.6); color:#fff; }
+        .badge-p3 { background: radial-gradient(circle,#FCD34D,#B45309); box-shadow: 0 0 24px rgba(245,158,11,0.6); color:#1a1a1a; }
+        .badge-p4 { background: radial-gradient(circle,#34D399,#065F46); box-shadow: 0 0 24px rgba(16,185,129,0.6); color:#fff; }
+        .phase-header-text { flex: 1; position: relative; z-index: 1; }
+        .phase-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.25rem; }
+        .phase-title { font-family: 'Montserrat', sans-serif; font-size: clamp(1.2rem,3vw,1.8rem); font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 0.5rem; }
+        .phase-subtitle { font-size: 0.85rem; color: rgba(255,255,255,0.75); max-width: 520px; }
+        .phase-timeline { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem; background: rgba(0,0,0,0.3); padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; color: #FFD700; }
+        .phase-body { background: rgba(0,10,24,0.6); padding: 2rem; backdrop-filter: blur(12px); }
+        .phase-thesis { background: rgba(255,255,255,0.04); border-left: 3px solid; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin-bottom: 1.75rem; font-size: 0.875rem; color: rgba(255,255,255,0.85); font-style: italic; line-height: 1.65; }
         .thesis-p1 { border-color: #DC143C; }
         .thesis-p2 { border-color: #3B82F6; }
         .thesis-p3 { border-color: #F59E0B; }
         .thesis-p4 { border-color: #10B981; }
-
-        /* Strategic pillars */
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1.75rem;
-        }
-
-        .pillar-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 1.1rem;
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-
-        .pillar-card:hover {
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-        }
-
-        .pillar-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 0.75rem;
-            font-size: 1rem;
-        }
-
-        .pillar-icon-p1 {
-            background: rgba(220,20,60,0.2);
-            color: #DC143C;
-            border: 1px solid rgba(220,20,60,0.3);
-        }
-
-        .pillar-icon-p2 {
-            background: rgba(59,130,246,0.2);
-            color: #60A5FA;
-            border: 1px solid rgba(59,130,246,0.3);
-        }
-
-        .pillar-icon-p3 {
-            background: rgba(245,158,11,0.2);
-            color: #FCD34D;
-            border: 1px solid rgba(245,158,11,0.3);
-        }
-
-        .pillar-icon-p4 {
-            background: rgba(16,185,129,0.2);
-            color: #34D399;
-            border: 1px solid rgba(16,185,129,0.3);
-        }
-
-        .pillar-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 0.4rem;
-        }
-
-        .pillar-desc {
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.65);
-            line-height: 1.5;
-        }
-
-        /* Metrics row */
-        .metrics-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 0.75rem;
-            margin-bottom: 1.75rem;
-        }
-
-        .metric-box {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        .metric-value {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 800;
-            margin-bottom: 0.2rem;
-        }
-
-        .metric-label {
-            font-size: 0.65rem;
-            color: rgba(255,255,255,0.55);
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
+        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); gap: 1rem; margin-bottom: 1.75rem; }
+        .pillar-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.1rem; transition: all 0.3s ease; cursor: default; }
+        .pillar-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+        .pillar-icon { width: 40px; height: 40px; border-radius: 10px; display:flex; align-items:center; justify-content:center; margin-bottom: 0.75rem; font-size: 1rem; }
+        .pillar-icon-p1 { background: rgba(220,20,60,0.2); color:#DC143C; border:1px solid rgba(220,20,60,0.3); }
+        .pillar-icon-p2 { background: rgba(59,130,246,0.2); color:#60A5FA; border:1px solid rgba(59,130,246,0.3); }
+        .pillar-icon-p3 { background: rgba(245,158,11,0.2); color:#FCD34D; border:1px solid rgba(245,158,11,0.3); }
+        .pillar-icon-p4 { background: rgba(16,185,129,0.2); color:#34D399; border:1px solid rgba(16,185,129,0.3); }
+        .pillar-name { font-family:'Montserrat',sans-serif; font-size:0.8rem; font-weight:700; color:#fff; margin-bottom:0.4rem; }
+        .pillar-desc { font-size:0.75rem; color:rgba(255,255,255,0.65); line-height:1.5; }
+        .metrics-row { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:0.75rem; margin-bottom:1.75rem; }
+        .metric-box { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:1rem; text-align:center; }
+        .metric-value { font-family:'Montserrat',sans-serif; font-size:1.4rem; font-weight:800; margin-bottom:0.2rem; }
+        .metric-label { font-size:0.65rem; color:rgba(255,255,255,0.55); letter-spacing:0.05em; text-transform:uppercase; }
         .metric-p1 { color: #F87171; }
         .metric-p2 { color: #60A5FA; }
         .metric-p3 { color: #FCD34D; }
         .metric-p4 { color: #34D399; }
-
-        /* Risk/outcome row */
-        .risk-outcome {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        @media (max-width: 600px) {
-            .risk-outcome {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .risk-box, .outcome-box {
-            border-radius: 10px;
-            padding: 1rem;
-        }
-
-        .risk-box {
-            background: rgba(220,20,60,0.08);
-            border: 1px solid rgba(220,20,60,0.2);
-        }
-
-        .outcome-box {
-            background: rgba(16,185,129,0.08);
-            border: 1px solid rgba(16,185,129,0.2);
-        }
-
-        .risk-outcome-title {
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 0.6rem;
-        }
-
+        .risk-outcome { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+        @media(max-width:600px){ .risk-outcome { grid-template-columns:1fr; } }
+        .risk-box, .outcome-box { border-radius:10px; padding:1rem; }
+        .risk-box { background:rgba(220,20,60,0.08); border:1px solid rgba(220,20,60,0.2); }
+        .outcome-box { background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.2); }
+        .risk-outcome-title { font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.6rem; }
         .risk-title { color: #F87171; }
         .outcome-title { color: #34D399; }
-
-        .risk-outcome-item {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 0.4rem;
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.75);
-            align-items: flex-start;
-        }
-
-        .risk-outcome-item i {
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
-
-        /* Sequence flow connector */
-        .sequence-flow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0;
-            margin: 2.5rem 0;
-            overflow-x: auto;
-            padding-bottom: 0.5rem;
-        }
-
-        .flow-step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 100px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .flow-step:hover .flow-circle {
-            transform: scale(1.15);
-        }
-
-        .flow-circle {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 1rem;
-            color: #fff;
-            margin-bottom: 0.5rem;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-        }
-
-        .fc-1 { background: linear-gradient(135deg, #DC143C, #8B0000); }
-        .fc-2 { background: linear-gradient(135deg, #3B82F6, #1D4ED8); }
-        .fc-3 { background: linear-gradient(135deg, #F59E0B, #B45309); }
-        .fc-4 { background: linear-gradient(135deg, #10B981, #065F46); }
-
-        .flow-step-label {
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: rgba(255,255,255,0.7);
-            max-width: 80px;
-            line-height: 1.3;
-        }
-
-        .flow-step-sub {
-            font-size: 0.6rem;
-            color: rgba(255,255,255,0.4);
-            margin-top: 0.15rem;
-        }
-
-        .flow-arrow {
-            flex-shrink: 0;
-            width: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255,215,0,0.5);
-            font-size: 1.2rem;
-        }
-
-        /* Score badge */
-        .score-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.3rem 0.8rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .score-p1 {
-            background: rgba(220,20,60,0.15);
-            border: 1px solid rgba(220,20,60,0.4);
-            color: #F87171;
-        }
-
-        .score-p2 {
-            background: rgba(59,130,246,0.15);
-            border: 1px solid rgba(59,130,246,0.4);
-            color: #60A5FA;
-        }
-
-        .score-p3 {
-            background: rgba(245,158,11,0.15);
-            border: 1px solid rgba(245,158,11,0.4);
-            color: #FCD34D;
-        }
-
-        .score-p4 {
-            background: rgba(16,185,129,0.15);
-            border: 1px solid rgba(16,185,129,0.4);
-            color: #34D399;
-        }
-
-        /* Investment bar */
-        .inv-row {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .inv-bar-wrap {
-            flex: 1;
-            height: 6px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 9999px;
-            overflow: hidden;
-        }
-
-        .inv-bar {
-            height: 100%;
-            border-radius: 9999px;
-            transition: width 0.8s ease;
-        }
-
-        .inv-label {
-            font-size: 0.7rem;
-            color: rgba(255,255,255,0.55);
-            width: 80px;
-            text-align: right;
-            white-space: nowrap;
-        }
+        .risk-outcome-item { display:flex; gap:0.5rem; margin-bottom:0.4rem; font-size:0.78rem; color:rgba(255,255,255,0.75); align-items:flex-start; }
+        .risk-outcome-item i { margin-top:2px; flex-shrink:0; }
+        .sequence-flow { display: flex; align-items: center; justify-content: center; gap: 0; margin: 2.5rem 0; overflow-x: auto; padding-bottom: 0.5rem; }
+        .flow-step { display: flex; flex-direction: column; align-items: center; min-width: 100px; text-align: center; cursor: pointer; transition: all 0.3s ease; }
+        .flow-step:hover .flow-circle { transform: scale(1.15); }
+        .flow-circle { width: 52px; height: 52px; border-radius: 50%; display:flex; align-items:center; justify-content:center; font-family:'Montserrat',sans-serif; font-weight:900; font-size:1rem; color:#fff; margin-bottom:0.5rem; transition: transform 0.3s ease; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+        .fc-1 { background: linear-gradient(135deg,#DC143C,#8B0000); }
+        .fc-2 { background: linear-gradient(135deg,#3B82F6,#1D4ED8); }
+        .fc-3 { background: linear-gradient(135deg,#F59E0B,#B45309); }
+        .fc-4 { background: linear-gradient(135deg,#10B981,#065F46); }
+        .flow-step-label { font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.7); max-width:80px; line-height:1.3; }
+        .flow-step-sub { font-size:0.6rem; color:rgba(255,255,255,0.4); margin-top:0.15rem; }
+        .flow-arrow { flex-shrink:0; width:40px; display:flex; align-items:center; justify-content:center; color:rgba(255,215,0,0.5); font-size:1.2rem; }
+        .score-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.8rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; font-family: 'Montserrat', sans-serif; }
+        .score-p1 { background:rgba(220,20,60,0.15); border:1px solid rgba(220,20,60,0.4); color:#F87171; }
+        .score-p2 { background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.4); color:#60A5FA; }
+        .score-p3 { background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.4); color:#FCD34D; }
+        .score-p4 { background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.4); color:#34D399; }
+        .inv-row { display:flex; align-items:center; gap:0.75rem; margin-bottom:0.5rem; }
+        .inv-bar-wrap { flex:1; height:6px; background:rgba(255,255,255,0.1); border-radius:9999px; overflow:hidden; }
+        .inv-bar { height:100%; border-radius:9999px; transition:width 0.8s ease; }
+        .inv-label { font-size:0.7rem; color:rgba(255,255,255,0.55); width:80px; text-align:right; white-space:nowrap; }
     </style>
 </head>
 
 <body class="antialiased min-h-screen relative dark">
-    
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
     
     <!-- Mobile Menu -->
     <nav class="mobile-menu glass-strong" id="mobileMenu">
         <div class="flex justify-between items-center mb-6">
-            <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png" 
-                 alt="Stronghold A3 Logo" 
-                 class="h-16 w-16 rounded-full object-cover">
+            <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png"
+                 alt="Stronghold A3 Logo" class="h-16 w-16 rounded-full object-cover">
             <button onclick="closeMobileMenu()" class="text-white hover:text-blue-400 transition">
                 <i class="fas fa-times text-2xl"></i>
             </button>
@@ -1093,8 +415,8 @@
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <a href="#" onclick="showPage('home')" class="flex items-center space-x-3">
-                    <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20A3%20logo.jpg" 
-                         alt="Stronghold A3 Logo" 
+                    <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png"
+                         alt="Stronghold A3 Logo"
                          class="h-16 w-16 rounded-full object-cover border-2 border-blue-500">
                     <div class="hidden md:block">
                         <h1 class="text-xl font-montserrat font-bold tracking-wide text-white">STRONGHOLD A3</h1>
@@ -1128,8 +450,7 @@
             <div class="relative">
                 <!-- Hero -->
                 <div class="hero-image-wrap">
-                    <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Zero-Liablity%20Moat.png" 
-                         alt="Zero-Liability Moat">
+                    <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Zero-Liablity%20Moat.png" alt="Zero-Liability Moat">
                 </div>
                 
                 <div class="container mx-auto px-4 relative z-10 -mt-24">
@@ -1177,13 +498,12 @@
                         <div class="lg:w-1/2 flex justify-center">
                             <div class="relative animate-spring">
                                 <div class="w-80 h-80 rounded-full border-4 border-blue-500 flex items-center justify-center glass-strong">
-                                    <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png" 
-                                         alt="Stronghold A3" 
-                                         class="w-64 h-64 rounded-full object-cover">
+                                    <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png"
+                                         alt="Stronghold A3" class="w-64 h-64 rounded-full object-cover">
                                 </div>
                                 <div class="absolute -bottom-4 -right-4 glass-gold px-6 py-3 rounded-xl">
-                                    <p class="text-[#0A1628] font-montserrat text-xl font-bold">100%</p>
-                                    <p class="text-gray-800 text-sm">Compliance Rate</p>
+                                    <p class="text-yellow-400 font-montserrat text-xl font-bold">100%</p>
+                                    <p class="text-white text-sm">Compliance Rate</p>
                                 </div>
                             </div>
                         </div>
@@ -1193,11 +513,10 @@
                 <!-- Strategic Sequence Image -->
                 <div class="container mx-auto px-4 py-12">
                     <div class="wide-image-container">
-                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/The%20Stronghiold%20Sequence-2.png" 
-                             alt="The Stronghold Sequence">
+                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/The%20Stronghiold%20Sequence-2.png" alt="The Stronghold Sequence">
                         <div class="wide-caption">
                             <h3 class="text-2xl font-bold text-white font-montserrat">The Stronghold Sequence</h3>
-                            <p class="text-white opacity-80">Four-Phased Execution Strategy: Assessment → Planning → Execution → Review</p>
+                            <p class="text-white opacity-80">Four-Phased Execution Strategy: Crisis-Proofing → Digital Transformation → Talent Fortress → Market Capture</p>
                         </div>
                     </div>
                 </div>
@@ -1277,8 +596,8 @@
                 <!-- CTA Banner -->
                 <div class="py-16 container mx-auto px-4">
                     <div class="glass-gold p-8 rounded-xl text-center animate-spring">
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-montserrat text-[#0A1628]">Ready to Secure Your Assets?</h2>
-                        <p class="text-xl text-gray-800 mb-6">Schedule your complimentary risk assessment today</p>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-montserrat text-white">Ready to Secure Your Assets?</h2>
+                        <p class="text-xl text-yellow-100 mb-6">Schedule your complimentary risk assessment today</p>
                         <button onclick="showPage('contact')" class="btn-primary bg-[#0A1628] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-900 transition shadow-lg">
                             <i class="fas fa-phone-alt mr-2"></i>Call Now: 09171370112
                         </button>
@@ -1363,23 +682,27 @@
                     </div>
                 </div>
                 
+                <!-- Service Areas with OpenStreetMap -->
                 <div class="glass p-8 rounded-xl mb-12">
                     <h3 class="text-2xl font-bold mb-6 text-center text-white font-montserrat">Our Service Areas</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white">Tacloban City</p></div>
-                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white">Ormoc City</p></div>
-                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white">Biliran Province</p></div>
-                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white">Eastern Samar</p></div>
-                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white">Northern Leyte</p></div>
-                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white">Southern Leyte</p></div>
-                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white">Sogod Bay Area</p></div>
-                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white">Whole Eastern Visayas</p></div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mb-6">
+                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white"><a href="https://www.openstreetmap.org/search?query=Tacloban+City" target="_blank" class="hover:text-yellow-400 transition">Tacloban City</a></p></div>
+                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white"><a href="https://www.openstreetmap.org/search?query=Ormoc+City" target="_blank" class="hover:text-yellow-400 transition">Ormoc City</a></p></div>
+                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white"><a href="https://www.openstreetmap.org/search?query=Biliran" target="_blank" class="hover:text-yellow-400 transition">Biliran Province</a></p></div>
+                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white"><a href="https://www.openstreetmap.org/search?query=Eastern+Samar" target="_blank" class="hover:text-yellow-400 transition">Eastern Samar</a></p></div>
+                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white"><a href="https://www.openstreetmap.org/search?query=Northern+Leyte" target="_blank" class="hover:text-yellow-400 transition">Northern Leyte</a></p></div>
+                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white"><a href="https://www.openstreetmap.org/search?query=Southern+Leyte" target="_blank" class="hover:text-yellow-400 transition">Southern Leyte</a></p></div>
+                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white"><a href="https://www.openstreetmap.org/search?query=Sogod+Bay" target="_blank" class="hover:text-yellow-400 transition">Sogod Bay Area</a></p></div>
+                        <div><i class="fas fa-map-marker-alt text-yellow-400 text-2xl mb-2"></i><p class="font-bold text-white"><a href="https://www.openstreetmap.org/search?query=Eastern+Visayas" target="_blank" class="hover:text-yellow-400 transition">Whole Eastern Visayas</a></p></div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden border border-blue-900">
+                        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=124.0,10.0,126.0,12.5&layer=mapnik&marker=11.2447,125.0038" width="100%" height="350" style="border:0;" allowfullscreen loading="lazy"></iframe>
                     </div>
                 </div>
                 
                 <div class="glass-gold p-8 rounded-xl text-center">
-                    <h3 class="text-2xl font-bold mb-4 font-montserrat text-[#0A1628]">Need a Customized Solution?</h3>
-                    <p class="mb-6 text-gray-800">Each client receives a tailored security plan based on their unique risk profile.</p>
+                    <h3 class="text-2xl font-bold mb-4 font-montserrat text-white">Need a Customized Solution?</h3>
+                    <p class="mb-6 text-yellow-100">Each client receives a tailored security plan based on their unique risk profile.</p>
                     <button onclick="showPage('contact')" class="btn-primary bg-[#0A1628] text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-900 transition">Get Free Consultation</button>
                 </div>
             </div>
@@ -1425,30 +748,43 @@
                     </div>
                 </div>
                 
-                <h2 class="text-3xl font-bold text-yellow-400 mb-6 font-montserrat">Strategic Pillars</h2>
-                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <!-- Guiding Principles Section (Updated from PDF) -->
+                <h2 class="text-3xl font-bold text-yellow-400 mb-6 font-montserrat">Guiding Principles</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                     <div class="glass p-6 rounded-xl hover:-translate-y-2 transition duration-300">
                         <div class="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center mb-4 border border-blue-500">
                             <i class="fas fa-shield-alt text-2xl text-white"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-2 font-montserrat">Compliance is Our Promise</h4>
-                        <p class="text-white text-sm">Integrity in every policy. Zero-liability assurance through strict adherence to Philippine regulations.</p>
+                        <h4 class="text-xl font-bold text-white mb-2 font-montserrat">1. Compliance is Our Promise</h4>
+                        <p class="text-white text-sm">We do not cut corners on licensing, training, or document storage. Our Digital Document Vault ensures any PNP or DOLE audit is passed in under 15 minutes.</p>
                     </div>
-
                     <div class="glass p-6 rounded-xl hover:-translate-y-2 transition duration-300">
                         <div class="w-12 h-12 bg-amber-900 rounded-lg flex items-center justify-center mb-4 border border-amber-500">
-                            <i class="fas fa-water text-2xl text-white"></i>
+                            <i class="fas fa-hand-holding-heart text-2xl text-white"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-2 font-montserrat">Built for Eastern Visayas</h4>
-                        <p class="text-white text-sm">Prepared for every storm. Specialized DRRM protocols designed for our region's unique risks.</p>
+                        <h4 class="text-xl font-bold text-white mb-2 font-montserrat">2. Fair Pay Creates Pride</h4>
+                        <p class="text-white text-sm">A guard who is not worried about feeding their family is alert, professional, and loyal. We neutralize the regional labor drain to Manila or overseas.</p>
                     </div>
-
                     <div class="glass p-6 rounded-xl hover:-translate-y-2 transition duration-300">
                         <div class="w-12 h-12 bg-purple-900 rounded-lg flex items-center justify-center mb-4 border border-purple-500">
-                            <i class="fas fa-handshake text-2xl text-white"></i>
+                            <i class="fas fa-laptop-code text-2xl text-white"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-2 font-montserrat">Fair Pay Creates Pride</h4>
-                        <p class="text-white text-sm">Empowered guards protect better. Investing in your workforce ensures mission success.</p>
+                        <h4 class="text-xl font-bold text-white mb-2 font-montserrat">3. Transparent & Tech-Enabled</h4>
+                        <p class="text-white text-sm">We replace paper logbooks with our Offline-First Cloud SMS, giving clients real-time visibility through digital guard tours and automated incident reports.</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl hover:-translate-y-2 transition duration-300">
+                        <div class="w-12 h-12 bg-red-900 rounded-lg flex items-center justify-center mb-4 border border-red-500">
+                            <i class="fas fa-user-check text-2xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2 font-montserrat">4. Clear Ownership, No Excuses</h4>
+                        <p class="text-white text-sm">We kill the "bystander effect." Everyone knows exactly what they are Responsible for, and who is Accountable. If a task drops, we fix the process.</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl hover:-translate-y-2 transition duration-300">
+                        <div class="w-12 h-12 bg-green-900 rounded-lg flex items-center justify-center mb-4 border border-green-500">
+                            <i class="fas fa-water text-2xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2 font-montserrat">5. Built for Eastern Visayas</h4>
+                        <p class="text-white text-sm">We do not just react to typhoons; we prepare for them. Our guards are equipped with offline-first tech, emergency load, and pre-positioned relief kits.</p>
                     </div>
                 </div>
                 
@@ -1593,22 +929,18 @@
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/The%20Stronghiold%20Sequence-2.png" alt="The Stronghold Sequence">
                         <div class="wide-caption"><h3 class="text-2xl font-bold text-white font-montserrat">The Stronghold Sequence</h3><p class="text-white opacity-80">Four-Phased Execution Strategy</p></div>
                     </div>
-
                     <div class="wide-image-container">
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Offline-first%20Crisis%20BCP.png" alt="Offline-first Crisis BCP">
                         <div class="wide-caption"><h3 class="text-2xl font-bold text-white font-montserrat">Offline-first Crisis BCP</h3><p class="text-white opacity-80">Business Continuity Plan for disaster scenarios</p></div>
                     </div>
-
                     <div class="wide-image-container">
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/RACI%20Funnel.png" alt="RACI Framework">
                         <div class="wide-caption"><h3 class="text-2xl font-bold text-white font-montserrat">RACI Framework</h3><p class="text-white opacity-80">Responsibility Assignment Matrix for clarity</p></div>
                     </div>
-
                     <div class="wide-image-container">
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Digital%20Bayanihan.png" alt="Digital Bayanihan">
                         <div class="wide-caption"><h3 class="text-2xl font-bold text-white font-montserrat">Digital Bayanihan</h3><p class="text-white opacity-80">Collaborative digital transformation initiative</p></div>
                     </div>
-
                     <div class="wide-image-container">
                         <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Launching%20Zero%20Liability%20Market%20capture.png" alt="Zero Liability Market Capture">
                         <div class="wide-caption"><h3 class="text-2xl font-bold text-white font-montserrat">Zero Liability Market Capture</h3><p class="text-white opacity-80">Expansion strategy into key sectors</p></div>
@@ -1747,7 +1079,6 @@
                                     "Stronghold A3 must establish an immediate, non-negotiable baseline of business continuity and digital record-keeping to ensure that a natural disaster or sudden PNP/DOLE audit does not result in operational paralysis or license suspension."
                                 </div>
                                 
-                                <!-- Wide image -->
                                 <div class="wide-image-container" style="margin-bottom:1.5rem;">
                                     <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Offline-first%20Crisis%20BCP.png" alt="Crisis BCP">
                                     <div class="wide-caption">
@@ -1756,7 +1087,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Metrics -->
                                 <div class="metrics-row">
                                     <div class="metric-box"><div class="metric-value metric-p1">PHP 175K</div><div class="metric-label">Investment</div></div>
                                     <div class="metric-box"><div class="metric-value metric-p1">Very Low</div><div class="metric-label">CAPEX Required</div></div>
@@ -1765,7 +1095,6 @@
                                     <div class="metric-box"><div class="metric-value metric-p1">1 Week</div><div class="metric-label">Implementation Time</div></div>
                                 </div>
 
-                                <!-- Pillars -->
                                 <h4 class="text-sm font-bold text-white/60 uppercase tracking-widest mb-3 font-montserrat">Strategic Pillars</h4>
                                 <div class="pillars-grid">
                                     <div class="pillar-card">
@@ -1785,7 +1114,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Risk/Outcome -->
                                 <div class="risk-outcome">
                                     <div class="risk-box">
                                         <div class="risk-outcome-title risk-title"><i class="fas fa-exclamation-triangle mr-1"></i>Primary Risk</div>
@@ -1827,7 +1155,6 @@
                                     "Stronghold A3 will eliminate structural role ambiguity and analog operational bottlenecks by adopting cloud-based Security Management Systems and formalizing SOPs, transforming operational chaos into a predictable, scalable machine."
                                 </div>
                                 
-                                <!-- Wide images -->
                                 <div class="wide-image-container" style="margin-bottom:1rem;">
                                     <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/RACI%20Funnel.png" alt="RACI Framework">
                                     <div class="wide-caption">
@@ -1844,7 +1171,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Metrics -->
                                 <div class="metrics-row">
                                     <div class="metric-box"><div class="metric-value metric-p2">PHP 890K</div><div class="metric-label">Investment</div></div>
                                     <div class="metric-box"><div class="metric-value metric-p2">8.95</div><div class="metric-label">Overall Score</div></div>
@@ -1853,7 +1179,6 @@
                                     <div class="metric-box"><div class="metric-value metric-p2">3 mo</div><div class="metric-label">Full Rollout</div></div>
                                 </div>
 
-                                <!-- Pillars -->
                                 <h4 class="text-sm font-bold text-white/60 uppercase tracking-widest mb-3 font-montserrat">Strategic Pillars</h4>
                                 <div class="pillars-grid">
                                     <div class="pillar-card">
@@ -1919,7 +1244,6 @@
                                     "Stronghold A3 will defend its profit margins and talent pool against predatory undercutting and regional inflation by institutionalizing its decent wage advantage, embedding dynamic pricing in all contracts, and leveraging local relationships to secure operational continuity."
                                 </div>
 
-                                <!-- Metrics -->
                                 <div class="metrics-row">
                                     <div class="metric-box"><div class="metric-value metric-p3">Low</div><div class="metric-label">Investment Required</div></div>
                                     <div class="metric-box"><div class="metric-value metric-p3">8.70</div><div class="metric-label">Overall Score</div></div>
@@ -1928,7 +1252,6 @@
                                     <div class="metric-box"><div class="metric-value metric-p3">&gt;80%</div><div class="metric-label">Welfare Participation</div></div>
                                 </div>
 
-                                <!-- Pillars -->
                                 <h4 class="text-sm font-bold text-white/60 uppercase tracking-widest mb-3 font-montserrat">Strategic Pillars</h4>
                                 <div class="pillars-grid">
                                     <div class="pillar-card">
@@ -1948,7 +1271,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Context: The Inflation-Wage Loop visualization -->
                                 <div class="glass rounded-xl p-5 mb-5">
                                     <h4 class="text-sm font-bold text-yellow-400 uppercase tracking-widest mb-4 font-montserrat">The Premium Retention Loop — Stronghold A3's Moat</h4>
                                     <div class="flex flex-wrap items-center justify-center gap-2 text-center">
@@ -2007,7 +1329,6 @@
                                     "Stronghold A3 will weaponize its strict adherence to DOLE DO-174 and PNP-SOSIA standards to position itself as the only 'Zero-Liability' security partner in Region VIII — ensuring clients inherit zero legal, financial, or operational burdens from their security provider."
                                 </div>
                                 
-                                <!-- Wide image -->
                                 <div class="wide-image-container" style="margin-bottom:1.5rem;">
                                     <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Launching%20Zero%20Liability%20Market%20capture.png" alt="Zero Liability Market Capture">
                                     <div class="wide-caption">
@@ -2016,7 +1337,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Metrics -->
                                 <div class="metrics-row">
                                     <div class="metric-box"><div class="metric-value metric-p4">Moderate</div><div class="metric-label">Investment</div></div>
                                     <div class="metric-box"><div class="metric-value metric-p4">15–20%</div><div class="metric-label">Client Growth Target</div></div>
@@ -2025,7 +1345,6 @@
                                     <div class="metric-box"><div class="metric-value metric-p4">54.5%</div><div class="metric-label">Year 1 ROI</div></div>
                                 </div>
 
-                                <!-- Pillars -->
                                 <h4 class="text-sm font-bold text-white/60 uppercase tracking-widest mb-3 font-montserrat">Strategic Pillars</h4>
                                 <div class="pillars-grid">
                                     <div class="pillar-card">
@@ -2045,7 +1364,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Zero-Liability Benefits -->
                                 <div class="glass rounded-xl p-5 mb-5">
                                     <h4 class="text-sm font-bold text-green-400 uppercase tracking-widest mb-4 font-montserrat">What "Zero-Liability Partner" Delivers to Clients</h4>
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -2113,7 +1431,6 @@
                         <p class="text-white/40 text-xs mt-4 italic">Note: Phase 4 ranks 4th for <em>immediate execution timing</em> only — it carries the highest economic impact. The sequential execution order (1→2→3→4) is mandated by operational logic, not by option quality alone.</p>
                     </div>
                 </div>
-                <!-- END SEQUENCE TAB -->
             </div>
         </section>
 
@@ -2165,7 +1482,7 @@
                         <div class="glass p-6 rounded-xl">
                             <h3 class="text-xl font-bold mb-4 flex items-center text-yellow-400 font-montserrat"><i class="fas fa-map-marker-alt mr-3"></i>Our Office</h3>
                             <p class="text-white">2nd Floor Real St.<br>Tacloban City, Leyte<br>Philippines 6500</p>
-                            <a href="https://maps.google.com/?q=Tacloban+City,+Leyte,+Philippines" target="_blank" class="text-blue-400 hover:underline inline-flex items-center mt-2">Get Directions <i class="fas fa-directions ml-2"></i></a>
+                            <a href="https://www.openstreetmap.org/search?query=Tacloban+City" target="_blank" class="text-blue-400 hover:underline inline-flex items-center mt-2">Get Directions <i class="fas fa-directions ml-2"></i></a>
                         </div>
                         
                         <div class="glass p-6 rounded-xl">
@@ -2204,13 +1521,13 @@
                 </div>
                 
                 <div class="glass p-2 rounded-xl mb-12">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.4654321098765!2d125.0038!3d11.2447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32da080808080809%3A0x808080808080808!2sTacloban%20City%2C%20Leyte!5e0!3m2!1sen!2sph!4v1234567890123"
+                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=124.9,11.1,125.1,11.4&layer=mapnik&marker=11.2447,125.0038"
                             width="100%" height="400" style="border:0;border-radius:12px;" allowfullscreen loading="lazy"></iframe>
                 </div>
                 
                 <div class="glass-gold p-8 rounded-xl text-center">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-4 font-montserrat text-[#0A1628]">Schedule Your Complimentary Risk Assessment</h3>
-                    <p class="text-lg text-gray-800 mb-6">No obligation consultation. Learn how Stronghold A3 can protect your assets.</p>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4 font-montserrat text-white">Schedule Your Complimentary Risk Assessment</h3>
+                    <p class="text-lg text-yellow-100 mb-6">No obligation consultation. Learn how Stronghold A3 can protect your assets.</p>
                     <button onclick="window.location.href='tel:09171370112'" class="btn-primary bg-[#0A1628] text-white px-10 py-5 rounded-xl font-bold text-xl hover:bg-blue-900 transition shadow-lg pulse-green">
                         <i class="fas fa-phone-alt mr-2"></i>Call 09171370112 Now
                     </button>
@@ -2274,9 +1591,8 @@
             <div class="py-20 container mx-auto px-4">
                 <div class="max-w-md mx-auto glass p-8 rounded-xl">
                     <div class="text-center mb-6">
-                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20A3%20logo.jpg" 
-                             alt="Stronghold A3 Logo" 
-                             class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-blue-500">
+                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png"
+                             alt="Stronghold A3 Logo" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-blue-500 object-cover">
                         <h1 class="text-2xl font-bold text-yellow-400 font-montserrat">Staff Login</h1>
                         <p class="text-white text-sm mt-2">Enter credentials for secure portal access</p>
                     </div>
@@ -2309,9 +1625,8 @@
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="text-center md:text-left">
                         <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
-                            <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20A3%20logo.jpg" 
-                                 alt="Stronghold A3" 
-                                 class="w-12 h-12 rounded-full">
+                            <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png"
+                                 alt="Stronghold A3" class="w-12 h-12 rounded-full object-cover">
                             <div><h3 class="font-bold font-montserrat text-white">STRONGHOLD A3</h3><p class="text-xs text-blue-400">Zero-Liability Security</p></div>
                         </div>
                         <p class="text-sm text-white/70">Eastern Visayas' premier security partner committed to zero-liability protection through compliance excellence.</p>
@@ -2359,10 +1674,7 @@
         function showPage(pageId) {
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
             const sel = document.getElementById(pageId);
-            if (sel) { 
-                sel.classList.add('active'); 
-                window.scrollTo(0,0); 
-            }
+            if (sel) { sel.classList.add('active'); window.scrollTo(0,0); }
             closeMobileMenu();
         }
 
@@ -2385,20 +1697,17 @@
         // ==================== PHASE SELECTOR ====================
         let activePhase = 1;
         function selectPhase(num) {
-            // Hide all panels
             [1,2,3,4].forEach(i => {
                 document.getElementById(`phase-panel-${i}`).classList.remove('active');
                 const btn = document.getElementById(`ptab-${i}`);
                 btn.classList.remove('active-p1','active-p2','active-p3','active-p4');
             });
             
-            // Show selected
             document.getElementById(`phase-panel-${num}`).classList.add('active');
             const colorMap = {1:'active-p1', 2:'active-p2', 3:'active-p3', 4:'active-p4'};
             document.getElementById(`ptab-${num}`).classList.add(colorMap[num]);
             activePhase = num;
             
-            // Scroll into view on mobile
             const panel = document.getElementById(`phase-panel-${num}`);
             if (window.innerWidth < 768) {
                 setTimeout(() => panel.scrollIntoView({behavior:'smooth', block:'start'}), 100);
@@ -2406,25 +1715,13 @@
         }
 
         // ==================== MOBILE MENU ====================
-        function openMobileMenu() { 
-            document.getElementById('mobileMenu').classList.add('open'); 
-            document.getElementById('overlay').classList.add('show'); 
-        }
-        
-        function closeMobileMenu() { 
-            document.getElementById('mobileMenu').classList.remove('open'); 
-            document.getElementById('overlay').classList.remove('show'); 
-        }
-        
+        function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.getElementById('overlay').classList.add('show'); }
+        function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.getElementById('overlay').classList.remove('show'); }
         document.getElementById('overlay').addEventListener('click', closeMobileMenu);
 
         // ==================== AUTH ====================
         let isLoggedIn = false;
-        
-        function openAuthModal() { 
-            isLoggedIn ? showPage('dashboard') : showPage('login'); 
-        }
-        
+        function openAuthModal() { isLoggedIn ? showPage('dashboard') : showPage('login'); }
         function handleLogin(e) {
             e.preventDefault();
             const email = document.getElementById('email').value;
@@ -2458,13 +1755,11 @@
         }
 
         // ==================== KEYBOARD ====================
-        document.addEventListener('keydown', e => { 
-            if (e.key === 'Escape') closeMobileMenu(); 
-        });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
 
         // ==================== INIT ====================
         showPage('home');
-        console.log('%cStronghold A3 v5.0 — Loaded', 'color:#3B82F6;font-size:16px;font-weight:bold;');
+        console.log('%cStronghold A3 v5.1 — Loaded', 'color:#3B82F6;font-size:16px;font-weight:bold;');
     </script>
 </body>
 </html>
