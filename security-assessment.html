@@ -82,16 +82,44 @@
             box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
         }
         .glass-strong {
-            background: linear-gradient(135deg, rgba(10,22,40,0.75), rgba(0,12,31,0.85));
+            background: linear-gradient(135deg, rgba(10,22,40,0.85), rgba(0,12,31,0.92));
             backdrop-filter: blur(28px) saturate(180%);
             -webkit-backdrop-filter: blur(28px) saturate(180%);
             border: 1px solid rgba(59,130,246,0.2);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
         }
         .glass-gold {
             background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,215,0,0.05));
             backdrop-filter: blur(16px);
             border: 1px solid rgba(255,215,0,0.4);
+        }
+
+        /* ===== HERO BANNER STYLES ===== */
+        .hero-banner-wrap {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+        }
+        .hero-banner-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            filter: brightness(0.55); /* Darkens image slightly for text contrast */
+        }
+        .hero-banner-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.4) 50%, rgba(10,22,40,0.1) 100%);
         }
 
         /* ===== ANIMATIONS ===== */
@@ -183,7 +211,7 @@
 <body class="antialiased">
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 shadow-lg bg-[#0A1628]/80 backdrop-blur-md border-b border-blue-900/50">
+    <header class="sticky top-0 z-50 shadow-lg bg-[#0A1628]/90 backdrop-blur-md border-b border-blue-900/50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-3">
                 <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png" alt="Logo" class="h-12 w-12 rounded-full object-cover border border-blue-500/50">
@@ -199,21 +227,28 @@
         </div>
     </header>
 
+    <!-- ==================== HERO BANNER ==================== -->
+    <section class="hero-banner-wrap">
+        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Security-Risk%20Self-Assessment-Banner.png" alt="Security Risk Self-Assessment">
+        <div class="hero-banner-overlay">
+            <div class="glass-gold px-4 py-2 rounded-full mb-4 animate-fade-in">
+                <span class="text-[#0A1628] font-montserrat font-bold text-sm"><i class="fas fa-clipboard-check mr-2"></i>FREE SECURITY RISK ASSESSMENT</span>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-bold font-montserrat text-white mb-4 animate-fade-in">
+                Discover Your Facility's <span class="text-brand-gold">Vulnerabilities</span>
+            </h2>
+            <p class="text-gray-200 text-lg max-w-2xl mx-auto animate-fade-in">
+                Get instant, personalized recommendations to protect your people, assets, and reputation in just 5 minutes.
+            </p>
+        </div>
+    </section>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
     <main class="container mx-auto px-4 py-8 max-w-4xl">
         
-        <!-- ==================== INTRO SECTION ==================== -->
-        <section id="introSection" class="animate-fade-in">
-            <div class="glass-strong rounded-3xl p-8 md:p-12 text-center mb-8">
-                <div class="inline-block glass-gold px-4 py-2 rounded-full mb-6">
-                    <span class="text-[#0A1628] font-montserrat font-bold text-sm"><i class="fas fa-clipboard-check mr-2"></i>FREE SECURITY RISK ASSESSMENT</span>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-montserrat text-white">
-                    Discover Your Facility's <span class="text-brand-gold">Vulnerabilities</span>
-                </h2>
-                <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-                    Get instant, personalized recommendations to protect your people, assets, and reputation in just 5 minutes.
-                </p>
-                
+        <!-- ==================== INTRO SECTION (Overlaps Banner) ==================== -->
+        <section id="introSection" class="animate-fade-in -mt-20 relative z-10">
+            <div class="glass-strong rounded-3xl p-8 md:p-12 text-center mb-8 shadow-2xl">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                     <div class="glass p-4 rounded-xl"><i class="fas fa-clock text-brand-blue text-xl mb-2"></i><p class="text-xs text-gray-300">3-Minute Assessment</p></div>
                     <div class="glass p-4 rounded-xl"><i class="fas fa-chart-radar text-brand-blue text-xl mb-2"></i><p class="text-xs text-gray-300">Instant Risk Score</p></div>
@@ -224,6 +259,7 @@
                 <button onclick="startAssessment()" class="btn-primary bg-brand-blue text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-600 transition shadow-lg shadow-blue-500/30 pulse-green">
                     <i class="fas fa-shield-alt mr-2"></i>Start Assessment Now
                 </button>
+                <p class="text-gray-400 text-sm mt-6">No obligation • Free consultation included • Trusted by 80+ clients</p>
             </div>
         </section>
 
@@ -408,6 +444,7 @@
             document.getElementById('assessmentSection').classList.remove('hidden');
             document.getElementById('totalQuestions').textContent = questions.length;
             renderQuestion();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function renderQuestion() {
@@ -462,6 +499,7 @@
             } else {
                 document.getElementById('assessmentSection').classList.add('hidden');
                 document.getElementById('leadCaptureSection').classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
 
