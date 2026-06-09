@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Risk Assessment | Stronghold A3 Security Agency</title>
+    <!-- Chart.js for Radar Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- jsPDF for High-Quality PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        :root {
+            --deep-blue: #0A1628;
+            --bright-blue: #3B82F6;
+            --light-blue: #F0F4F8;
+            --white: #FFFFFF;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --gray: #6B7280;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #1e3a5f 100%);
+            color: var(--white);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--bright-blue);
+            margin-bottom: 40px;
+        }
+
+        .logo { font-size: 2.5em; font-weight: bold; color: var(--bright-blue); margin-bottom: 10px; }
+        .tagline { font-size: 1.2em; color: var(--light-blue); }
+
+        .assessment-card {
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--deep-blue);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .intro-section { text-align: center; padding: 20px 0; }
+        .intro-section h2 { color: var(--deep-blue); font-size: 2em; margin-bottom: 15px; }
+        .intro-section p { color: var(--gray); font-size: 1.1em; margin-bottom: 30px; }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .feature {
+            padding: 15px;
+            background: var(--light-blue);
+            border-radius: 8px;
+            border-left: 4px solid var(--bright-blue);
+        }
+        .feature strong { color: var(--deep-blue); display: block; margin-bottom: 5px; }
+
+        .btn {
+            background: var(--bright-blue);
+            color: var(--white);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            margin: 10px;
+        }
+        .btn:hover {
+            background: #2563EB;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+        .btn-secondary { background: var(--gray); }
+        .btn-secondary:hover { background: #4B5563; }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: var(--light-blue);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress-fill { height: 100%; background: var(--bright-blue); transition: width 0.3s; }
+
+        .question-container { display: none; }
+        .question-container.active { display: block; animation: fadeIn 0.5s; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: var(--bright-blue);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .question-text { font-size: 1.3em; font-weight: 600; color: var(--deep-blue); margin-bottom: 20px; }
+
+        .options { display: flex; flex-direction: column; gap: 12px; }
+        .option {
+            padding: 15px 20px;
+            background: var(--light-blue);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .option:hover { border-color: var(--bright-blue); background: #E0E7FF; }
+        .option.selected { border-color: var(--bright-blue); background: #DBEAFE; font-weight: 600; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--deep-blue); }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--bright-blue); }
+
+        .results-section { display: none; }
+        .results-section.active { display: block; }
+
+        .risk-gauge {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        .gauge-value { font-size: 4em; font-weight: bold; margin: 20px 0; }
+        .gauge-value.low { color: var(--success); }
+        .gauge-value.moderate { color: var(--warning); }
+        .gauge-value.high { color: var(--danger); }
+        .gauge-value.critical { color: #DC2626; }
+        .gauge-label { font-size: 1.5em; font-weight: 600; text-transform: uppercase; }
+
+        .radar-chart { max-width: 500px; margin: 30px auto; }
+
+        .recommendations { margin-top: 30px; }
+        .recommendation-card {
+            background: var(--white);
+            border-left: 5px solid var(--bright-blue);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .recommendation-card.urgent { border-left-color: var(--danger); }
+        .recommendation-card.high { border-left-color: var(--warning); }
+
+        .rec-header { display: flex; align-items: center; margin-bottom: 10px; }
+        .rec-icon { font-size: 1.5em; margin-right: 10px; }
+        .rec-title { font-size: 1.2em; font-weight: bold; color: var(--deep-blue); }
+        .rec-score { margin-left: auto; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9em; }
+        .rec-score.urgent { background: #FEE2E2; color: var(--danger); }
+        .rec-score.high { background: #FEF3C7; color: var(--warning); }
+        .rec-score.medium { background: #DBEAFE; color: var(--bright-blue); }
+
+        .cta-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #1e3a5f 100%);
+            color: var(--white);
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        .cta-section h3 { font-size: 2em; margin-bottom: 15px; }
+
+        .hidden { display: none !important; }
+
+        @media (max-width: 768px) {
+            .assessment-card { padding: 20px; }
+            .logo { font-size: 1.8em; }
+            .gauge-value { font-size: 3em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🛡️ STRONGHOLD A3</div>
+        <div class="tagline">Eastern Visayas' Premier "Zero-Liability" Security Partner</div>
+    </header>
+
+    <div class="container">
+        <!-- INTRO SECTION -->
+        <div class="assessment-card" id="introSection">
+            <div class="intro-section">
+                <h2>Free Security Risk Assessment</h2>
+                <p>Discover your facility's vulnerabilities in just 5 minutes. Get instant, personalized recommendations to protect your people, assets, and reputation.</p>
+                <div class="features">
+                    <div class="feature"><strong>⏱️ 3-Minute Assessment</strong>Quick and easy to complete</div>
+                    <div class="feature"><strong>📊 Instant Results</strong>See your risk score immediately</div>
+                    <div class="feature"><strong>🎯 Personalized Plan</strong>Tailored recommendations</div>
+                    <div class="feature"><strong>🔒 100% Confidential</strong>Your data is secure</div>
+                </div>
+                <button class="btn" onclick="startAssessment()">Start Assessment Now</button>
+                <p style="margin-top: 20px; color: var(--gray); font-size: 0.9em;">No obligation • Free consultation included • Trusted by 80+ clients</p>
+            </div>
+        </div>
+
+        <!-- ASSESSMENT FORM -->
+        <div class="assessment-card hidden" id="assessmentSection">
+            <div class="progress-bar"><div class="progress-fill" id="progressBar" style="width: 0%"></div></div>
+            <p style="text-align: center; margin-bottom: 20px;">Question <span id="currentQuestion">1</span> of <span id="totalQuestions">22</span></p>
+            <form id="assessmentForm">
+                <div id="questionsContainer"></div>
+                <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+                    <button type="button" class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()" style="visibility: hidden;">Previous</button>
+                    <button type="button" class="btn" id="nextBtn" onclick="nextQuestion()">Next</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- LEAD CAPTURE -->
+        <div class="assessment-card hidden" id="leadCaptureSection">
+            <h2 style="text-align: center; margin-bottom: 20px;">Get Your Detailed Report</h2>
+            <p style="text-align: center; color: var(--gray); margin-bottom: 30px;">Enter your information to receive your personalized security risk assessment and recommendations.</p>
+            <form id="leadForm" onsubmit="submitLead(event)">
+                <div class="form-group"><label for="fullName">Full Name *</label><input type="text" id="fullName" name="fullName" required></div>
+                <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required></div>
+                <div class="form-group"><label for="company">Company/Organization Name *</label><input type="text" id="company" name="company" required></div>
+                <div class="form-group">
+                    <label for="facilityType">Facility Type *</label>
+                    <select id="facilityType" name="facilityType" required>
+                        <option value="">Select...</option>
+                        <option value="corporate">Corporate Office/BPO</option>
+                        <option value="warehouse">Warehouse/Logistics</option>
+                        <option value="retail">Retail/Commercial</option>
+                        <option value="hospital">Hospital/Healthcare</option>
+                        <option value="school">Educational Institution</option>
+                        <option value="lgu">Government/LGU</option>
+                        <option value="ngo">NGO/Development</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group"><label for="contactNumber">Contact Number (Optional)</label><input type="tel" id="contactNumber" name="contactNumber"></div>
+                <div style="text-align: center; margin-top: 30px;"><button type="submit" class="btn">View My Results</button></div>
+            </form>
+        </div>
+
+        <!-- RESULTS SECTION -->
+        <div class="assessment-card results-section" id="resultsSection">
+            <div class="risk-gauge">
+                <h2>Your Overall Security Risk Index</h2>
+                <div class="gauge-value" id="overallScore">0</div>
+                <div class="gauge-label" id="riskLevel">CALCULATING...</div>
+            </div>
+            <div class="radar-chart"><canvas id="radarChart"></canvas></div>
+            <div class="recommendations" id="recommendationsContainer">
+                <h2 style="margin-bottom: 20px; text-align: center;">Your Priority Recommendations</h2>
+            </div>
+            <div class="cta-section">
+                <h3>Ready to Reduce Your Risk?</h3>
+                <p style="margin-bottom: 20px; font-size: 1.1em;">Schedule a free 30-minute consultation with our security experts.<br>We'll review your assessment and create a customized security roadmap.</p>
+                <button class="btn" onclick="scheduleConsultation()">Schedule Free Consultation</button>
+                <button class="btn btn-secondary" onclick="downloadPDF()">Download Full Report (PDF)</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- GLOBAL VARIABLES ---
+        let currentQuestion = 0;
+        let answers = [];
+        let categoryScores = {};
+        let leadData = {};
+        let radarChartInstance = null; // Global variable to store the chart for PDF export
+
+        // --- CATEGORY WEIGHTS ---
+        const categoryWeights = {
+            "Physical Security": 0.25,
+            "Operational Continuity": 0.25,
+            "Compliance & Liability": 0.20,
+            "Technology & Monitoring": 0.20,
+            "Human Capital": 0.10
+        };
+
+        // --- QUESTIONS DATA ---
+        const questions = [
+            { category: "Physical Security", weight: 4, question: "How would you rate your facility's perimeter security (fencing, gates, lighting)?", options: [{ text: "Excellent - Comprehensive coverage", score: 0 }, { text: "Good - Minor gaps", score: 3 }, { text: "Fair - Several vulnerabilities", score: 6 }, { text: "Poor - Inadequate or non-existent", score: 9 }] },
+            { category: "Physical Security", weight: 5, question: "Do you have a formal visitor management and access control system?", options: [{ text: "Fully digital & strictly enforced", score: 0 }, { text: "Manual but consistently enforced", score: 3 }, { text: "Inconsistent implementation", score: 6 }, { text: "None or minimal controls", score: 9 }] },
+            { category: "Physical Security", weight: 4, question: "How many security incidents (theft, unauthorized entry, vandalism) have you experienced in the past 12 months?", options: [{ text: "None", score: 0 }, { text: "1-2 incidents", score: 3 }, { text: "3-5 incidents", score: 6 }, { text: "6 or more incidents", score: 9 }] },
+            { category: "Physical Security", weight: 3, question: "What is the total value of assets requiring protection?", options: [{ text: "Below ₱500,000", score: 0, exposure: 1.0 }, { text: "₱500,000 - ₱5 Million", score: 0, exposure: 1.5 }, { text: "₱5 Million - ₱50 Million", score: 0, exposure: 2.0 }, { text: "Above ₱50 Million", score: 0, exposure: 2.5 }] },
+            { category: "Physical Security", weight: 5, question: "Do you have 24/7 professional security guards?", options: [{ text: "Yes, fully trained & licensed", score: 0 }, { text: "Yes, but minimal training", score: 6 }, { text: "Part-time coverage only", score: 7 }, { text: "No security guards", score: 9 }] },
+            { category: "Operational Continuity", weight: 5, question: "Do you have a documented Business Continuity Plan (BCP)?", options: [{ text: "Yes, tested & updated annually", score: 0 }, { text: "Documented but not regularly tested", score: 4 }, { text: "Informal/unwritten plan", score: 7 }, { text: "No BCP", score: 9 }] },
+            { category: "Operational Continuity", weight: 5, question: "How prepared is your facility for typhoon Signal No. 2 or higher?", options: [{ text: "Full protocol & emergency supplies ready", score: 0 }, { text: "Basic protocol in place", score: 4 }, { text: "Ad-hoc response only", score: 7 }, { text: "No preparation", score: 9 }] },
+            { category: "Operational Continuity", weight: 4, question: "Do you have backup power for security systems?", options: [{ text: "Generator + UPS backup", score: 0 }, { text: "Generator only", score: 3 }, { text: "UPS only", score: 5 }, { text: "No backup power", score: 9 }] },
+            { category: "Operational Continuity", weight: 4, question: "What alternative communication do you have if cellular networks fail?", options: [{ text: "Two-way radio + satellite", score: 0 }, { text: "Two-way radio only", score: 4 }, { text: "Multiple SIM cards", score: 6 }, { text: "None", score: 9 }] },
+            { category: "Operational Continuity", weight: 3, question: "Do you have alternative suppliers for critical security equipment?", options: [{ text: "2 or more verified suppliers", score: 0 }, { text: "1 backup supplier", score: 4 }, { text: "Single supplier only", score: 7 }, { text: "No established suppliers", score: 9 }] },
+            { category: "Compliance & Liability", weight: 5, question: "Is your current security agency DOLE DO-174 compliant?", options: [{ text: "Yes, verified with documentation", score: 0 }, { text: "Claims compliance but unverified", score: 4 }, { text: "Uncertain about compliance", score: 7 }, { text: "Known to be non-compliant", score: 9 }] },
+            { category: "Compliance & Liability", weight: 5, question: "What percentage of your guards have valid PNP-SOSIA licenses?", options: [{ text: "100%", score: 0 }, { text: "75-99%", score: 3 }, { text: "50-74%", score: 6 }, { text: "Less than 50%", score: 9 }] },
+            { category: "Compliance & Liability", weight: 4, question: "Are visitor logs, CCTV footage stored per Data Privacy Act (RA 10173)?", options: [{ text: "Fully compliant with encryption", score: 0 }, { text: "Partial compliance", score: 5 }, { text: "Minimal measures", score: 7 }, { text: "No compliance measures", score: 9 }] },
+            { category: "Compliance & Liability", weight: 3, question: "Do you have liability insurance for security incidents?", options: [{ text: "Comprehensive coverage", score: 0 }, { text: "Basic coverage", score: 4 }, { text: "Limited coverage", score: 6 }, { text: "No insurance", score: 9 }] },
+            { category: "Technology & Monitoring", weight: 4, question: "What percentage of critical areas have CCTV coverage?", options: [{ text: "More than 90%", score: 0 }, { text: "60-90%", score: 3 }, { text: "30-59%", score: 6 }, { text: "Less than 30%", score: 9 }] },
+            { category: "Technology & Monitoring", weight: 5, question: "Do guards use digital tour systems or paper logbooks?", options: [{ text: "Real-time digital system", score: 0 }, { text: "Digital but delayed reporting", score: 4 }, { text: "Hybrid (digital + paper)", score: 6 }, { text: "Paper logbooks only", score: 9 }] },
+            { category: "Technology & Monitoring", weight: 4, question: "What is the average time to report security incidents to management?", options: [{ text: "Less than 15 minutes", score: 0 }, { text: "15-60 minutes", score: 3 }, { text: "1-4 hours", score: 6 }, { text: "More than 4 hours", score: 9 }] },
+            { category: "Technology & Monitoring", weight: 4, question: "Are your security systems (CCTV, access control, alarms) integrated?", options: [{ text: "Fully integrated platform", score: 0 }, { text: "Partially integrated", score: 4 }, { text: "Standalone systems", score: 7 }, { text: "No electronic systems", score: 9 }] },
+            { category: "Technology & Monitoring", weight: 3, question: "Do you analyze security data for trends and prevention?", options: [{ text: "Advanced analytics & reporting", score: 0 }, { text: "Basic reporting only", score: 4 }, { text: "Reactive only (no analysis)", score: 7 }, { text: "No data collection", score: 9 }] },
+            { category: "Human Capital", weight: 4, question: "How many hours of security training do guards receive annually?", options: [{ text: "More than 40 hours", score: 0 }, { text: "20-40 hours", score: 3 }, { text: "8-19 hours", score: 6 }, { text: "Less than 8 hours", score: 9 }] },
+            { category: "Human Capital", weight: 3, question: "What is your annual guard turnover rate?", options: [{ text: "Less than 5%", score: 0 }, { text: "5-15%", score: 3 }, { text: "16-30%", score: 6 }, { text: "More than 30%", score: 9 }] },
+            { category: "Human Capital", weight: 3, question: "Do guards receive benefits beyond legal minimum?", options: [{ text: "Comprehensive benefits package", score: 0 }, { text: "Some additional benefits", score: 4 }, { text: "Legal minimum only", score: 7 }, { text: "Below legal minimum", score: 9 }] }
+        ];
+
+        // --- UI FUNCTIONS ---
+        function startAssessment() {
+            document.getElementById('introSection').classList.add('hidden');
+            document.getElementById('assessmentSection').classList.remove('hidden');
+            document.getElementById('totalQuestions').textContent = questions.length;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const container = document.getElementById('questionsContainer');
+            const q = questions[currentQuestion];
+            let optionsHTML = '';
+            q.options.forEach((opt, idx) => {
+                optionsHTML += `<div class="option" onclick="selectOption(${idx})" data-index="${idx}">${opt.text}</div>`;
+            });
+            container.innerHTML = `<div class="question-container active"><div class="question-header"><span class="category-badge">${q.category}</span><div class="question-text">${q.question}</div></div><div class="options">${optionsHTML}</div></div>`;
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('currentQuestion').textContent = currentQuestion + 1;
+            document.getElementById('prevBtn').style.visibility = currentQuestion === 0 ? 'hidden' : 'visible';
+            document.getElementById('nextBtn').textContent = currentQuestion === questions.length - 1 ? 'Finish' : 'Next';
+        }
+
+        function selectOption(index) {
+            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            document.querySelectorAll('.option')[index].classList.add('selected');
+            answers[currentQuestion] = index;
+        }
+
+        function nextQuestion() {
+            if (answers[currentQuestion] === undefined) { alert('Please select an answer before continuing.'); return; }
+            if (currentQuestion < questions.length - 1) { currentQuestion++; renderQuestion(); } 
+            else { showLeadCapture(); }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--; renderQuestion();
+                if (answers[currentQuestion] !== undefined) {
+                    setTimeout(() => { document.querySelectorAll('.option')[answers[currentQuestion]].classList.add('selected'); }, 100);
+                }
+            }
+        }
+
+        function showLeadCapture() {
+            document.getElementById('assessmentSection').classList.add('hidden');
+            document.getElementById('leadCaptureSection').classList.remove('hidden');
+        }
+
+        function submitLead(event) {
+            event.preventDefault();
+            leadData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                facilityType: document.getElementById('facilityType').value,
+                contactNumber: document.getElementById('contactNumber').value,
+                timestamp: new Date().toISOString()
+            };
+            calculateResults();
+            document.getElementById('leadCaptureSection').classList.add('hidden');
+            document.getElementById('resultsSection').classList.add('active');
+        }
+
+        // --- CALCULATION & RESULTS ---
+        function calculateResults() {
+            Object.keys(categoryWeights).forEach(cat => { categoryScores[cat] = { totalScore: 0, maxScore: 0 }; });
+            questions.forEach((q, idx) => {
+                const selectedOption = q.options[answers[idx]];
+                const exposure = selectedOption.exposure || 1.5;
+                categoryScores[q.category].totalScore += q.weight * selectedOption.score * exposure;
+                categoryScores[q.category].maxScore += q.weight * 9 * (selectedOption.exposure || 2.0);
+            });
+            const normalizedScores = {};
+            Object.keys(categoryScores).forEach(cat => {
+                normalizedScores[cat] = Math.round((categoryScores[cat].totalScore / categoryScores[cat].maxScore) * 100);
+            });
+            let osri = 0;
+            Object.keys(normalizedScores).forEach(cat => { osri += normalizedScores[cat] * categoryWeights[cat]; });
+            displayResults(Math.round(osri), normalizedScores);
+        }
+
+        function displayResults(osri, scores) {
+            const scoreElement = document.getElementById('overallScore');
+            const levelElement = document.getElementById('riskLevel');
+            scoreElement.textContent = osri + '/100';
+            let riskLevel, riskClass;
+            if (osri <= 25) { riskLevel = 'LOW RISK'; riskClass = 'low'; } 
+            else if (osri <= 50) { riskLevel = 'MODERATE RISK'; riskClass = 'moderate'; } 
+            else if (osri <= 75) { riskLevel = 'HIGH RISK'; riskClass = 'high'; } 
+            else { riskLevel = 'CRITICAL RISK'; riskClass = 'critical'; }
+            scoreElement.className = 'gauge-value ' + riskClass;
+            levelElement.textContent = riskLevel;
+            createRadarChart(scores);
+            generateRecommendations(scores);
+        }
+
+        function createRadarChart(scores) {
+            const ctx = document.getElementById('radarChart').getContext('2d');
+            // Save instance for PDF export
+            radarChartInstance = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: Object.keys(scores),
+                    datasets: [{
+                        label: 'Risk Score',
+                        data: Object.values(scores),
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        borderColor: '#3B82F6',
+                        pointBackgroundColor: '#3B82F6',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#3B82F6'
+                    }]
+                },
+                options: {
+                    scales: {
+                        r: {
+                            angleLines: { display: true, color: 'rgba(0, 0, 0, 0.1)' },
+                            grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                            pointLabels: { font: { size: 11, weight: 'bold' }, color: '#0A1628' },
+                            ticks: { stepSize: 25, max: 100, color: '#6B7280' }
+                        }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        function generateRecommendations(scores) {
+            const container = document.getElementById('recommendationsContainer');
+            const sortedCategories = Object.entries(scores).sort((a, b) => b[1] - a[1]).slice(0, 3);
+            const recommendations = {
+                "Physical Security": { title: "Physical Security Enhancement", solution: "Stronghold A3's Professional Guarding Service", features: ["24/7 licensed & trained security personnel", "Access control & visitor management systems", "Regular perimeter inspections", "Incident response protocols"], investment: "50,000-150,000/year", timeline: "30 days", riskReduction: "Up to 60%" },
+                "Operational Continuity": { title: "Disaster Resilience & Business Continuity", solution: "DRRM-Integrated Security Package", features: ["RA 10121-compliant emergency protocols", "Pre-positioned emergency supplies", "Backup communication systems", "Typhoon BCP development & training"], investment: "₱75,000-200,000/year", timeline: "45 days", riskReduction: "Up to 70%" },
+                "Compliance & Liability": { title: "Regulatory Compliance & Risk Mitigation", solution: "Zero-Liability Security Partnership", features: ["100% DOLE DO-174 compliance", "PNP-SOSIA licensed personnel", "Data Privacy Act compliance", "Free compliance audit & transition"], investment: "₱100,000-250,000/year", timeline: "14 days", riskReduction: "Eliminates legal liability" },
+                "Technology & Monitoring": { title: "Digital Security Transformation", solution: "Hybrid Security Solution", features: ["Real-time digital guard tours", "CCTV integration & remote monitoring", "Automated incident reporting", "Client portal access"], investment: "₱150,000-400,000/year", timeline: "60 days", riskReduction: "Up to 65%" },
+                "Human Capital": { title: "Security Personnel Excellence", solution: "Guard Welfare & Training Program", features: ["Continuous professional development", "Competitive compensation packages", "Emergency relief programs", "<5% attrition rate guarantee"], investment: "Included in service", timeline: "Ongoing", riskReduction: "Up to 50%" }
+            };
+            let html = '';
+            sortedCategories.forEach(([category, score], index) => {
+                const rec = recommendations[category];
+                let priorityClass = score >= 75 ? 'urgent' : score >= 50 ? 'high' : 'medium';
+                let priorityIcon = score >= 75 ? '🔴' : score >= 50 ? '🟡' : '🟢';
+                let priorityLabel = score >= 75 ? 'URGENT PRIORITY' : score >= 50 ? 'HIGH PRIORITY' : 'MEDIUM PRIORITY';
+                html += `
+                    <div class="recommendation-card ${priorityClass}">
+                        <div class="rec-header">
+                            <span class="rec-icon">${priorityIcon}</span>
+                            <div class="rec-title">${index + 1}. ${rec.title}</div>
+                            <div class="rec-score ${priorityClass}">${priorityLabel} (${score}/100)</div>
+                        </div>
+                        <p style="margin-bottom: 15px;"><strong>Recommended Solution:</strong> ${rec.solution}</p>
+                        <div style="background: #F0F4F8; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                            <strong style="color: #0A1628; display: block; margin-bottom: 10px;">Key Features:</strong>
+                            <ul style="margin: 0; padding-left: 20px; color: #374151;">
+                                ${rec.features.map(f => `<li>${f}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="metrics-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; font-size: 0.9em;">
+                            <div class="metric-item"><strong>Investment:</strong><br>${rec.investment}</div>
+                            <div class="metric-item"><strong>Implementation:</strong><br>${rec.timeline}</div>
+                            <div class="metric-item"><strong>Risk Reduction:</strong><br>${rec.riskReduction}</div>
+                        </div>
+                    </div>`;
+            });
+            container.innerHTML += html;
+        }
+
+        function scheduleConsultation() {
+            const subject = encodeURIComponent('Free Security Consultation Request - ' + leadData.company);
+            const body = encodeURIComponent(`Dear Stronghold A3 Team,\n\nI would like to schedule a free consultation to discuss my security assessment results.\n\nCompany: ${leadData.company}\nContact: ${leadData.fullName}\nEmail: ${leadData.email}\nPhone: ${leadData.contactNumber}\n\nPreferred date/time: [Please specify]\n\nThank you!`);
+            window.open(`mailto:info@strongholda3.com?subject=${subject}&body=${body}`, '_blank');
+        }
+
+        // --- HIGH-QUALITY PDF GENERATION ---
+        async function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const deepBlue = [10, 22, 40];
+            const brightBlue = [59, 130, 246];
+            const textDark = [31, 41, 55];
+            const textGray = [107, 114, 128];
+
+            // --- PAGE 1: COVER & OVERVIEW ---
+            doc.setFillColor(...deepBlue);
+            doc.rect(0, 0, 210, 45, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(22);
+            doc.text("STRONGHOLD A3", 105, 18, { align: 'center' });
+            doc.setFontSize(12);
+            doc.setFont("helvetica", "normal");
+            doc.text("Security Risk Assessment Report", 105, 26, { align: 'center' });
+            doc.setFontSize(10);
+            doc.text("Eastern Visayas' Premier Zero-Liability Security Partner", 105, 34, { align: 'center' });
+
+            doc.setTextColor(...textDark);
+            doc.setFontSize(11);
+            doc.text(`Prepared For:`, 14, 55);
+            doc.setFont("helvetica", "bold");
+            doc.text(`${leadData.fullName}`, 14, 62);
+            doc.setFont("helvetica", "normal");
+            doc.text(`${leadData.company} (${leadData.facilityType})`, 14, 69);
+            
+            doc.text(`Date of Assessment:`, 140, 55);
+            doc.setFont("helvetica", "bold");
+            doc.text(`${new Date().toLocaleDateString('en-PH', { year: 'numeric', month: 'long', day: 'numeric' })}`, 140, 62);
+
+            doc.setDrawColor(...brightBlue);
+            doc.setLineWidth(0.5);
+            doc.line(14, 78, 196, 78);
+
+            doc.setFontSize(14);
+            doc.setTextColor(...brightBlue);
+            doc.setFont("helvetica", "bold");
+            doc.text("Overall Security Risk Index (OSRI)", 14, 88);
+
+            const osriScore = document.getElementById('overallScore').textContent;
+            const riskLevel = document.getElementById('riskLevel').textContent;
+            
+            doc.setFontSize(28);
+            doc.setTextColor(...deepBlue);
+            doc.text(`Score: ${osriScore}`, 14, 102);
+            
+            doc.setFontSize(16);
+            let riskColor = riskLevel.includes('LOW') ? [16, 185, 129] : riskLevel.includes('MODERATE') ? [245, 158, 11] : riskLevel.includes('HIGH') ? [249, 115, 22] : [239, 68, 68];
+            doc.setTextColor(...riskColor);
+            doc.text(`Status: ${riskLevel}`, 14, 114);
+
+            if (radarChartInstance) {
+                const chartImg = radarChartInstance.toBase64Image();
+                doc.addImage(chartImg, 'PNG', 14, 125, 182, 95);
+            }
+
+            // --- PAGE 2: RECOMMENDATIONS ---
+            doc.addPage();
+            doc.setFillColor(...deepBlue);
+            doc.rect(0, 0, 210, 20, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(14);
+            doc.setFont("helvetica", "bold");
+            doc.text("Priority Recommendations & Action Plan", 105, 13, { align: 'center' });
+
+            let yPos = 35;
+            const recCards = document.querySelectorAll('.recommendation-card');
+
+            recCards.forEach((card, index) => {
+                if (yPos > 240) { doc.addPage(); yPos = 20; }
+
+                const title = card.querySelector('.rec-title').textContent.replace(/^\d+\.\s*/, '');
+                const scoreText = card.querySelector('.rec-score').textContent;
+                const solution = card.querySelector('p strong').nextSibling.textContent.trim();
+                const features = Array.from(card.querySelectorAll('ul li')).map(li => li.textContent);
+                
+                // Robust extraction for metrics
+                const metricItems = card.querySelectorAll('.metric-item');
+                const investment = metricItems[0].textContent.replace('Investment:', '').trim();
+                const timeline = metricItems[1].textContent.replace('Implementation:', '').trim();
+                const reduction = metricItems[2].textContent.replace('Risk Reduction:', '').trim();
+
+                doc.setFontSize(12);
+                doc.setTextColor(...deepBlue);
+                doc.setFont("helvetica", "bold");
+                doc.text(`${index + 1}. ${title}`, 14, yPos);
+                
+                doc.setFontSize(9);
+                doc.setTextColor(...textGray);
+                doc.setFont("helvetica", "normal");
+                doc.text(scoreText, 196, yPos, { align: 'right' });
+                yPos += 7;
+
+                doc.setFontSize(10);
+                doc.setTextColor(...textDark);
+                doc.text(`Recommended Solution: ${solution}`, 14, yPos);
+                yPos += 6;
+
+                doc.setFont("helvetica", "bold");
+                doc.text("Key Features:", 14, yPos);
+                doc.setFont("helvetica", "normal");
+                yPos += 5;
+                
+                features.forEach(feature => {
+                    const splitFeature = doc.splitTextToSize(`• ${feature}`, 180);
+                    doc.text(splitFeature, 18, yPos);
+                    yPos += (splitFeature.length * 4) + 2;
+                });
+
+                yPos += 2;
+                doc.setFontSize(9);
+                doc.setTextColor(...textGray);
+                doc.text(`Investment: ${investment}`, 14, yPos);
+                doc.text(`Timeline: ${timeline}`, 80, yPos);
+                doc.text(`Risk Reduction: ${reduction}`, 140, yPos);
+                yPos += 12;
+
+                if (index < recCards.length - 1) {
+                    doc.setDrawColor(229, 231, 235);
+                    doc.setLineWidth(0.5);
+                    doc.line(14, yPos - 5, 196, yPos - 5);
+                }
+            });
+
+            // --- FOOTER / CALL TO ACTION ---
+            yPos += 10;
+            if (yPos > 240) { doc.addPage(); yPos = 20; }
+
+            doc.setFillColor(240, 244, 248);
+            doc.rect(14, yPos, 182, 35, 'F');
+            doc.setFontSize(11);
+            doc.setTextColor(...deepBlue);
+            doc.setFont("helvetica", "bold");
+            doc.text("Ready to Reduce Your Risk?", 105, yPos + 10, { align: 'center' });
+            doc.setFontSize(9);
+            doc.setFont("helvetica", "normal");
+            doc.setTextColor(...textDark);
+            doc.text("Schedule a free 30-minute consultation with our security experts.", 105, yPos + 17, { align: 'center' });
+            doc.text("Email: info@strongholda3.com | Phone: (053) XXX-XXXX", 105, yPos + 24, { align: 'center' });
+
+            doc.save(`StrongholdA3_Security_Assessment_${leadData.company.replace(/\s+/g, '_')}.pdf`);
+        }
+
+        // --- AUTO-SAVE PROGRESS ---
+        window.addEventListener('beforeunload', function() {
+            if (currentQuestion > 0 && !document.getElementById('resultsSection').classList.contains('active')) {
+                localStorage.setItem('stronghold_assessment_progress', JSON.stringify({ currentQuestion, answers }));
+            }
+        });
+        window.addEventListener('load', function() {
+            const saved = localStorage.getItem('stronghold_assessment_progress');
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (confirm('You have an incomplete assessment. Would you like to continue?')) {
+                    currentQuestion = data.currentQuestion;
+                    answers = data.answers;
+                    startAssessment();
+                }
+                localStorage.removeItem('stronghold_assessment_progress');
+            }
+        });
+    </script>
+</body>
+</html>
