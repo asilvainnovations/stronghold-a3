@@ -3,893 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ASilva Innovations Policies - Comprehensive overview of our Terms and Conditions, Privacy Policy, Cookies Policy, Accessibility Policy, AI Ethics and Compliance standards.">
-    <meta name="keywords" content="ASilva Innovations policies, terms and conditions, privacy policy, cookies policy, accessibility policy, AI ethics policy, compliance standards, GDPR, WCAG 2.1">
-    <title>Policies - ASilva Innovations</title>
+    <meta name="description" content="Stronghold A3 Security Agency Policies - Comprehensive overview of our Terms of Service, Privacy Policy (RA 10173), Surveillance Ethics, and Compliance Standards (DOLE DO-174, PNP-SOSIA).">
+    <meta name="keywords" content="Stronghold A3 policies, security agency compliance, DOLE DO-174, PNP-SOSIA, RA 10173 data privacy, RA 10121 DRRM, zero liability security, Tacloban security">
+    <title>Policies & Compliance - Stronghold A3 Security Agency</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1777440983" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png">
     
     <style>
         /* ===========================================
-           DESIGN SYSTEM (Synced with DDRiVE-M Index)
+           STRONGHOLD A3 DESIGN SYSTEM (Liquid Glass)
            =========================================== */
         :root {
-            --primary: #1e40af;       /* Deep Blue */
-            --primary-dark: #1d3693;  /* Darker Blue */
-            --secondary: #f59e0b;     /* Amber/Orange Accent */
-            --accent: #0f766e;        /* Teal Accent */
-            --light: #f8fafc;         /* Light Gray Background */
-            --dark: #0f172a;          /* Dark Slate Text */
-            --gray: #64748b;          /* Medium Gray */
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
+            --gold: #FFD700;
+            --navy: #0A1628;
+            --navy-light: #001b3d;
+            --blue: #3B82F6;
+            --blue-dark: #2563EB;
+            --text-light: rgba(255, 255, 255, 0.85);
+            --text-muted: rgba(255, 255, 255, 0.6);
             
-            /* Shadows & Transitions */
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --card-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --card-shadow: 0 12px 40px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.15);
             --transition: all 0.3s ease;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-
-        h1, h2, h3, h4 {
             font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
+            background: radial-gradient(circle at 20% 0%, #002b5c 0%, #001b3d 45%, #000c1f 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
+        /* Watermark Logo Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(80vw, 80vh);
+            height: min(80vw, 80vh);
+            background-image: url('https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 0;
         }
 
-        /* Base Buttons */
+        main, header, footer, nav, .container { position: relative; z-index: 1; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; letter-spacing: 0.02em; }
+
+        /* ===== GLASS EFFECTS ===== */
+        .glass {
+            background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+        .glass-strong {
+            background: linear-gradient(135deg, rgba(0,43,92,0.55), rgba(0,12,31,0.65));
+            backdrop-filter: blur(28px) saturate(180%);
+            -webkit-backdrop-filter: blur(28px) saturate(180%);
+            border: 1px solid rgba(255,215,0,0.18);
+            box-shadow: var(--card-shadow);
+        }
+        .glass-gold {
+            background: linear-gradient(135deg, rgba(255,215,0,0.16), rgba(255,215,0,0.04));
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,215,0,0.35);
+        }
+        .glass-blue {
+            background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(59,130,246,0.05));
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(59,130,246,0.3);
+        }
+
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* ===== BUTTONS ===== */
         .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.75rem;
+            border-radius: 0.75rem;
             font-weight: 600;
             text-decoration: none;
             transition: var(--transition);
             cursor: pointer;
-            text-align: center;
             font-size: 1rem;
             border: none;
         }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid rgba(255,255,255,0.7);
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(255,255,255,0.15);
-            border-color: white;
-        }
-
-        .btn-dashboard {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 0.85rem 1.75rem;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-dashboard:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px -5px rgba(30, 64, 175, 0.4);
-        }
-
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background: linear-gradient(135deg, var(--blue), var(--blue-dark));
             color: white;
-            padding: 0.85rem 1.75rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            display: inline-block;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
         }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5); }
+        
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold), #eab308);
+            color: var(--navy);
+            font-weight: 700;
+        }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4); }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.3);
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1.5px solid rgba(255,255,255,0.3);
         }
-
-        .btn-secondary-theme {
-            background: var(--secondary);
-            color: var(--dark);
-            padding: 0.85rem 1.75rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            display: inline-block;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-secondary-theme:hover {
-            background: #d97706;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
-        }
-
-        .section {
-            padding: 5rem 0;
-        }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--gold); color: var(--gold); }
 
         /* =====================
            Header & Navigation
            ===================== */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: rgba(10, 22, 40, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
         }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-icon { width: 48px; height: 48px; border-radius: 50%; overflow: hidden; border: 2px solid var(--blue); flex-shrink: 0; }
+        .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.4rem; color: #fff; }
+        .logo-subtext { font-size: 0.7rem; color: var(--blue); font-weight: 600; letter-spacing: 0.05em; }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.25rem 0;
-            position: relative;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            flex-shrink: 0;
-        }
-
-        /* Circular Logo Icon */
-        .logo-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;           
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #e2e8f0;
-            flex-shrink: 0;
-            background: white;
-        }
-
-        .logo-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .logo-text {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--dark);
-        }
-
-        .logo-subtext {
-            font-size: 0.75rem;
-            color: var(--gray);
-            margin-top: -0.25rem;
-        }
-
-        /* Desktop nav links */
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            list-style: none;
-        }
-
+        .nav-links { display: flex; align-items: center; gap: 0.5rem; list-style: none; }
         .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            padding: 0.5rem 0.75rem;
-            border-radius: 0.4rem;
-            transition: var(--transition);
-            white-space: nowrap;
+            text-decoration: none; color: var(--text-light); font-weight: 500; font-size: 0.9rem;
+            padding: 0.5rem 1rem; border-radius: 0.5rem; transition: var(--transition);
         }
-
-        .nav-links a:hover {
-            color: var(--primary);
-            background-color: #eff6ff;
+        .nav-links a:hover { color: var(--gold); background: rgba(255,255,255,0.05); }
+        .nav-links a.active-page { color: var(--gold); background: rgba(255,215,0,0.1); }
+        .nav-links a.nav-btn-portal {
+            background: var(--gold); color: var(--navy); font-weight: 700; padding: 0.5rem 1.2rem;
         }
+        .nav-links a.nav-btn-portal:hover { background: #fff; color: var(--navy); }
 
-        .nav-links a.nav-btn-dashboard {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            font-weight: 700;
-            padding: 0.5rem 1rem;
-            font-size: 0.875rem;
-            letter-spacing: 0.3px;
-        }
-
-        .nav-links a.nav-btn-dashboard:hover {
-            background: linear-gradient(135deg, var(--primary-dark), #162c7a);
-            color: white;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
-        }
-
-        .nav-links a.active-page {
-            color: var(--primary);
-            background-color: #eff6ff;
-            font-weight: 600;
-        }
-
-        /* Hamburger button */
         .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            width: 42px;
-            height: 42px;
-            background: none;
-            border: 1.5px solid #e2e8f0;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            padding: 8px;
-            transition: var(--transition);
-            flex-shrink: 0;
+            display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px;
+            width: 42px; height: 42px; background: none; border: 1.5px solid rgba(255,255,255,0.2);
+            border-radius: 0.5rem; cursor: pointer; padding: 8px;
         }
+        .hamburger-bar { display: block; width: 20px; height: 2px; background-color: #fff; border-radius: 2px; transition: var(--transition); }
+        .mobile-menu-btn.is-open .hamburger-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .mobile-menu-btn.is-open .hamburger-bar:nth-child(2) { opacity: 0; }
+        .mobile-menu-btn.is-open .hamburger-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-        .mobile-menu-btn:hover {
-            border-color: var(--primary);
-            background-color: #eff6ff;
-        }
-
-        .hamburger-bar {
-            display: block;
-            width: 20px;
-            height: 2px;
-            background-color: var(--dark);
-            border-radius: 2px;
-            transition: var(--transition);
-            transform-origin: center;
-        }
-
-        .mobile-menu-btn.is-open .hamburger-bar:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-        .mobile-menu-btn.is-open .hamburger-bar:nth-child(2) {
-            opacity: 0;
-            transform: scaleX(0);
-        }
-        .mobile-menu-btn.is-open .hamburger-bar:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
-
-        /* Mobile drawer */
         .mobile-nav {
-            display: none;
-            flex-direction: column;
-            gap: 0.25rem;
-            background: white;
-            border-top: 1px solid #e2e8f0;
-            padding: 1rem 1.5rem 1.25rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            animation: slideDown 0.22s ease;
+            display: none; flex-direction: column; gap: 0.25rem;
+            background: rgba(10, 22, 40, 0.95); backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(59, 130, 246, 0.2); padding: 1rem 1.5rem;
         }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-8px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        .mobile-nav.is-open {
-            display: flex;
-        }
-
+        .mobile-nav.is-open { display: flex; }
         .mobile-nav a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            font-size: 1rem;
-            padding: 0.7rem 0.75rem;
-            border-radius: 0.5rem;
-            transition: var(--transition);
-            border-bottom: 1px solid #f1f5f9;
+            text-decoration: none; color: var(--text-light); font-weight: 500; padding: 0.8rem;
+            border-radius: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-
-        .mobile-nav a:last-child {
-            border-bottom: none;
-        }
-
-        .mobile-nav a:hover {
-            background: #eff6ff;
-            color: var(--primary);
-        }
-
-        .mobile-nav a.nav-btn-dashboard {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            font-weight: 700;
-            text-align: center;
-            margin-top: 0.5rem;
-            border-bottom: none;
-        }
-
-        .mobile-nav a.nav-btn-dashboard:hover {
-            background: linear-gradient(135deg, var(--primary-dark), #162c7a);
-            color: white;
-        }
+        .mobile-nav a.nav-btn-portal { background: var(--gold); color: var(--navy); text-align: center; font-weight: 700; margin-top: 0.5rem; border-bottom: none; }
 
         /* =====================
            Hero Section
            ===================== */
         .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #0c4a6e 100%);
+            background: linear-gradient(135deg, rgba(10,22,40,0.9), rgba(0,27,61,0.9)), url('https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Security-Risk%20Self-Assessment-Banner.png');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 4.5rem 0 0;
+            padding: 5rem 0 3rem;
             position: relative;
-            overflow: hidden;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
         }
+        .hero-content { position: relative; text-align: center; max-width: 860px; margin: 0 auto; }
+        .hero h1 { font-size: 2.75rem; margin-bottom: 1rem; line-height: 1.2; }
+        .hero h1 span { color: var(--gold); }
+        .hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; }
         
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 800px;
-            height: 800px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            text-align: center;
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 0 1.5rem 3rem;
-        }
-
-        .hero h1 {
-            font-size: 2.75rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .last-updated {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-            font-weight: 500;
-        }
-
-        .effective-date {
-            font-size: 0.95rem;
-            color: rgba(255,255,255,0.8);
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        .compliance-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 2rem;
-            justify-content: center;
-        }
-
+        .compliance-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; justify-content: center; }
         .badge {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 50px;
-            padding: 0.35rem 1rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,215,0,0.3); border-radius: 50px;
+            padding: 0.4rem 1.2rem; font-size: 0.8rem; font-weight: 600;
+            display: inline-flex; align-items: center; gap: 0.5rem; color: var(--gold);
         }
 
-        /* Floating Button */
-        .floating-dashboard {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 1000;
-            background: linear-gradient(135deg, var(--secondary), #eab308);
-            color: white;
-            padding: 0.65rem 1.4rem 0.65rem 0.65rem;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 0.65rem;
-            font-size: 0.9rem;
-            letter-spacing: 0.3px;
-        }
-
-        .floating-dashboard:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 30px -5px rgba(245, 158, 11, 0.5);
-        }
-
-        .floating-logo-circle {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            overflow: hidden;
-            flex-shrink: 0;
-            border: 2px solid rgba(255,255,255,0.7);
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .floating-logo-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Main Content Styling */
+        /* =====================
+           Main Content
+           ===================== */
+        .content-wrapper { margin-top: -2rem; position: relative; z-index: 10; padding-bottom: 4rem; }
+        
         .content-card {
-            background: white;
-            border-radius: 1.25rem;
-            padding: 2.5rem;
-            box-shadow: var(--card-shadow);
-            border: 1px solid #e2e8f0;
+            border-radius: 1.5rem;
+            padding: 3rem;
             margin-bottom: 2rem;
         }
 
         h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid rgba(59, 130, 246, 0.1);
+            font-size: 1.8rem; color: var(--gold); margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem; border-bottom: 2px solid rgba(255,215,0,0.2);
+            display: flex; align-items: center; gap: 0.75rem;
         }
+        h2 i { color: var(--blue); font-size: 1.5rem; }
 
-        h3 {
-            font-size: 1.5rem;
-            color: var(--dark);
-            margin: 2rem 0 1rem;
-        }
-
-        p, li {
-            color: var(--gray);
-            line-height: 1.7;
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-            margin: 1rem 0;
-        }
-
-        li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-
+        h3 { font-size: 1.3rem; color: #fff; margin: 2rem 0 1rem; }
+        p, li { color: var(--text-light); line-height: 1.8; font-size: 0.95rem; }
+        
+        ul { list-style: none; padding-left: 0; margin: 1rem 0; }
+        li { position: relative; padding-left: 1.75rem; margin-bottom: 0.75rem; }
         li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
+            content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900;
+            position: absolute; left: 0; color: var(--blue); top: 2px;
         }
 
-        strong {
-            color: var(--dark);
-            font-weight: 600;
-        }
+        strong { color: #fff; font-weight: 600; }
+        a { color: var(--blue); text-decoration: none; transition: var(--transition); }
+        a:hover { color: var(--gold); text-decoration: underline; }
 
+        /* Table */
         table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            background: white;
-            border-radius: 0.75rem;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
+            width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+            border-radius: 0.75rem; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);
         }
-
         th {
-            background: var(--primary);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
+            background: rgba(59, 130, 246, 0.2); color: var(--gold);
+            padding: 1rem; text-align: left; font-weight: 600; font-family: 'Montserrat', sans-serif;
+            border-bottom: 1px solid rgba(255,215,0,0.2);
         }
+        td { padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-light); }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(255,255,255,0.03); }
 
-        td {
-            padding: 1rem;
-            border-bottom: 1px solid #e2e8f0;
-            color: var(--gray);
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* Table of Contents */
+        /* TOC */
         .toc {
-            background: white;
-            border-radius: 1.25rem;
-            padding: 2rem;
-            box-shadow: var(--card-shadow);
-            border: 1px solid #e2e8f0;
-            margin: 2rem 0;
+            border-radius: 1rem; padding: 2rem; margin: 2rem 0;
         }
+        .toc h3 { color: var(--gold); margin-top: 0; font-size: 1.2rem; }
+        .toc ol { padding-left: 1.5rem; list-style-position: inside; color: var(--text-light); }
+        .toc li { margin-bottom: 0.5rem; padding-left: 0; }
+        .toc li::before { display: none; }
+        .toc a { color: var(--blue); font-weight: 600; }
+        .toc a:hover { color: var(--gold); }
 
-        .toc h3 {
-            font-size: 1.25rem;
-            color: var(--primary);
-            margin-top: 0;
-        }
-
-        .toc ol {
-            padding-left: 1.5rem;
-            list-style-position: inside;
-            color: var(--gray);
-        }
-
-        .toc a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color var(--transition);
-        }
-
-        .toc a:hover {
-            color: var(--secondary);
-        }
-
-        /* Policy Cards */
-        .policy-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .policy-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-        }
-
-        .policy-card:hover {
-            border-color: var(--secondary);
-            transform: translateY(-3px);
-        }
-
-        .policy-card h4 {
-            color: var(--dark);
-            font-size: 1.1rem;
-            margin: 0.5rem 0;
-        }
-
-        .policy-card p {
-            font-size: 0.85rem;
-            color: var(--gray);
-        }
-
-        .policy-card-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Quick Access Links */
-        .quick-access {
-            background: var(--light);
-            border-radius: 1rem;
-            padding: 2rem;
-            margin: 2rem 0;
-            border: 1px solid #e2e8f0;
-        }
-
-        .quick-access h4 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .quick-access-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
+        /* Quick Access */
+        .quick-access { border-radius: 1rem; padding: 2rem; margin: 2rem 0; }
+        .quick-access h4 { color: var(--gold); margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; }
+        .quick-access-links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
         .quick-access-link {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #fff; padding: 0.6rem 1.2rem; border-radius: 0.5rem;
+            font-weight: 600; font-size: 0.9rem; transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 0.5rem;
         }
-
-        .quick-access-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(30, 64, 175, 0.3);
-        }
+        .quick-access-link:hover { background: var(--blue); color: #fff; transform: translateY(-2px); text-decoration: none; }
 
         /* Contact Box */
         .contact-box {
-            background: var(--primary);
-            color: white;
-            border-radius: 1.25rem;
-            padding: 2.5rem;
-            margin: 3rem 0;
+            border-radius: 1.25rem; padding: 2.5rem; margin: 2rem 0;
         }
-
-        .contact-box h3 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .contact-box p {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .contact-link {
-            color: white;
-            text-decoration: underline;
-            font-weight: 600;
-        }
-
-        .contact-link:hover {
-            color: var(--secondary);
-        }
-
-        .contact-grid {
-            display: grid;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: baseline;
-            gap: 1rem;
-        }
-
-        .label {
-            font-weight: 700;
-            color: var(--secondary);
-            min-width: 120px;
-        }
+        .contact-box h3 { color: var(--gold); margin-bottom: 1rem; }
+        .contact-grid { display: grid; gap: 1rem; margin-top: 1.5rem; }
+        .contact-item { display: flex; align-items: baseline; gap: 1rem; }
+        .label { font-weight: 700; color: var(--blue); min-width: 120px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; }
+        .contact-link { color: #fff; font-weight: 500; }
+        .contact-link:hover { color: var(--gold); }
 
         /* Footer */
         footer {
-            background-color: var(--dark);
-            color: white;
+            background: rgba(10, 22, 40, 0.95);
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
             padding: 3rem 0 2rem;
         }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-col h3 { font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--gold); position: relative; padding-bottom: 0.5rem; }
+        .footer-col h3::after { content: ""; position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: var(--blue); }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links li::before { display: none; }
+        .footer-links a { color: var(--text-muted); transition: var(--transition); }
+        .footer-links a:hover { color: var(--gold); padding-left: 5px; text-decoration: none; }
+        .copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); font-size: 0.85rem; }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-col h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-
-        .footer-col h3::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--secondary);
-            border-radius: 3px;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #334155;
-            color: #94a3b8;
-            font-size: 0.9rem;
-        }
-
-        /* Back to Home Button */
-        .back-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .back-home:hover {
-            color: white;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .floating-dashboard {
-                bottom: 1.5rem;
-                right: 1.5rem;
-            }
-        }
-
+        /* Responsive */
         @media (max-width: 860px) {
-            .nav-links {
-                display: none;
-            }
-            .mobile-menu-btn {
-                display: flex;
-            }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: flex; }
         }
-
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .section {
-                padding: 3rem 0;
-            }
-
-            .content-card {
-                padding: 1.75rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .floating-dashboard {
-                font-size: 0.8rem;
-                padding: 0.55rem 1.1rem 0.55rem 0.55rem;
-                gap: 0.5rem;
-            }
-
-            .floating-logo-circle {
-                width: 28px;
-                height: 28px;
-            }
-            
-            .contact-item {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            
-            .label {
-                min-width: auto;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.75rem;
-            }
-            
-            .policy-cards {
-                grid-template-columns: 1fr;
-            }
-            
-            .quick-access-links {
-                flex-direction: column;
-            }
+            .hero h1 { font-size: 2rem; }
+            .content-card { padding: 1.5rem; }
+            h2 { font-size: 1.4rem; }
+            .contact-item { flex-direction: column; gap: 0.25rem; }
+            .label { min-width: auto; }
         }
     </style>
     <base target="_blank">
 </head>
 <body>
-    <!-- Floating Dashboard Button -->
-    <a href="https://asilvainnovations-website-version77.bolt.host/" class="floating-dashboard">
-        <div class="floating-logo-circle">
-            <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1777440983" alt="ASilva Innovations Logo">
-        </div>
-        HOME
-    </a>
 
     <!-- Header -->
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="https://asilvainnovations.com" class="logo">
+                <a href="https://asilvainnovations.github.io/stronghold-a3/" class="logo">
                     <div class="logo-icon">
-                        <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1777440983" alt="ASilva Innovations Logo">
+                        <img src="https://fhwhqoiucfxmfsclianh.databasepad.com/storage/v1/object/public/sop-files/public/Stronghold%20Logo.png" alt="Stronghold A3 Logo">
                     </div>
                     <div>
-                        <div class="logo-text">ASilva</div>
-                        <div class="logo-subtext">Innovations</div>
+                        <div class="logo-text">STRONGHOLD A3</div>
+                        <div class="logo-subtext">ZERO-LIABILITY SECURITY</div>
                     </div>
                 </a>
 
                 <ul class="nav-links" id="desktopNav">
-                    <li><a href="https://strategic-collaborative-auditable.deploypad.app/" class="nav-btn-dashboard">Dashboard</a></li>
-                    <li><a href="https://asilvainnovations.github.io/website/about-us.html">About</a></li>
-                    <li><a href="https://asilvainnovations.github.io/website/faq.html">FAQ</a></li>
-                    <li><a href="https://asilvainnovations.github.io/website/policies.html" class="active-page">Policies</a></li>
-                    <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a></li>
-                    <li><a href="https://asilvainnovations.github.io/website/contact.html">Contact</a></li>
+                    <li><a href="https://asilvainnovations.github.io/stronghold-a3/">Home</a></li>
+                    <li><a href="https://asilvainnovations.github.io/stronghold-a3/#services">Services</a></li>
+                    <li><a href="https://asilvainnovations.github.io/stronghold-a3/#about">About</a></li>
+                    <li><a href="https://asilvainnovations.github.io/stronghold-a3/#strategy">Strategy</a></li>
+                    <li><a href="https://asilvainnovations.github.io/stronghold-a3/policies.html" class="active-page">Policies</a></li>
+                    <li><a href="https://resilient-secure-mobile.deploypad.app/" class="nav-btn-portal">Staff Portal</a></li>
                 </ul>
 
-                <button class="mobile-menu-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
+                <button class="mobile-menu-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
                     <span class="hamburger-bar"></span>
                     <span class="hamburger-bar"></span>
                     <span class="hamburger-bar"></span>
@@ -897,12 +352,12 @@
             </nav>
 
             <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-                <a href="https://strategic-collaborative-auditable.deploypad.app/" class="nav-btn-dashboard">Dashboard</a>
-                <a href="https://asilvainnovations.github.io/website/about-us.html">About</a>
-                <a href="https://asilvainnovations.github.io/website/faq.html">FAQ</a>
-                <a href="https://asilvainnovations.github.io/website/policies.html" class="active-page">Policies</a>
-                <a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a>
-                <a href="https://asilvainnovations.github.io/website/contact.html">Contact</a>
+                <a href="https://asilvainnovations.github.io/stronghold-a3/">Home</a>
+                <a href="https://asilvainnovations.github.io/stronghold-a3/#services">Services</a>
+                <a href="https://asilvainnovations.github.io/stronghold-a3/#about">About</a>
+                <a href="https://asilvainnovations.github.io/stronghold-a3/#strategy">Strategy</a>
+                <a href="https://asilvainnovations.github.io/stronghold-a3/policies.html" class="active-page">Policies</a>
+                <a href="https://resilient-secure-mobile.deploypad.app/" class="nav-btn-portal">Staff Portal</a>
             </nav>
         </div>
     </header>
@@ -911,293 +366,181 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <a href="https://asilvainnovations.com" class="back-home">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M19 12H5M12 19l-7-7 7-7"/>
-                    </svg>
-                    Back To Home
-                </a>
+                <h1>Policies & <span>Compliance Framework</span></h1>
+                <p>Transparency, Accountability, and Zero-Liability Protection. Our policies govern how we secure your assets, protect your data, and uphold the highest regulatory standards in Eastern Visayas.</p>
                 
-                <h1>Policies</h1>
-                <p class="effective-date">Effective Date: February 24, 2026</p>
-                <p class="last-updated">Last Updated: April 29, 2026</p>
                 <div class="compliance-badges">
-                    <span class="badge">🔒 Transparency First</span>
-                    <span class="badge">⚖️ Compliance Driven</span>
-                    <span class="badge">🛡️ Security Focused</span>
-                    <span class="badge">🤝 Trust Based</span>
+                    <span class="badge"><i class="fas fa-shield-alt"></i> DOLE DO-174 Compliant</span>
+                    <span class="badge"><i class="fas fa-id-badge"></i> PNP-SOSIA Licensed</span>
+                    <span class="badge"><i class="fas fa-lock"></i> RA 10173 (Data Privacy)</span>
+                    <span class="badge"><i class="fas fa-water"></i> RA 10121 (DRRM)</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Main Content -->
-    <main>
-        <div class="container" style="margin-top: -2rem;">
-            <div class="content-card">
+    <main class="content-wrapper">
+        <div class="container">
+            <div class="content-card glass-strong">
                 
                 <!-- Introduction -->
-                <section class="section">
-                    <h2>Our Commitment to Transparency and Trust</h2>
-                    <p>At ASilva Innovations, our policies reflect our core values of integrity, accountability, and respect for all stakeholders. These frameworks guide how we develop technology, protect your information, ensure accessibility, and uphold ethical standards in every solution we deliver to Local Government Units, NGOs, and communities across Southeast Asia.</p>
+                <section>
+                    <h2><i class="fas fa-handshake"></i> Our Commitment to Zero-Liability & Trust</h2>
+                    <p>At Stronghold A3 Security Agency, our policies reflect our core values of integrity, regulatory excellence, and respect for all stakeholders. These frameworks guide how we deploy security personnel, protect sensitive client data, ensure ethical surveillance, and uphold compliance with Philippine laws. We don't just supply guards; we provide <strong>zero-liability security solutions</strong> that shield our clients from operational, legal, and reputational risks.</p>
                     
-                    <blockquote style="border-left: 4px solid var(--primary); padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: var(--gray);">
-                        <strong>"Policies that protect people are the foundation of technology that serves humanity."</strong><br>
-                        <small>— ASilva Innovations Policy Framework</small>
-                    </blockquote>
-                    
-                    <div class="quick-access">
-                        <h4>📋 Quick Access to All Policies</h4>
+                    <div class="quick-access glass">
+                        <h4><i class="fas fa-bolt"></i> Quick Access to All Policies</h4>
                         <div class="quick-access-links">
-                            <a href="#terms" class="quick-access-link">📜 Terms & Conditions</a>
-                            <a href="#privacy-policy" class="quick-access-link">🔒 Privacy Policy</a>
-                            <a href="#cookie-policy" class="quick-access-link">🍪 Cookie Policy</a>
-                            <a href="#accessibility-policy" class="quick-access-link">♿ Accessibility Policy</a>
-                            <a href="#ai-ethics-policy" class="quick-access-link">🤖 AI Ethics Policy</a>
+                            <a href="#terms" class="quick-access-link"><i class="fas fa-file-contract"></i> Terms of Service</a>
+                            <a href="#privacy" class="quick-access-link"><i class="fas fa-user-shield"></i> Privacy Policy (RA 10173)</a>
+                            <a href="#surveillance" class="quick-access-link"><i class="fas fa-video"></i> Surveillance Ethics</a>
+                            <a href="#accessibility" class="quick-access-link"><i class="fas fa-universal-access"></i> Accessibility & DRRM</a>
+                            <a href="#compliance" class="quick-access-link"><i class="fas fa-certificate"></i> Compliance Standards</a>
                         </div>
                     </div>
                 </section>
                 
                 <!-- Table of Contents -->
-                <nav class="toc" aria-label="Table of Contents">
+                <nav class="toc glass" aria-label="Table of Contents">
+                    <h3><i class="fas fa-list-ul"></i> Table of Contents</h3>
                     <ol>
-                        <li><a href="#terms">Terms and Conditions</a></li>
-                        <li><a href="#privacy-policy">Privacy Policy</a></li>
-                        <li><a href="#cookie-policy">Cookie Policy</a></li>
-                        <li><a href="#accessibility-policy">Accessibility Policy</a></li>
-                        <li><a href="#ai-ethics-policy">AI Ethics and Policy</a></li>
-                        <li><a href="#compliance">Compliance Standards</a></li>
+                        <li><a href="#terms">Terms of Service & Security Contracts</a></li>
+                        <li><a href="#privacy">Privacy Policy & Data Handling (RA 10173)</a></li>
+                        <li><a href="#surveillance">Technology & Surveillance Ethics</a></li>
+                        <li><a href="#accessibility">Accessibility & DRRM Commitment (RA 10121)</a></li>
+                        <li><a href="#compliance">Regulatory Compliance Standards</a></li>
                     </ol>
                 </nav>
 
-                <!-- Section 1: Terms and Conditions -->
-                <section id="terms" class="section">
-                    <h2>1. Terms and Conditions</h2>
-                    <p>At ASilva Innovations, we provide cutting‑edge digital solutions with transparency and integrity. By accessing our website, products, or services, you agree to:</p>
+                <!-- Section 1: Terms of Service -->
+                <section id="terms" style="margin-top: 3rem;">
+                    <h2><i class="fas fa-file-contract"></i> 1. Terms of Service & Security Contracts</h2>
+                    <p>Stronghold A3 provides premier security services governed by transparent, legally sound contracts. By engaging our services, clients benefit from our <strong>Zero-Liability Guarantee</strong>, meaning we assume full responsibility for labor compliance, shielding you from co-employer risks.</p>
                     <ul>
-                        <li>Use our platforms responsibly and lawfully.</li>
-                        <li>Respect intellectual property rights and proprietary content.</li>
-                        <li>Avoid misuse, unauthorized access, or harmful activities.</li>
-                        <li>Accept that services may evolve, and updates may be introduced without prior notice.</li>
+                        <li><strong>Zero-Liability Deployment:</strong> All personnel are strictly employed under Stronghold A3, fully compliant with DOLE DO-174. Clients are insulated from labor disputes.</li>
+                        <li><strong>Rules of Engagement:</strong> Our guards operate under strict, legally defined rules of engagement, prioritizing de-escalation, observation, and reporting over physical confrontation.</li>
+                        <li><strong>Service Continuity:</strong> We guarantee operational continuity through our 3-Bridge Communication System and Typhoon BCP, ensuring your site is never left unguarded during regional disasters.</li>
+                        <li><strong>Contractual Transparency:</strong> All pricing, inflation-adjustment clauses, and service level agreements (SLAs) are clearly documented with no hidden fees.</li>
                     </ul>
-                    <p>We reserve the right to modify these terms to ensure compliance with industry standards and legal requirements.</p>
-                    
-                    <div style="text-align: center; margin-top: 2rem;">
-                        <a href="https://asilvainnovations.github.io/website/terms.html" class="btn btn-primary">READ FULL TERMS</a>
-                    </div>
                 </section>
 
                 <!-- Section 2: Privacy Policy -->
-                <section id="privacy-policy" class="section">
-                    <h2>2. Privacy Policy</h2>
-                    <p>Your privacy matters to us. ASilva Innovations collects limited personal information to improve user experience and deliver tailored services.</p>
+                <section id="privacy" style="margin-top: 3rem;">
+                    <h2><i class="fas fa-user-shield"></i> 2. Privacy Policy & Data Handling (RA 10173)</h2>
+                    <p>As a security agency, we handle sensitive data daily. Stronghold A3 strictly adheres to the <strong>Philippine Data Privacy Act of 2012 (RA 10173)</strong>. Our Encrypted Document Vault and digital systems ensure that all information is protected against unauthorized access.</p>
                     
                     <table>
                         <thead>
                             <tr>
-                                <th>Aspect</th>
-                                <th>Details</th>
+                                <th>Data Category</th>
+                                <th>Handling & Protection Protocol</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Data Collection</strong></td>
-                                <td>Name, email, usage analytics</td>
+                                <td><strong>Visitor Logs & Biometrics</strong></td>
+                                <td>Digitally encrypted, accessible only to authorized site admins. Purged after 90 days unless required by law enforcement.</td>
                             </tr>
                             <tr>
-                                <td><strong>Data Use</strong></td>
-                                <td>Service enhancement, personalization, security</td>
+                                <td><strong>CCTV Footage</strong></td>
+                                <td>Stored on secure, localized NVRs with AES-256 encryption. Access restricted to client management and Stronghold A3 Ops.</td>
                             </tr>
                             <tr>
-                                <td><strong>Data Protection</strong></td>
-                                <td>Encryption, secure servers, access controls</td>
+                                <td><strong>Incident Reports</strong></td>
+                                <td>Transmitted via secure cloud channels. Redacted of personally identifiable information (PII) before archival.</td>
                             </tr>
                             <tr>
-                                <td><strong>User Rights</strong></td>
-                                <td>Access, correction, deletion requests</td>
+                                <td><strong>Guard Personnel Data</strong></td>
+                                <td>NBI clearances, medical records, and PNP licenses are stored in a restricted Digital Vault, accessible only to HR/Admin.</td>
                             </tr>
                         </tbody>
                     </table>
-                    
-                    <p>We never sell or share personal data with third parties without consent, except when required by law.</p>
-                    
-                    <div style="text-align: center; margin-top: 2rem;">
-                        <a href="https://asilvainnovations.github.io/website/privacy-policy.html" class="btn btn-primary">VIEW PRIVACY POLICY</a>
-                    </div>
+                    <p style="margin-top: 1rem;">We never sell, share, or exploit client or personnel data. All data breaches are reported within 72 hours to the National Privacy Commission (NPC) and affected clients.</p>
                 </section>
 
-                <!-- Section 3: Cookie Policy -->
-                <section id="cookie-policy" class="section">
-                    <h2>3. Cookie Policy</h2>
-                    <p>ASilva Innovations uses cookies to optimize performance and personalize your browsing experience.</p>
-                    
+                <!-- Section 3: Surveillance Ethics -->
+                <section id="surveillance" style="margin-top: 3rem;">
+                    <h2><i class="fas fa-video"></i> 3. Technology & Surveillance Ethics</h2>
+                    <p>As we integrate hybrid security solutions (CCTV, AI monitoring, GPS tracking), we uphold strict ethical guidelines to ensure technology empowers security without infringing on civil liberties.</p>
                     <ul>
-                        <li><strong>Essential Cookies:</strong> Enable core functionality such as login and navigation.</li>
-                        <li><strong>Analytics Cookies:</strong> Help us understand user behavior and improve services.</li>
-                        <li><strong>Preference Cookies:</strong> Store your settings for a seamless experience.</li>
+                        <li><strong>Purpose Limitation:</strong> Surveillance tech is deployed strictly for asset protection, access control, and guard accountability. It is never used for unauthorized personal monitoring.</li>
+                        <li><strong>Transparency:</strong> Clients and visitors are informed of CCTV presence through clear signage. Guard GPS tracking is disclosed and used solely for dispatch optimization and safety.</li>
+                        <li><strong>Data Minimization:</strong> We only collect visual or location data that is strictly necessary for the security mandate of the specific site.</li>
+                        <li><strong>Human Oversight:</strong> AI-assisted monitoring (if deployed) always requires human verification by our Ops Center before any incident is escalated or reported to authorities.</li>
                     </ul>
-                    
-                    <p>You can manage or disable cookies through your browser settings, though some features may be limited.</p>
-                    
-                    <div style="text-align: center; margin-top: 2rem;">
-                        <a href="https://asilvainnovations.github.io/website/cookie-policy.html" class="btn btn-primary">LEARN MORE</a>
-                    </div>
                 </section>
 
-                <!-- Section 4: Accessibility Policy -->
-                <section id="accessibility-policy" class="section">
-                    <h2>4. Accessibility Policy</h2>
-                    <p>We are committed to digital inclusivity. ASilva Innovations designs platforms that are accessible to all users, including those with disabilities.</p>
-                    
+                <!-- Section 4: Accessibility & DRRM -->
+                <section id="accessibility" style="margin-top: 3rem;">
+                    <h2><i class="fas fa-universal-access"></i> 4. Accessibility & DRRM Commitment (RA 10121)</h2>
+                    <p>Security must be inclusive and resilient. Stronghold A3 aligns with the <strong>Philippine Disaster Risk Reduction and Management Act (RA 10121)</strong> and advocates for physical and digital accessibility.</p>
                     <ul>
-                        <li>Compliance with <strong>WCAG 2.1</strong> accessibility standards</li>
-                        <li>Support for screen readers, keyboard navigation, and alternative text for images</li>
-                        <li>Continuous testing and improvements to remove barriers</li>
+                        <li><strong>DRRM First Responders:</strong> All guards undergo mandatory disaster response training. During typhoons or emergencies, our personnel act as facility first responders, assisting in evacuations and securing perimeters.</li>
+                        <li><strong>PWD Assistance:</strong> Our access control protocols prioritize the safety and dignity of Persons with Disabilities (PWDs), ensuring guards are trained to assist without compromising site security.</li>
+                        <li><strong>Digital Accessibility:</strong> Our Client Transparency Portal and digital incident reports are designed with high-contrast, screen-reader-friendly interfaces to ensure all stakeholders can access security data.</li>
                     </ul>
-                    
-                    <p>Feedback on accessibility is welcome to help us improve inclusivity.</p>
-                    
-                    <div style="text-align: center; margin-top: 2rem;">
-                        <a href="https://asilvainnovations.github.io/website/accessibility-policy.html" class="btn btn-primary">ACCESSIBILITY POLICY</a>
-                    </div>
                 </section>
 
-                <!-- Section 5: AI Ethics Policy -->
-                <section id="ai-ethics-policy" class="section">
-                    <h2>5. AI Ethics and Policy</h2>
-                    <p>As innovators in AI, we uphold ethical principles to ensure responsible technology use.</p>
+                <!-- Section 5: Compliance Standards -->
+                <section id="compliance" style="margin-top: 3rem;">
+                    <h2><i class="fas fa-certificate"></i> 5. Regulatory Compliance Standards</h2>
+                    <p>Compliance is not an option; it is our foundation. Stronghold A3 maintains a <strong>100% compliance rate</strong> across all regulatory bodies, ensuring our clients face zero legal exposure.</p>
                     
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Principle</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Transparency</strong></td>
-                                <td>Clear communication about how AI systems function</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Fairness</strong></td>
-                                <td>Avoiding bias in algorithms and promoting equitable outcomes</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Accountability</strong></td>
-                                <td>Human oversight in critical decision-making processes</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Privacy</strong></td>
-                                <td>Protecting user data in AI applications</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Sustainability</strong></td>
-                                <td>Designing AI solutions that support societal well-being</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-                    <p style="margin-top: 1.5rem;"><strong>We believe AI should empower people, not exploit them.</strong></p>
-                    
-                    <div style="text-align: center; margin-top: 2rem;">
-                        <a href="https://asilvainnovations.github.io/website/ai-ethics.html" class="btn btn-primary">AI ETHICS POLICY</a>
-                    </div>
-                </section>
-
-                <!-- Section 6: Compliance Standards -->
-                <section id="compliance" class="section">
-                    <h2>6. Compliance Standards</h2>
-                    <p>ASilva Innovations aligns with global standards to ensure compliance and trustworthiness. We collaborate with partners who share our values of innovation, ethics, and sustainability.</p>
-                    
-                    <div class="contact-box">
-                        <h3>Global Standards We Uphold</h3>
-                        <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1.5rem 0;">
-                            <span style="background: rgba(255,255,255,0.1); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600;">GDPR</span>
-                            <span style="background: rgba(255,255,255,0.1); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600;">CCPA</span>
-                            <span style="background: rgba(255,255,255,0.1); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600;">ISO 27001</span>
-                            <span style="background: rgba(255,255,255,0.1); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600;">ISO 31000</span>
-                            <span style="background: rgba(255,255,255,0.1); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600;">WCAG 2.1</span>
-                            <span style="background: rgba(255,255,255,0.1); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600;">RA 10173</span>
-                            <span style="background: rgba(255,255,255,0.1); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600;">RA 10121</span>
+                    <div class="contact-box glass-gold">
+                        <h3>Our Regulatory Moat</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin: 1.5rem 0;">
+                            <span class="badge" style="background: rgba(10,22,40,0.6); color: var(--gold); border-color: var(--gold);">DOLE DO-174</span>
+                            <span class="badge" style="background: rgba(10,22,40,0.6); color: var(--gold); border-color: var(--gold);">PNP-SOSIA</span>
+                            <span class="badge" style="background: rgba(10,22,40,0.6); color: var(--gold); border-color: var(--gold);">PADPAO Region 8</span>
+                            <span class="badge" style="background: rgba(10,22,40,0.6); color: var(--gold); border-color: var(--gold);">RA 10173 (DPA)</span>
+                            <span class="badge" style="background: rgba(10,22,40,0.6); color: var(--gold); border-color: var(--gold);">RA 10121 (DRRM)</span>
+                            <span class="badge" style="background: rgba(10,22,40,0.6); color: var(--gold); border-color: var(--gold);">BIR Registered</span>
                         </div>
+                        <p style="text-align: center; color: var(--text-light); font-size: 0.9rem;">All documents are digitized in our Encrypted Vault, guaranteeing <strong>15-minute audit readiness</strong> for any DOLE, PNP, or LGU inspection.</p>
                     </div>
-                    
-                    <h3 style="color: var(--primary);">Our Partnerships Are Built On:</h3>
-                    <ul>
-                        <li>Ethical technology deployment in high-risk environments</li>
-                        <li>Transparent data practices and user consent</li>
-                        <li>Community-centered design and local capacity building</li>
-                        <li>Environmental sustainability in all operations</li>
-                        <li>Continuous improvement through shared learning</li>
-                    </ul>
-                    
-                    <p>We conduct rigorous due diligence on all partners to ensure alignment with our mission of building resilient communities through ethical technology.</p>
-                </section>
 
-                <!-- Acknowledgment -->
-                <section class="section">
-                    <h2>Acknowledgment</h2>
-                    <div class="contact-box">
-                        <h3 style="margin-bottom: 1rem;">By using ASilva Innovations platforms and services, you acknowledge that you have read, understood, and agree to be bound by all policies referenced herein, including our:</h3>
-                        <ul style="margin-top: 1rem; color: rgba(255, 255, 255, 0.9);">
-                            <li>Terms and Conditions</li>
-                            <li>Privacy Policy</li>
-                            <li>Cookie Policy</li>
-                            <li>Accessibility Policy</li>
-                            <li>AI Ethics Policy</li>
-                        </ul>
-                    </div>
+                    <h3>Our Operational Mandates:</h3>
+                    <ul>
+                        <li><strong>Fair Wage & Welfare:</strong> We neutralize the regional labor drain by paying above-industry wages and providing typhoon relief, ensuring a stable, professional guard force.</li>
+                        <li><strong>Continuous Training:</strong> Mandatory In-Service Training (MIST) and DRRM drills are conducted regularly to maintain PNP-SOSIA standards.</li>
+                        <li><strong>Mock Audits:</strong> We conduct quarterly internal stress tests to ensure our Digital Vault and SOPs can withstand any regulatory scrutiny.</li>
+                    </ul>
                 </section>
 
                 <!-- Contact -->
-                <section class="section">
-                    <h2>Questions About Our Policies?</h2>
-                    <p>If you have any questions about our policies, compliance standards, or data practices, please contact us:</p>
+                <section style="margin-top: 3rem;">
+                    <h2><i class="fas fa-headset"></i> Questions About Our Policies?</h2>
+                    <p>If you require clarification on our compliance frameworks, data handling, or contract terms, our Compliance & Operations team is ready to assist.</p>
                     
-                    <div class="contact-box">
+                    <div class="contact-box glass-blue">
                         <h3>Compliance & Policy Team</h3>
                         <div class="contact-grid">
                             <div class="contact-item">
                                 <span class="label">Email:</span>
-                                <a href="mailto:compliance@asilvainnovations.com" class="contact-link">compliance@asilvainnovations.com</a>
+                                <a href="mailto:info@strongholda3.com" class="contact-link">info@strongholda3.com</a>
                             </div>
                             <div class="contact-item">
                                 <span class="label">Data Officer:</span>
-                                <a href="mailto:dataofficer@asilvainnovations.com" class="contact-link">dataofficer@asilvainnovations.com</a>
+                                <a href="mailto:compliance@strongholda3.com" class="contact-link">compliance@strongholda3.com</a>
                             </div>
                             <div class="contact-item">
                                 <span class="label">Phone:</span>
-                                <span>+639178555134</span>
+                                <a href="tel:09171370112" class="contact-link">09171370112 (24/7 Ops)</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="label">CEO Direct:</span>
+                                <a href="tel:09171350112" class="contact-link">Antonie M. Silva (09171350112)</a>
                             </div>
                             <div class="contact-item">
                                 <span class="label">Address:</span>
-                                <span>ASilva Innovations<br>Muntinlupa City, Metro Manila, Philippines</span>
+                                <span>2nd Floor Real St., Tacloban City, Leyte, Philippines 6500</span>
                             </div>
                         </div>
-                        <p style="margin-top: 1.5rem;">We aim to respond to policy-related inquiries within <strong>5 business days</strong>.</p>
+                        <p style="margin-top: 1.5rem; text-align: center; color: var(--text-muted); font-size: 0.9rem;">We aim to respond to policy-related inquiries within <strong>24 business hours</strong>.</p>
                     </div>
                 </section>
 
-                <!-- Additional Information -->
-                <section class="section">
-                    <h2>Additional Information</h2>
-                    
-                    <h3>About This Page</h3>
-                    <p>This Policies page provides comprehensive coverage of ASilva Innovations' commitment to transparency, compliance, and ethical technology practices. Our policies evolve continuously to meet emerging regulations and best practices.</p>
-                    
-                    <h3>Updates & Changes</h3>
-                    <p>We may update these policies periodically to reflect changes in laws, regulations, or company practices. The dates shown above indicate when the most recent revisions were published.</p>
-                    
-                    <h3>Certifications & Compliance</h3>
-                    <ul>
-                        <li>Registered Business Entity in the Republic of the Philippines</li>
-                        <li>Compliant with Data Privacy Act (RA 10173)</li>
-                        <li>Aligned with ISO 27001 Information Security Standards</li>
-                        <li>WCAG 2.1 AA Accessible Digital Platform</li>
-                        <li>DRRM Act Compliant (RA 10121)</li>
-                    </ul>
-                </section>
             </div>
         </div>
     </main>
@@ -1207,45 +550,44 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>ASilva Innovations</h3>
+                    <h3>Stronghold A3</h3>
                     <ul class="footer-links">
-                        <li><a href="https://asilvainnovations.com">Home</a></li>
-                        <li><a href="https://asilvainnovations.github.io/website/about-us.html">About Us</a></li>
-                        <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a></li>
-                        <li><a href="https://asilvainnovations.github.io/website/contact.html">Contact</a></li>
+                        <li><a href="https://asilvainnovations.github.io/stronghold-a3/">Home</a></li>
+                        <li><a href="https://asilvainnovations.github.io/stronghold-a3/#about">About Us</a></li>
+                        <li><a href="https://asilvainnovations.github.io/stronghold-a3/#strategy">Strategy Map</a></li>
+                        <li><a href="https://asilvainnovations.github.io/stronghold-a3/#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Solutions</h3>
+                    <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="https://asilvainnovations.github.io/ddrive-m/">DDRiVE-M</a></li>
-                        <li><a href="https://asilvainnovations.github.io/website/rtl.html">Real-Time Leadership</a></li>
-                        <li><a href="https://asilvainnovations.github.io/strat-planner-pwa/public/index.html">Strat Planner Pro</a></li>
-                        <li><a href="https://asilvainnovations.github.io/website/ai-solutions.html">AI-Solutions</a></li>
+                        <li><a href="https://asilvainnovations.github.io/stronghold-a3/#services">Corporate Security</a></li>
+                        <li><a href="https://asilvainnovations.github.io/stronghold-a3/#services">Event Security</a></li>
+                        <li><a href="https://asilvainnovations.github.io/stronghold-a3/#services">Disaster Response</a></li>
+                        <li><a href="https://asilvainnovations.github.io/stronghold-a3/security-assessment.html">Risk Assessment Tool</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="https://blog-leadership-analytics.deploypad.app/">Blog</a></li>
-                        <li><a href="https://asilvainnovations.github.io/case-studies/">Case Studies</a></li>
-                        <li><a href="https://asilvainnovations.github.io/white-papers/">White Papers</a></li>
-                        <li><a href="https://asilvainnovations.github.io/website/faq.html">FAQ</a></li>
+                        <li><a href="https://resilient-secure-mobile.deploypad.app/">Staff SMS Portal</a></li>
+                        <li><a href="https://asilvainnovations.github.io/stronghold-a3/policies.html">Policies & Compliance</a></li>
+                        <li><a href="https://asilvainnovations.github.io/stronghold-a3/#contact">Client Support</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Legal</h3>
                     <ul class="footer-links">
-                        <li><a href="https://asilvainnovations.github.io/website/terms.html">Terms & Conditions</a></li>
-                        <li><a href="https://asilvainnovations.github.io/website/privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="https://asilvainnovations.github.io/website/cookie-policy.html">Cookie Policy</a></li>
-                        <li><a href="https://asilvainnovations.github.io/website/accessibility-policy.html">Accessibility Policy</a></li>
-                        <li><a href="https://asilvainnovations.github.io/website/ai-ethics.html">AI Ethics Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy (RA 10173)</a></li>
+                        <li><a href="#surveillance">Surveillance Ethics</a></li>
+                        <li><a href="#compliance">Compliance Standards</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2026 ASilva Innovations. All rights reserved. Building resilient communities through ethical AI and human-centered design.</p>
+                <p>&copy; 2026 Stronghold A3 Security Agency. All Rights Reserved. | DOLE DO-174 Compliant | PNP-SOSIA Licensed</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.4);">Eastern Visayas' Premier Zero-Liability Security Partner.</p>
             </div>
         </div>
     </footer>
@@ -1258,23 +600,13 @@
         hamburgerBtn.addEventListener('click', function () {
             const isOpen = mobileNav.classList.toggle('is-open');
             hamburgerBtn.classList.toggle('is-open', isOpen);
-            hamburgerBtn.setAttribute('aria-expanded', isOpen);
         });
 
         mobileNav.querySelectorAll('a').forEach(function (link) {
             link.addEventListener('click', function () {
                 mobileNav.classList.remove('is-open');
                 hamburgerBtn.classList.remove('is-open');
-                hamburgerBtn.setAttribute('aria-expanded', 'false');
             });
-        });
-
-        document.addEventListener('click', function (e) {
-            if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
-                mobileNav.classList.remove('is-open');
-                hamburgerBtn.classList.remove('is-open');
-                hamburgerBtn.setAttribute('aria-expanded', 'false');
-            }
         });
 
         // Smooth scrolling for anchor links
@@ -1288,23 +620,25 @@
             });
         });
 
-        // Active state for navigation
+        // Active state for navigation on scroll
         window.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-links a:not(.nav-btn-dashboard)');
+            const navLinks = document.querySelectorAll('.toc a');
             
             let current = '';
             sections.forEach(function(section) {
                 const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 100) {
+                if (pageYOffset >= sectionTop - 150) {
                     current = section.getAttribute('id');
                 }
             });
 
             navLinks.forEach(function(link) {
-                link.classList.remove('active-page');
+                link.style.color = '';
+                link.style.fontWeight = '';
                 if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active-page');
+                    link.style.color = '#FFD700';
+                    link.style.fontWeight = '700';
                 }
             });
         });
